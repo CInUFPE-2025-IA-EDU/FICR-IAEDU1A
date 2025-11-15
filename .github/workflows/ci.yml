@@ -1,0 +1,49 @@
+name: CI - Análise de Métricas por Squad
+
+on: [push, pull_request]
+
+jobs:
+  analyze-squads:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        squad: [A, B, C, D, E, F, G, H, I]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install html-validate
+        run: npm install -g html-validate
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Analyze Squad ${{ matrix.squad }}
+        run: |
+          python scripts/analyze_squad.py squads/squad-${{ matrix.squad }}
+
+      - name: Generate Research Metrics Skeleton
+        run: |
+          python scripts/analyze_metrics.py
+
+      - name: Upload Squad Metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics-squad-${{ matrix.squad }}
+          path: |
+            metrics-squad-${{ matrix.squad }}.json
+            research_metrics.json
+            research_data_glmm.csv
