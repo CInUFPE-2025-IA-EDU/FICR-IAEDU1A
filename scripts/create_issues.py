@@ -3,9 +3,9 @@ import requests
 import os
 import time
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-REPO_OWNER = "sua-organizacao"  # ajuste aqui
-REPO_NAME = "FICR-IAEDU1A"      # ajuste se o nome do repo mudar
+GITHUB_TOKEN = os.getenv('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')
+REPO_OWNER = 'CinUFPE-2025-IA-EDU'
+REPO_NAME = 'FICR-IAEDU1A'
 
 SPRINT_PLANNING = {
     "Home": 1, "Sobre": 1,
