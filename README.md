@@ -9,6 +9,7 @@ Cada squad possui 4 alunos:
 - 2 focados em **HTML**
 - 2 focados em **CSS**
 
+
 ## 🗓️ Sprints (por páginas)
 
 - **Sprint 1:** Home, Sobre  
