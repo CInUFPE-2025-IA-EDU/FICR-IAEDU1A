@@ -1,6 +1,56 @@
-/* Estilos base - personalize para seu squad */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --background: #FFF;
+  --text: #0A0614;
+  --cor-primaria: #2349FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+  font-family: 'Inter', Segoe UI, Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: var(--background);
+}
+
+body * {
+  color: var(--text);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 804px;
+  justify-content: flex-end;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu ul li {
+  list-style: none;
+  gap: 10px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+}
+
+.pag-ativa {
+  background-color: var(--cor-primaria);
+  border-radius: 100px;
+  color: var(--background);
+  padding: 15px 30px;
 }
