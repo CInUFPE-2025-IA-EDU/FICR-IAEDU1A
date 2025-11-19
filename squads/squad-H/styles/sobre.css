@@ -4,3 +4,133 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
 }
+.about {
+  padding: 80px 20px;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: "Inter", sans-serif;
+}
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.about .profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.about .profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.about .title span {
+  color: #4f46e5;
+}
+
+.about .description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+  color: #4b5563;
+}
+.about .buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about .btn-primary {
+  background: #4f46e5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.about .btn-primary:hover {
+  background: #4338ca;
+}
+.about .btn-outline {
+  border: 2px solid #e5e7eb;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.about .btn-outline:hover {
+  background: #f3f4f6;
+}
+.about .stats {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 500px;
+}
+
+.about .stat-item {
+  text-align: center;
+}
+
+.about .stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.about .stat-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+.about .techs {
+  margin-top: 30px;
+}
+
+.about .techs-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.about .badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about .badge {
+  padding: 6px 14px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+@media (min-width: 900px) {
+  .about .container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
