@@ -1,6 +1,97 @@
-/* Estilos base - personalize para seu squad */
+
+:root {
+    --cor-fundo-principal: #16162e; 
+    --cor-fundo-header: #212140; 
+    --cor-texto-claro: #ffffff;
+    --cor-texto-suave: #a9a9b9; 
+    --gradiente-inicio: #9a40ff; 
+    --gradiente-fim: #4092ff; 
+    --fonte-titulo: 'Poppins', sans-serif;
+    --espacamento-padrao: 50px;
+}
+
+* {
+    margin: 7;
+    padding: 5;
+    box-sizing: border-box;
+    font-size: 13px;
+    scroll-behavior: smooth;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+    font-family: var(--fonte-titulo);
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-claro);
+    min-height: 100vh;
+    
 }
+
+.logo-container {
+  text-align: start;
+  display: flex;
+  align-items: start; 
+  gap: 5px;
+}
+
+.logo-container .logo {
+    width: 30px; 
+    height: 30px;
+    object-fit: fill; 
+  
+}
+
+main{
+  text-align: center;
+}
+
+header {
+
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px var(--espacamento-padrao);
+    background-color: var(--cor-fundo-header);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.opçoes-superior-direita {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    z-index: 1000; 
+    padding: 10px;
+    background-color: rgba(33, 33, 64, 0.8); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.opçoes-superior-direita .icon img {
+   
+    width: 20px;
+    height: 20px;
+    filter: invert(1); 
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.opçoes-superior-direita .icon:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+aside.opçoes-superior-direita {
+    display: none; 
+}
+
+
