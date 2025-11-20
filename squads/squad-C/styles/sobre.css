@@ -1,6 +1,21 @@
-/* Estilos base - personalize para seu squad */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #0a0f1c;
+  color: #e2e8f0;
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+h1 {
+  text-align: center;
+}
+
+section {
+  padding: 6rem 2rem;
+
+}
+
