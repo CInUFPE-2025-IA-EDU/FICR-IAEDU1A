@@ -2,20 +2,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #0a0f1c;
-  color: #e2e8f0;
+  background: #0f172a;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1 {
   text-align: center;
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  color: #4f46e5;
 }
 
 section {
-  padding: 6rem 2rem;
-
+  padding: 8rem 4rem;
 }
 
+h2 {
+  font-size: 2rem;
+  color: #4f46e5;
+}
+
+p {
+  font-size: 20px;
+  color: #e2e8f0;
+}
