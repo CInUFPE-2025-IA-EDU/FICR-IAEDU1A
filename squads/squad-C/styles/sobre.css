@@ -9,10 +9,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 h1 {
   text-align: center;
   font-size: 6rem;
