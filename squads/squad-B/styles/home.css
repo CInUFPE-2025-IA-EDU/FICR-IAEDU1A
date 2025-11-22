@@ -7,7 +7,7 @@ body {
                background-color: rgba(240, 248, 255, 0.712);
 }
 
-header {
+    header {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
@@ -87,8 +87,6 @@ h1, p {
     display: inline-block;
     padding: 10px 15px;
     text-decoration: none;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out; 
 }
@@ -102,7 +100,6 @@ li {
     padding: 10px 15px;
     text-decoration: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out; 
 }
