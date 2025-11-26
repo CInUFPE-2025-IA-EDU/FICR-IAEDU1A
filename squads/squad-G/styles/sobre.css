@@ -1,37 +1,148 @@
-/* Estilos base - personalize para seu squad */
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
-  background-color: rgb(210, 208, 208);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #d3d3d3;
+  background-size: cover;
+  color: #333;
+  
 }
-ul, li, a{
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  gap: 10px;
-  margin-bottom: 15px;
-  text-decoration: none;
-  color: black;
-}
-img{
-    
-  display: flex;
 
-  width: 150px;
-  height: 150px;
-  border-style: solid;
-  border-radius: 175px;
+header {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  margin-top: -110px;
+  margin-bottom: -75px;
 }
-.membros{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 20px;
-   margin: 40px auto;
-   padding:0 20px;
-    
+
+header img {
+  height: 375px;
+  width: auto;
 }
-.colunas{
-    display: flex;
-    justify-content: flex-end;    
+
+.menu-container ul {
+  list-style: none;
+  display:flex;
+  gap: 30px;
+  margin-top: -75px;
+}
+
+.menu-container ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-container ul li a:hover{
+  text-decoration: underline;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  
+}
+
+.titulo-equipe h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 42px;
+  color: #000000;
+}
+
+.altura{
+  height: 575px;
+}
+.quem-somos-box {
+  width: 70%;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  
+}
+
+.quem-esquerda h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: #000000;
+ 
+}
+
+.quem-direita p {
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #000000;
+  padding-left: 20px;
+  
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.container h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.fotos {
+  display: inline-block;
+  width: 230px;
+  margin: 15px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.fotos img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.fotos h2 {
+  font-size: 22px;
+  margin-top: 15px;
+  color: #000000;
+}
+
+.fotos p {
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer p{
+  text-align: center;
 }
