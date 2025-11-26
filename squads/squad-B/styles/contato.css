@@ -3,4 +3,71 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+               margin: 20px;
+               background-color: ;
+               padding: 20px;
+               display: flex;
+               flex-direction: column;
+               
+                
+               
 }
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+  padding: 20px;
+  background-color: #e8e2ee;
+  border-radius: 40px;
+  border: 2px solid #c9c9c9;
+}
+
+form {
+  margin: 50px;
+  padding: 20px;
+  background-color: #e8e2ee;
+  border: 2px solid #c9c9c9;
+  border-radius: 40px;
+}
+
+.project {
+  margin: 50px;
+  padding: 20px;
+  background-color: #e8e2ee;
+  border: 2px solid #c9c9c9;
+  border-radius: 40px;
+}
+
+
+
+ul  {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  padding: 10px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  text-decoration: none;
+  border: 1px solid #c9c9c9;
+}
+
+
