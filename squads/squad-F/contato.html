@@ -1,11 +1,64 @@
-<!-- Contato - Squad F -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contato - Squad F</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato - Meu Portfolio</title>
 </head>
 <body>
-  <!-- Conteúdo da página Contato do Squad F -->
+    <header>
+        <h1>Meu Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#sucessos">Sucessos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#serviços">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projetos" aria-label="Seção de projetos">
+            <h2>Projetos</h2>
+            <p>Aqui estão alguns dos meus projetos mais recentes.</p>
+            <ul>
+                <li><a href="https://meusite.com/projeto1" target="_blank" rel="noopener">Projeto 1</a></li>
+                <li><a href="https://meusite.com/projeto2" target="_blank" rel="noopener">Projeto 2</a></li>
+                <li><a href="https://meusite.com/projeto3" target="_blank" rel="noopener">Projeto 3</a></li>
+            </ul>
+        </section>
+
+        <section id="habilidades" aria-label="Seção de habilidades">
+            <h2>Habilidades</h2>
+            <p>Principais habilidades em desenvolvimento web:</p>
+            <ul>
+                <li>HTML5 semântico</li>
+                <li>Layouts responsivos</li>
+                <li>JavaScript básico</li>
+                <li>Controle de versão com Git</li>
+            </ul>
+        </section>
+        <section id="contato" aria-label="Formulário de contato">
+            <h2>Contato</h2>
+            <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain" novalidate>
+                <label for="nome">Nome completo*</label><br />
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome aqui" /><br />
+
+                <label for="email">Email*</label><br />
+                <input type="email" id="email" name="email" required placeholder="seu@email.com" /><br />
+
+                <label for="mensagem">Mensagem*</label><br />
+                <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Sua mensagem aqui"></textarea><br />
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Portfolio</p>
+    </footer>
 </body>
 </html>
