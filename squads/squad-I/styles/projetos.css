@@ -4,12 +4,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 body {
   background-color: #000;
@@ -95,10 +89,6 @@ section.portfolio .flex {
   color: #fff;
   opacity: 0;
   transition: .5s;
-}
-
-.overlay:hover {
-  opacity: 1;
 }
 
 .overlay:hover {
