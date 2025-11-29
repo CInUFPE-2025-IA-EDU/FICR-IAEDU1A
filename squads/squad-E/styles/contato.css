@@ -1,6 +1,62 @@
 /* Estilos base - personalize para seu squad */
-
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #222;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 32px;
+}
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+form label {
+  font-weight: 600;
+  font-size: 16px;
+}
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+form input:focus,
+form select:focus {
+  border-color: #000;
+}
+hr {
+  max-width: 600px;
+  margin: 40px auto;
+  border: none;
+  border-top: 2px solid #ddd;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+iframe {
+  display: block;
+  margin: 0 auto 40px auto;
+  width: 90%;
+  max-width: 700px;
+  height: 350px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
