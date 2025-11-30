@@ -25,11 +25,12 @@ import json
 import os
 import re
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Set
 
 import pandas as pd
 import requests
 
+# Caminhos básicos
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 GLMM_CSV_PATH = os.path.join(ROOT_DIR, "research_data_glmm.csv")
 RESEARCH_JSON_PATH = os.path.join(ROOT_DIR, "research_metrics.json")
@@ -38,7 +39,7 @@ RESEARCH_JSON_PATH = os.path.join(ROOT_DIR, "research_metrics.json")
 REPO_OWNER = "CInUFPE-2025-IA-EDU"
 REPO_NAME = "FICR-IAEDU1A"
 
-# Token deve vir do ambiente, nunca hard-coded
+# Token deve vir do ambiente (em GitHub Actions, como secret GITHUB_TOKEN)
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 
@@ -48,7 +49,7 @@ def load_json_safe(path: str) -> Any:
     """Carrega JSON ou retorna None se arquivo não existir/estiver vazio/for inválido."""
     if not os.path.exists(path):
         return None
-    if os.path.getsize(path) == 0:
+    if os.pathsize := os.path.getsize(path) == 0:
         return None
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -73,10 +74,9 @@ def discover_css_fields(css_data: Dict[str, Any]) -> Set[str]:
     if not isinstance(pages, dict):
         return fields
 
-    for page_name, metrics in pages.items():
+    for _, metrics in pages.items():
         if isinstance(metrics, dict):
-            for key in metrics.keys():
-                fields.add(key)
+            fields.update(metrics.keys())
 
     return fields
 
@@ -127,10 +127,10 @@ def parse_issue_metadata(issue: Dict[str, Any]) -> Optional[Dict[str, str]]:
     """
     Extrai de uma issue:
       - squad (label: squad-A, squad-B, ...)
-      - page (label: home, sobre, contato, ...)
+      - page (label: home, sobre, contato, projetos, etc.)
       - sprint (label: sprint-1, sprint-2, ...)
-      - semana (label: SEM1, SEM2, ...)
-      - copilot_usage (label: SEM_IA, COM_IA)
+      - semana (label: SEM1, SEM2, SEM3, SEM4)
+      - copilot_usage (label: SEM_IA ou COM_IA)
       - student_id (label tipo A01, A25, etc.)
 
     Retorna None se não achar squad OU page.
@@ -156,11 +156,14 @@ def parse_issue_metadata(issue: Dict[str, Any]) -> Optional[Dict[str, str]]:
     if not squad_label or not page_label:
         return None
 
+    # Semana = somente SEM1, SEM2, SEM3, SEM4 (evita confusão com SEM_IA)
+    semana_label = next(
+        (l for l in labels if re.fullmatch(r"SEM[1-4]", l.upper())),
+        "",
+    )
+
     # Sprint
     sprint_label = next((l for l in labels if l.startswith("sprint-")), "")
-
-    # Semana (SEM1, SEM2...)
-    semana_label = next((l for l in labels if l.upper().startswith("SEM")), "")
 
     # Copilot usage
     if "COM_IA" in labels:
@@ -170,19 +173,17 @@ def parse_issue_metadata(issue: Dict[str, Any]) -> Optional[Dict[str, str]]:
     else:
         copilot_usage = ""
 
-    # Student ID (A01, A25 etc.)
-    student_id_label = ""
-    for l in labels:
-        # Algo como A01, A02, ..., B15 etc. Ajuste o regex se necessário
-        if re.fullmatch(r"[A-Z]\d{2}", l):
-            student_id_label = l
-            break
+    # Student ID ex. A25, A01 etc.
+    student_id_label = next(
+        (l for l in labels if re.fullmatch(r"[A-Z]\d{2}", l)),
+        "",
+    )
 
     return {
-        "squad": squad_label,        # ex: "squad-A"
-        "page": page_label,          # ex: "home"
-        "sprint": sprint_label,      # ex: "sprint-1"
-        "semana": semana_label,      # ex: "SEM2"
+        "squad": squad_label,
+        "page": page_label,
+        "sprint": sprint_label,
+        "semana": semana_label,
         "copilot_usage": copilot_usage,
         "student_id": student_id_label,
     }
@@ -194,7 +195,7 @@ def build_research_metrics_struct(
     squads_pages_metrics: Dict[str, Dict[str, Dict[str, Any]]]
 ) -> Dict[str, Any]:
     """
-    Monta o dicionário base do research_metrics.json, agora usando
+    Monta o dicionário base do research_metrics.json, usando
     métricas reais de HTML (html_errors por squad, etc.).
     """
     data: Dict[str, Any] = {
@@ -432,3 +433,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
