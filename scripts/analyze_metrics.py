@@ -49,7 +49,7 @@ def load_json_safe(path: str) -> Any:
     """Carrega JSON ou retorna None se arquivo não existir/estiver vazio/for inválido."""
     if not os.path.exists(path):
         return None
-    if os.pathsize := os.path.getsize(path) == 0:
+    if os.path.getsize(path) == 0:
         return None
     try:
         with open(path, "r", encoding="utf-8") as f:
