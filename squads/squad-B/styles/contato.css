@@ -69,8 +69,6 @@ form {
   margin: 0;
 }
 
-
-
 ul  {
   list-style-type: none;
   padding: 0;
@@ -161,7 +159,6 @@ button {
   fill: #fff;
 }
 
-/* --- Estilização do Formulário --- */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -208,7 +205,6 @@ button {
   color: #999;
 }
 
-/* Focus state para inputs */
 .form-grupo input:focus,
 .form-grupo textarea:focus {
   outline: none;
@@ -217,20 +213,17 @@ button {
   box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.1);
 }
 
-/* Hover state */
 .form-grupo input:hover,
 .form-grupo textarea:hover {
   border-color: #a89be8;
 }
 
-/* TextArea específico */
 .form-grupo textarea {
   resize: vertical;
   min-height: 140px;
   max-height: 300px;
 }
 
-/* --- Estilização dos Botões --- */
 .button-enviar button,
 .button-cancelar button {
   width: 100%;
@@ -245,7 +238,6 @@ button {
   letter-spacing: 0.8px;
 }
 
-/* Botão Submit (Enviar) */
 .button-enviar button[type="submit"] {
   background: linear-gradient(135deg, #7b68ee 0%, #6a5adb 100%);
   color: #fff;
@@ -268,7 +260,6 @@ button {
   box-shadow: 0 0 0 4px rgba(123, 104, 238, 0.2);
 }
 
-/* Botão Reset (Cancelar) */
 .button-cancelar button[type="reset"] {
   background-color: #e0e0e0;
   color: #333;
@@ -291,7 +282,6 @@ button {
   box-shadow: 0 0 0 3px rgba(200, 200, 200, 0.5);
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   main {
     flex-direction: column;
@@ -343,7 +333,7 @@ button {
   
   .form-grupo input,
   .form-grupo textarea {
-    font-size: 16px; /* Previne zoom automático no iOS */
+    font-size: 16px; 
   }
   
   ul {
@@ -357,7 +347,7 @@ button {
   }
 }
 
-/* Footer */
+
 footer {
   background-color: #2c3e50;
   color: #fff;
