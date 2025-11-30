@@ -1,67 +1,77 @@
-<!-- Projetos - Squad G -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Projetos - Squad G</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projetos.css">
+    <title>Projetos - Squad G</title>
 </head>
 <body>
 
-  <!-- Conteúdo da página Projetos do Squad G -->
-
-  <!-- HEADER FIXO COM MENU HAMBÚRGUER -->
-    <header style="position: sticky; top: 0; background: #fff; padding: 10px 20px; z-index: 999;">
+   
+    <header>
         <div class="logo">
-            <h1>Squad G</h1>
+            <img class="img-logo" src="squads/squad-G/styles/img/logo squadG.png" alt="squadG">
         </div>
 
-        <input type="checkbox" id="menu-hamburguer" style="display:none;">
-        <label for="menu-hamburguer" style="cursor:pointer; font-size:28px;">☰</label>
-
-        <nav>
-            <ul style="list-style:none; padding:0; margin:0;">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+    <div class="menu-container">
+      <nav id="menu-principal" class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Projetos</a></li>
+          <li><a href="#">Habilidades</a></li>
+          <li><a href="#">Depoimentos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
     </header>
 
-    <!-- SEÇÃO PRINCIPAL -->
+    
     <main>
-        <section>
-            <h2>Projeto 01 — Landing Page</h2>
-            <p>Página inicial moderna desenvolvida em HTML semântico.</p>
+        
+      <section class="seção-principal">
+            <h2>Projetos dos integrantes do Squad G</h2>
+            <p>arquivos com imagens de projetos dos integrantes do squad G</p>
         </section>
 
-        <!-- 4 CARDS PARA SQUADS (COM ESPAÇO PARA IMAGEM) -->
+        
         <section>
-            <h3>Squad — Componentes</h3>
+            <h3>Projetos </h3>
 
             <div class="cards">
 
                 <div class="card">
-                    <img src="" alt="Imagem Squad 1" width="100%">
-                    <h4>Squad 1</h4>
-                    <p></p>
+                    <img class="amanda_img" src="squads/squad-G/styles/img/projeto_amanda.jpg" alt="projeto_Amanda" width="100%">
+                    <h4>Amanda</h4>
+                    <p>Projeto desenvolvido por Amanda: 
+                    <br>Possuindo tela de cadastro e tela de login.
+                    </p>
                 </div>
 
                 <div class="card">
-                    <img src="" alt="Imagem Squad 2" width="100%">
-                    <h4>Squad 2</h4>
-                    <p></p>
+                    <img class="projeto_guilherme" src="squads/squad-G/styles/img/projeto_guilherme.png" alt="Projeto_Guilherme" width="100%">
+                    <h4>Guilherme</h4>
+                    <p>Projeto desenvolvido por Guilherme:
+                    <br>Possuindo tela de cadastro e tela de login.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cards-2">
+                <div class="card">
+                    <img class="projeto_aylton" src="squads/squad-G/styles/img/projeto_aylton.png" alt="projeto_Aylton" width="100%">
+                    <h4>Aylton</h4>
+                    <p>Projeto desenvolvido por Aylton:
+                    <br>Tela de navegação inicial do Google.
+                    </p>
                 </div>
 
                 <div class="card">
-                    <img src="" alt="Imagem Squad 3" width="100%">
-                    <h4>Squad 3</h4>
-                    <p></p>
-                </div>
-
-                <div class="card">
-                    <img src="" alt="Imagem Squad 4" width="100%">
-                    <h4>Squad 4</h4>
+                    <img src="" alt="Projeto_diogenes" width="100%">
+                    <h4>Diogenes</h4>
                     <p></p>
                 </div>
 
@@ -69,7 +79,7 @@
         </section>
     </main>
 
-    <!-- RODAPÉ -->
+    
     <footer>
         <p>© 2025 — Squad G</p>
     </footer>
