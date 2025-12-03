@@ -20,7 +20,7 @@ body {
     align-items: center;
 }
 
-.navbar .logo {
+.logo {
     font-size: 22px;
     font-weight: 600;
 }
@@ -69,8 +69,8 @@ body {
     color: #8ea0b5;
 }
 
-/* SERVIÇOS GRID */
-.servicos-grid {
+
+.skills-grid {
     width: 90%;
     margin: 40px auto;
     display: grid;
@@ -78,7 +78,7 @@ body {
     gap: 25px;
 }
 
-.servico-card {
+.skill-card {
     background: #111b2e;
     border: 1px solid #1e2a43;
     padding: 25px;
@@ -87,14 +87,17 @@ body {
     transition: 0.3s;
 }
 
-.servico-card:hover {
+.skill-card:hover {
     transform: translateY(-6px);
     border-color: #7b2fff;
 }
 
-.icon-servico {
+.icon-skill {
     font-size: 45px;
     margin-bottom: 10px;
     color: #7b2fff;
 }
+
+
+
 
