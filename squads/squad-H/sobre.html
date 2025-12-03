@@ -1,69 +1,87 @@
-<!-- Sobre - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sobre - Squad H</title>
-  <link rel="stylesheet" href="styles/sobre.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="styles/sobre.css">
 </head>
-<body>
-  <!-- Conteúdo da página Sobre do Squad H -->
-  <section id="about">
-  <div class="container">
-    
-    <div class="profile-photo">
-      <img src="Lucas Silva copy.png" alt="Lucas Silva">
-    </div>
+<body class="sobre-page">
 
-    <div class="content">
-      <h2 class="title">Olá, eu sou <span>Lucas Silva</span></h2>
-
-      <p class="description">
-        Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais que fazem a diferença.
-        Com mais de 5 anos de experiência, transformo ideias complexas em aplicações web elegantes e funcionais.
-      </p>
-
-      <div class="buttons">
-        <a href="#projects" class="btn-primary">Ver Projetos</a>
-        <a href="cv.pdf" class="btn-outline">Download CV</a>
-      </div>
-
-      <div class="stats">
-        <div class="stat-item">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Projetos</div>
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">💻</span>
+            <h2>DevJuniors</h2>
         </div>
 
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">Clientes</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="habilidades.html">Habilidades</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sobre-section">
+
+        <h3 class="subtitulo">SOBRE NÓS</h3>
+        <h1 class="titulo">
+            Desenvolvedores <span class="gradiente">Apaixonados</span> por Tecnologia
+        </h1>
+
+        <div class="conteudo">
+
+            <img src="img/Squad-H.jpeg" class="foto" alt="">
+
+            <div class="texto">
+
+                <P>Somos uma equipe de quatro desenvolvedores apaixonados por tecnologia, atualmente cursando Análise e Desenvolvimento de Sistemas (ADS). Combinamos nossos conhecimentos teóricos e práticos adquiridos na graduação para criar soluções inovadoras e eficientes. </p>                <p>Nossa formação nos proporciona uma visão abrangente...</p>
+                <p>Embora estejamos no início de nossa jornada profissional, nossa dedicação e projetos acadêmicos, detalhados neste portfólio, demonstram nossa capacidade de enfrentar desafios e entregar resultados de qualidade.</p>
+                <p>Estamos entusiasmados com as oportunidades futuras e comprometidos em continuar aprendendo e crescendo na área de desenvolvimento de software.</p>
+
+
+                <div class="skills-tags">
+                    <span>FrontEnd</span>
+                    <span>Html</span>
+                    <span>Css</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="metricas">
+        <div class="card-metrica">
+            <span class="icone">📚</span>
+            <h2 class="gradiente">+1 ano</h2>
+            <p>De Estudo e Prática</p>
         </div>
 
-        <div class="stat-item">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Anos</div>
+        <div class="card-metrica">
+            <span class="icone">💻</span>
+            <h2 class="gradiente">10+</h2>
+            <p>Projetos de Estudo</p>
         </div>
 
-        <div class="stat-item">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Prêmios</div>
+        <div class="card-metrica">
+            <span class="icone">👥</span>
+            <h2 class="gradiente">5+</h2>
+            <p>Projetos em Equipe</p>
         </div>
-      </div>
 
-      <div class="techs">
-        <div class="techs-title">Tech Stack</div>
-        <div class="badge-list">
-          <span class="badge">JavaScript</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">React</span>
-          <span class="badge">Node.js</span>
-          <span class="badge">Docker</span>
-          <span class="badge">PostgreSQL</span>
+        <div class="card-metrica">
+            <span class="icone">🚀</span>
+            <h2 class="gradiente">100+</h2>
+            <p>Commits no GitHub</p>
         </div>
-      </div>
-    </div>
+    </section>
 
-  </div>
-</section>
 </body>
 </html>

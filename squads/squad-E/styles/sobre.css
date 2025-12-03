@@ -36,3 +36,44 @@ header h2 {
   background-color: #ffffff;
   color: #000000;
 }
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #111;
+}
+main > p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #444;
+}
+.imagens {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px 30px;
+  align-items: center;
+}
+.imagens img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.imagens img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+.imagens p {
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  line-height: 1.4;
+}

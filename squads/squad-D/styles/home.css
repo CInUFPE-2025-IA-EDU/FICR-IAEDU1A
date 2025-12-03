@@ -1,6 +1,91 @@
-/* Estilos base - personalize para seu squad */
-
+/* Center-align the h2 with id="squad" */
+#squad {
+	text-align: center; /* centers text inside the element */
+	margin: 0 auto;     /* horizontal auto margins (keeps it centered if width is set) */
+}
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
 }
+
+* {margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+  }
+
+  header {
+    background: #1a1a1a;
+  color:white;
+padding:20px;
+text-align: center;
+}
+
+nav {
+  background: #333;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  }
+
+  nav ul li a:hover{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav u li a:hover {
+  color:#00bfff;
+  }
+
+section {
+padding: 40 px 20px;
+max-width: 900px;
+margin: auto;
+}
+ 
+h1 h2 h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+  
+ul { 
+  list-style: none;
+  margin-top: 20px;
+}
+
+ul li{
+  padding: 10px;
+  background: white;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+
+  ul li a {
+    color:#222;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+text-decoration: underline;
+}
+
+footer {
+  background: #1a1a1a;
+  color:white;
+  padding: 12px;
+  text-align: center;
+  margin-top: 40px;
+  }

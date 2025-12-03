@@ -1,11 +1,120 @@
-<!-- Contato - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Contato - Squad H</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - DevPortfolio</title>
+    <link rel="stylesheet" href="styles/contato.css">
 </head>
+
 <body>
-  <!-- Conteúdo da página Contato do Squad H -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="icon">💻</span> DevJuniors
+        </div>
+
+        <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="habilidades.html">Habilidades</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="depoimentos.html">Depoimentos</a></li>
+            <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+        <p class="subtitulo">ENTRE EM CONTATO</p>
+        <h1>Vamos Trabalhar <span class="destaque">Juntos</span></h1>
+        <p class="descricao">
+            Tem um projeto em mente? Entre em contato e vamos transformar suas ideias em realidade!
+        </p>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <section class="contato-container">
+
+        <!-- FORMULÁRIO -->
+        <form class="formulario">
+
+            <div class="linha">
+                <div class="campo">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+
+                <div class="campo">
+                    <label>Email</label>
+                    <input type="email" placeholder="seu@email.com">
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Assunto</label>
+                <input type="text" placeholder="Assunto da mensagem">
+            </div>
+
+            <div class="campo">
+                <label>Mensagem</label>
+                <textarea placeholder="Descreva seu projeto ou ideia..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">✉️ Enviar Mensagem</button>
+        </form>
+
+        <!-- LADO DIREITO -->
+        <div class="contatos-lista">
+
+            <!-- EQUIPE -->
+            <div class="card-info">
+                <section class="contatos-equipe">
+                    <div class="integrantes-grid">
+
+                        <div class="card-integrante">
+                            <h2>Carla Paraguaio</h2>
+                            <p>📞 (81) 98597-5171</p>
+                            <p>📷 @carlinhadoparaguaio</p>
+                        </div>
+
+                        <div class="card-integrante">
+                            <h2>Cleidiane Silva</h2>
+                            <p>📞 (81) 98678-5840</p>
+                            <p>📷 @cleidianeccesilva</p>
+                        </div>
+
+                        <div class="card-integrante">
+                            <h2>João Gabriel França</h2>
+                            <p>📞 (81) 99100-9623</p>
+                            <p>📷 @jg_biel19</p>
+                        </div>
+
+                        <div class="card-integrante">
+                            <h2>Uilson Nascimento</h2>
+                            <p>📞 (81) 99169-6781</p>
+                            <p>📷 @_uilson</p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- LOCALIZAÇÃO -->
+            <div class="card-info">
+                <div class="icon-card">📍</div>
+                <div>
+                    <h3>Localização</h3>
+                    <p>Recife - PE</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>

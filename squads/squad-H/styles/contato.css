@@ -1,6 +1,187 @@
-/* Estilos base - personalize para seu squad */
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+    background: #0d1525;
+    color: #fff;
 }
+
+
+.navbar {
+    width: 100%;
+    padding: 20px 60px;
+    background: #0b1320;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.logo .icon {
+    margin-right: 10px;
+    font-size: 26px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #c9d1d9;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.menu a:hover,
+.menu .active {
+    color: #7b2fff;
+}
+
+
+            
+.header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.subtitulo {
+    color: #7b8a9e;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.destaque {
+    background: linear-gradient(to right, #7b2fff, #d14cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.descricao {
+    color: #8ea0b5;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+
+.contato-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    padding-bottom: 80px;
+}
+
+
+.formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linha {
+    display: flex;
+    gap: 20px;
+}
+
+.campo label {
+    font-size: 16px;
+    color: #c9d1d9;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    background: #111b2e;
+    border: 1px solid #1e2a43;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.campo textarea {
+    height: 140px;
+    resize: none;
+}
+
+.btn-enviar {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #7b2fff, #d14cff);
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-enviar:hover {
+    opacity: .9;
+}
+
+
+.contatos-lista {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-info {
+    background: #111b2e;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #1e2a43;
+}
+
+
+.icon-card {
+    font-size: 34px;
+    background: linear-gradient(90deg, #7b2fff, #d14cff);
+    padding: 14px;
+    border-radius: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+
+.integrantes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card-integrante {
+    background: #0f192d;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1c2944;
+    text-align: left;
+}
+
