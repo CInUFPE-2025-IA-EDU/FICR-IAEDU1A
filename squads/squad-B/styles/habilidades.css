@@ -78,31 +78,39 @@ html {
 }
 
 .projects-container {
-  margin-top: auto;
   display: flex;
-  gap: 5px;
-  height: 400px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  width: auto;
   justify-content: center;
   align-items: center;
-  & .project-card {
-    width: 150px;
+  background-color: transparent;
+  gap: 20px;
+  height: 400px;
+  & .project-card-container {
+    background: radial-gradient(circle at 50% 10%, rgba(35, 73, 255, 0.7), rgba(254, 254, 254, 1));
+    border-radius: 24px;
+    & .project-card {
+      width: 150px;
+      padding: 10px;
+      border-radius: inherit;
+      --blur-strength: 20px;
+      backdrop-filter: blur(var(--blur-strength));
+      -webkit-backdrop-filter: blur(var(--blur-strength));
+      outline: 1px solid rgba(10, 6, 20, 0.2);
+    }
   }
 }
 
 .skills-logo {
   width: 80px;
   height: 80px;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  display: block;
+  margin: 15px auto 15px auto;
 }
 
 .infos > h3 {
   text-align: center;
-}
-
-.skill-javascript {
-  color: yellow;
+  font-weight: 500;
+  cursor: default;
 }
