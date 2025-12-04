@@ -41,6 +41,11 @@ h2.titulo {
     text-align: center;
 }
 
+.titulo {
+    margin-top: -40px;
+    margin-bottom: 10px;
+}
+
 h2.titulo span {
     color: #00FF08;
 }
@@ -91,4 +96,16 @@ form .btn-enviar input {
 form .btn-enviar input:hover {
     box-shadow: 0px 0px 8px #00ff08;
     transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 25px;
+        max-width: 90%;
+        box-shadow: 0 0 15px #00ff0820;
+    }
+
+    h2.titulo {
+        font-size: 32px;
+    }
 }
