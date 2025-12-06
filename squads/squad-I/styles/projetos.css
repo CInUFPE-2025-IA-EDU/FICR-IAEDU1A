@@ -4,12 +4,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 body {
   background-color: #000;
@@ -53,6 +47,11 @@ h2.titulo {
 
 h2.titulo span {
   color: #00FF08;
+}
+
+.titulo {
+    margin-top: -40px;
+    margin-bottom: 10px;
 }
 
 section.portfolio {
@@ -101,6 +100,24 @@ section.portfolio .flex {
   opacity: 1;
 }
 
-.overlay:hover {
-  opacity: 1;
+@media (max-width: 900px) {
+  .img-port {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  h2.titulo {
+    font-size: 28px;
+  }
+
+  .img-port {
+    width: 260px;
+    height: 350px;
+  }
+
+  section.portfolio {
+    padding: 40px 4%;
+  }
 }

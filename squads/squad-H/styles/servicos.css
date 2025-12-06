@@ -1,6 +1,118 @@
 /* Estilos base - personalize para seu squad */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1b2947, #0d1221);
+  color: #fff;
+  padding: 40px 0;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.subtitulo {
+  color: #a8b2d1;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.destaque {
+  background: linear-gradient(90deg, #4f8cff, #9b4dff, #ff4dd4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.descricao {
+  margin: 15px auto;
+  max-width: 650px;
+  color: #cdd3e8;
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.servico-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  cursor: default;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.icon-servico {
+  font-size: 40px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #4f8cff, #9b4dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.servico-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.servico-card p {
+  color: #c6cce0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .descricao {
+    font-size: 15px;
+  }
+
+  .servico-card {
+    padding: 22px;
+  }
+
+  .icon-servico {
+    font-size: 32px;
+  }
 }

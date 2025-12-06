@@ -1,10 +1,76 @@
+#!/usr/bin/env python
 import os
 import json
 import subprocess
 import sys
 from datetime import datetime
 
-def analyze_page(squad_path, html_file):
+
+def run_html_validate(html_path: str) -> dict:
+    """
+    Executa html-validate e retorna contagem de erros/avisos.
+
+    Usa a opção correta: --formatter json
+    e considera a saída JSON mesmo quando o processo retorna código != 0.
+    """
+    metrics = {
+        "html_errors": 0,
+        "html_warnings": 0,
+    }
+
+    cmd = f"html-validate --formatter json {html_path}"
+    try:
+        result = subprocess.run(
+            cmd,
+            shell=True,
+            capture_output=True,
+            text=True,
+        )
+
+        output = (result.stdout or "").strip()
+
+        # Se não houve saída, loga o erro e retorna métrica zerada
+        if not output:
+            if result.stderr:
+                print(f"[WARN] Erro ao validar {html_path}: {result.stderr}")
+            return metrics
+
+        try:
+            data = json.loads(output)
+        except json.JSONDecodeError:
+            print(f"[WARN] Saída não JSON ao validar {html_path}")
+            return metrics
+
+        # html-validate com formatter json normalmente retorna:
+        # { "results": [ { "messages": [ ... ] } ] }
+        messages = []
+
+        if isinstance(data, list):
+            # fallback, caso a CLI retorne lista diretamente
+            messages = data
+        elif isinstance(data, dict):
+            results = data.get("results", [])
+            if isinstance(results, list):
+                for res in results:
+                    msgs = res.get("messages", [])
+                    if isinstance(msgs, list):
+                        messages.extend(msgs)
+
+        for msg in messages:
+            sev = msg.get("severity")
+            # versões antigas podem usar número, novas usam string
+            if sev == 2 or sev == "error":
+                metrics["html_errors"] += 1
+            elif sev == 1 or sev == "warning":
+                metrics["html_warnings"] += 1
+
+    except Exception as e:
+        print(f"[EXCEPTION] Falha ao rodar html-validate em {html_path}: {e}")
+
+    return metrics
+
+
+def analyze_page(squad_path: str, html_file: str) -> dict:
     metrics = {
         "html_errors": 0,
         "html_warnings": 0,
@@ -13,37 +79,21 @@ def analyze_page(squad_path, html_file):
 
     html_path = os.path.join(squad_path, html_file)
     if os.path.exists(html_path):
+        # tamanho do arquivo HTML
         metrics["file_size_html"] = os.path.getsize(html_path)
-        cmd = f"html-validate {html_path} --format json"
-        try:
-            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-            if result.returncode == 0 and result.stdout.strip():
-                try:
-                    issues = json.loads(result.stdout)
-                    # html-validate geralmente retorna lista de erros
-                    if isinstance(issues, list):
-                        for issue in issues:
-                            sev = issue.get("severity", 0)
-                            if sev == 2:
-                                metrics["html_errors"] += 1
-                            elif sev == 1:
-                                metrics["html_warnings"] += 1
-                except json.JSONDecodeError:
-                    pass
-            else:
-                if result.stderr:
-                    print(f"[WARN] Erro ao validar {html_path}: {result.stderr}")
-        except Exception as e:
-            print(f"[EXCEPTION] Falha ao rodar html-validate: {e}")
+
+        # validação sintática com html-validate
+        hv_metrics = run_html_validate(html_path)
+        metrics.update(hv_metrics)
 
     return metrics
 
 
-def analyze_squad(squad_path):
+def analyze_squad(squad_path: str) -> dict:
     data = {
         "squad": os.path.basename(squad_path),
         "timestamp": datetime.now().isoformat(),
-        "pages": {}
+        "pages": {},
     }
 
     if not os.path.isdir(squad_path):
