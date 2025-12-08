@@ -6,9 +6,9 @@ body {
 }
 
 header {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    background-color: black;
+    background-color: #111;
 }
 
 nav a {
@@ -23,7 +23,7 @@ nav a:hover {
 
 h2.titulo {
   color: #fff;
-  font-size: 38px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ h2.titulo span {
 }
 
 .titulo {
-    margin-top: -30px;
+    margin-top: -10px;
     margin-bottom: 40px;
 }
 
