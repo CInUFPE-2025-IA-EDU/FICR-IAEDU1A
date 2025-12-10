@@ -111,13 +111,13 @@ section p {
 }
 
 section ul {
-  list-style: disc inside; 
-  padding-left: 1rem; 
+  list-style: disc inside;
+  padding-left: 1rem;
 }
 
 section ul li {
-  position: static; 
-  padding-left: 0; 
+  position: static;
+  padding-left: 0;
   margin-bottom: 0.8rem;
   color: var(--text-muted);
 }
@@ -206,7 +206,8 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #9aa4b3;
-  background: transparent;
+  color: var(--text-muted);
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-color);
   margin-top: auto;
 }
