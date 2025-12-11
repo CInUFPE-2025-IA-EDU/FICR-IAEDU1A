@@ -3,4 +3,29 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+               padding: 20px;
+}
+section {
+  max-width: 400px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+}
+.carousel {
+  text-align: center;
+}
+.slides {
+  position: relative;
+  height: 150px;
+}
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.slide.active {
+  display: block;
 }

@@ -1,6 +1,96 @@
-/* Estilos base - personalize para seu squad */
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #211a33; 
+}
+
+.navbar {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .menu a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .menu a.ativo,
+.navbar .menu a:hover {
+    color: #fff;
+}
+
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #fff; 
+}
+
+.header .descricao {
+    color: #ccc; 
+    font-size: 18px;
+}
+
+
+.depoimentos-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.card-depoimento {
+    background: #9933cc; 
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.card-depoimento img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.card-depoimento h3 {
+    margin-top: 15px;
+    color: #000000; 
+}
+
+.profissao {
+    font-size: 14px;
+    color: #000000; 
+}
+
+.texto {
+    margin-top: 10px;
+    color: #000000; 
+    font-size: 15px;
+}
+
+.estrelas {
+    margin-top: 15px;
+    color: gold;
+    font-size: 20px;
 }

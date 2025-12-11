@@ -1,6 +1,115 @@
-/* Estilos base - personalize para seu squad */
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    background-color: #111;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: #00ff5e;
+}
+
+h2.titulo {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #00FF08;
+}
+
+.titulo {
+    margin-top: -10px;
+    margin-bottom: 40px;
+}
+
+.menu ul a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.menu ul a:hover,
+.menu ul .ativo {
+    color: #00ff5e;
+}
+
+.cases-container {
+    padding: 40px 6%;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.case-card {
+    background-color: #111;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #1f1f1f;
+    transition: .25s;
+    min-height: 230px;
+}
+
+.case-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff0860;
+}
+
+.case-card h3 {
+    color: #00FF08;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.case-card p {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #ddd;
+}
+
+.tag {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background-color: #00FF08;
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+    .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-card {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 26px;
+    }
 }
