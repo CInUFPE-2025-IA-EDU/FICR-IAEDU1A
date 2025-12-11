@@ -38,56 +38,6 @@ body {
     }
   }
 
-  /*.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: auto;
-  width: auto;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  gap: 20px;
-  height: 400px;
-  & .project-card-container--css {
-    background: radial-gradient(circle at 50% 10%, rgba(38, 77, 228, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--html {
-    background: radial-gradient(circle at 50% 10%, rgba(227, 76, 38, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--javascript {
-    background: radial-gradient(circle at 50% 10%, rgba(247, 223, 30, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--figma {
-    background: radial-gradient(circle at 50% 10%, rgba(5, 190, 107, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--java {
-    background: radial-gradient(circle at 50% 10%, rgba(210, 39, 48, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--node {
-    background: radial-gradient(circle at 50% 10%, rgba(130, 210, 90, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--python {
-    background: radial-gradient(circle at 50% 10%, rgba(70, 130, 255, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container--react {
-    background: radial-gradient(circle at 50% 10%, rgba(0, 240, 255, 0.7), rgba(254, 254, 254, 1)) !important;
-  }
-  & .project-card-container {
-    background: radial-gradient(circle at 50% 10%, rgba(35, 73, 255, 0.7), rgba(254, 254, 254, 1));
-    border-radius: 24px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    & .project-card {
-      width: 150px;
-      padding: 10px;
-      border-radius: inherit;
-      --blur-strength: 20px;
-      backdrop-filter: blur(var(--blur-strength));
-      -webkit-backdrop-filter: blur(var(--blur-strength));
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-  }
-} */
-
 
 .menu {
   display: flex;
