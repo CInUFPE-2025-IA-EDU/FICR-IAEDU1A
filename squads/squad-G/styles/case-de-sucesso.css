@@ -3,4 +3,103 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', sans-serif;
+    background-color: #ffffff;
+  @apply text-gray-700;
+}
+main {
+  @apply pt-4 md:pt-8;
+}
+
+
+.header {
+  @apply sticky top-0 z-50 bg-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center;
+}
+
+.menu-container {
+  @apply w-full md:w-auto mt-2 md:mt-0;
+}
+
+.nav ul {
+  @apply flex justify-center md:justify-end space-x-4 md:space-x-8;
+}
+
+.nav a {
+  @apply text-gray-600 hover:text-indigo-600 font-medium transition duration-150 text-sm md:text-base;
+}
+
+.hero-case {
+    @apply bg-indigo-700 text-white py-16 md:py-24 mb-10 shadow-xl;
+}
+
+.hero-content {
+    @apply max-w-5xl mx-auto px-4 text-center;
+}
+
+.hero-content h1 {
+    @apply text-3xl md:text-5xl font-extrabold mb-4;
+}
+
+.hero-content p {
+    @apply text-xl md:text-2xl font-light mb-6 opacity-90;
+}
+
+.tags span {
+    @apply inline-block bg-indigo-500 text-white text-xs font-semibold px-3 py-1 rounded-full mr-2;
+}
+
+.case-section {
+    @apply max-w-5xl mx-auto px-4 py-10 md:py-16;
+}
+
+.case-section h2 {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-6 border-b-2 border-indigo-400 pb-2;
+}
+
+.case-section p {
+    @apply text-lg leading-relaxed mb-4;
+}
+
+.solution-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 mt-6;
+}
+
+.solution-item {
+    @apply p-6 bg-white rounded-lg shadow-md border-t-4 border-indigo-500;
+}
+
+.solution-item h3 {
+    @apply text-xl font-semibold text-gray-900 mb-2;
+}
+.metrics-grid {
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-8;
+}
+
+.metric-box {
+    @apply bg-white p-6 rounded-lg shadow-xl border-b-8 border-indigo-600;
+}
+
+.metric-number {
+    @apply text-5xl font-extrabold text-indigo-700 block;
+}
+
+.metric-label {
+    @apply text-sm text-gray-500 uppercase tracking-widest mt-1;
+}
+.testimonial-container {
+    @apply flex items-center bg-gray-100 p-6 rounded-lg shadow-inner;
+}
+
+.client-foto {
+    @apply w-16 h-16 rounded-full object-cover mr-4 flex-shrink-0;
+}
+
+.testimonial-text p {
+    @apply italic text-base mb-1;
+}
+
+.testimonial-text cite {
+    @apply not-italic font-semibold text-indigo-600 block text-right;
+}
+.footer {
+    @apply text-center p-4 bg-gray-800 text-white mt-8;
 }
