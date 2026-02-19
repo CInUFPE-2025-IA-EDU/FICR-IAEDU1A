@@ -43,6 +43,7 @@ jobs:
         run: |
           node scripts/collect_metrics.js squads/squad-${{ matrix.squad }} metrics-squad-${{ matrix.squad }}.json
 
+
       - name: Upload metrics artifact
         uses: actions/upload-artifact@v4
         with:
