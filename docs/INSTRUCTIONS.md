@@ -40,13 +40,14 @@ em turmas de HTML & CSS, com o squad C.
 A pasta `squads/squad-C` contém:
 
 - `metadata.json` → membros, grupo experimental (COMIA/SEMIA), datas
-- arquivos `.html` base: `home.html`, `sobre.html`, `contato.html`, `projetos.html`,
-  `habilidades.html`, `servicos.html`, `depoimentos.html`, `case-de-sucesso.html`
-- pasta `styles/` com um `.css` correspondente para cada página
+- `app/index.html` → página inicial
+- `app/pages/` → páginas internas da aplicação
+- `app/styles/` → um `.css` correspondente para cada página
+- `app/assets/images/` → imagens e recursos visuais
 
 ## 4. CI e Métricas
 
-- `ci.yml` roda `html-validate` nos `.html` do squad C.
+- `ci.yml` roda `html-validate` nos `.html` do squad C, incluindo `app/index.html` e `app/pages/`.
 - Gera um JSON com métricas: `metrics-squad-C.json`.
 - Gera a base para análise estatística:
   - `research_metrics.json`
@@ -60,7 +61,7 @@ A pasta `squads/squad-C` contém:
 
    ```bash
    git clone https://github.com/CInUFPE-2025-IA-EDU/FICR-IAEDU1A.git
-   cd FICR-IAEDU1A/squads/squad-C
+   cd FICR-IAEDU1A/squads/squad-C/app
    ```
 
 4. Implemente apenas arquivos do squad C.

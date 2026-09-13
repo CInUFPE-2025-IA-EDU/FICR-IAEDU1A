@@ -6,9 +6,10 @@ usada no experimento com **GitHub Copilot** (COMIA x SEMIA).
 ## 📁 Estrutura do projeto
 
 - `squads/squad-C/` → aplicação escolhida para desenvolvimento.
-- `squads/squad-C/*.html` → páginas da aplicação.
-- `squads/squad-C/styles/` → folhas de estilo de cada página.
-- `squads/squad-C/img/` → imagens e recursos visuais.
+- `squads/squad-C/app/index.html` → entrada principal da aplicação.
+- `squads/squad-C/app/pages/` → páginas internas da aplicação.
+- `squads/squad-C/app/styles/` → folhas de estilo de cada página.
+- `squads/squad-C/app/assets/images/` → imagens e recursos visuais.
 - `scripts/` → ferramentas de análise e métricas.
 - `docs/` → instruções do projeto.
 
