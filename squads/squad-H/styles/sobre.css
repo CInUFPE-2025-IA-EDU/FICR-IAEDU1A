@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    background: #0a0f2d;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 20px 60px;
+    background: rgba(10, 15, 45, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h2 {
+    font-size: 22px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #bbbbbb;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
+
+/* SECTION SOBRE */
+.sobre-section {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: #8fa0c9;
+    letter-spacing: 3px;
+}
+
+.titulo {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.gradiente {
+    background: linear-gradient(to right, #7b2ff7, #4cc3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.conteudo {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto {
+    width: 420px;
+    border-radius: 15px;
+}
+
+.texto {
+    max-width: 600px;
+    text-align: left;
+    font-size: 16px;
+    color: #d4d9e8;
+}
+
+.skills-tags {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skills-tags span {
+    padding: 8px 15px;
+    background: #101632;
+    border: 1px solid #2d355a;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* MÉTRICAS */
+.metricas {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 60px;
+}
+
+.card-metrica {
+    width: 230px;
+    background: #0f153a;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #242a52;
+}
+
+.icone {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card-metrica h2 {
+    font-size: 32px;
+    background: linear-gradient(to right, #7b2ff7, #4cc3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.card-metrica p {
+    color: #b4b9d4;
+}

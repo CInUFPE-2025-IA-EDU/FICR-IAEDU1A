@@ -1,0 +1,37 @@
+main{
+display: grid;
+grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+}
+header{ grid-column: 1 / -1;
+    text-align: center; color: rgb(241, 241, 241);
+    font-family:'Times New Roman', Times, serif;
+    background-color:rgb(7, 7, 49);
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+#frontend{
+    text-align: center; color: rgb(241, 241, 241);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgb(7, 7, 49);
+}
+#backend{    text-align: center; color: rgb(241, 241, 241);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgb(7, 7, 49);
+
+}
+#tools{
+        text-align: center; color: rgb(241, 241, 241);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgb(7, 7, 49);
+}
+#languages{
+    text-align: center; color: rgb(241, 241, 241);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgb(7, 7, 49);
+
+}
