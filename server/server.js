@@ -59,11 +59,49 @@ function cleanAnswer(text = "") {
     .trim();
 }
 
+const memberResponses = {
+  Warlley:
+    "Warlley Santos é integrante do Squad C e se interessa por design, automação, tecnologia e desenvolvimento de interfaces. Entre suas áreas de interesse estão arquitetura de soluções, desenvolvimento full stack, HTML, CSS e design de interfaces.\n\nNo portfólio, Warlley contribui especialmente para transformar ideias em experiências visuais mais claras, funcionais e fáceis de usar.",
+  Bruno:
+    "Bruno Cauã é integrante do Squad C e se interessa por estratégia, negócios e estruturação de sistemas. Suas principais áreas de interesse são arquitetura de back-end, APIs, microsserviços, bancos de dados, HTML, CSS e Java.\n\nSua contribuição está ligada à organização dos processos e à construção das estruturas que dão suporte aos produtos digitais da equipe.",
+  Alessandro:
+    "Alessandro Gomes é integrante do Squad C e se interessa por desenvolvimento web, tecnologia e organização de produtos digitais. Suas principais áreas de interesse são design de interfaces, desenvolvimento de aplicações, APIs, microsserviços, HTML, CSS e Java.\n\nNos projetos do Squad C, Alessandro contribui para transformar requisitos em soluções funcionais e para organizar a experiência visual, ajudando a conectar tecnologia, produto e usabilidade.",
+  Luis: "Luis Gabriel é integrante do Squad C e se interessa por desenvolvimento full stack, segurança e soluções digitais. Entre suas áreas de interesse estão autenticação, segurança de aplicações, criptografia, hashing, HTML, CSS e Python.\n\nSua contribuição está relacionada à criação de estruturas confiáveis e à preocupação com a segurança e o funcionamento das aplicações.",
+};
+
+function getMemberResponse(message) {
+  const normalizedMessage = normalizeForModeration(message);
+
+  if (normalizedMessage.includes("alessandro")) {
+    return memberResponses.Alessandro;
+  }
+
+  if (normalizedMessage.includes("warlley")) {
+    return memberResponses.Warlley;
+  }
+
+  if (normalizedMessage.includes("bruno")) {
+    return memberResponses.Bruno;
+  }
+
+  if (normalizedMessage.includes("luis") || normalizedMessage.includes("luiz")) {
+    return memberResponses.Luis;
+  }
+
+  return null;
+}
+
 const portfolioContext = `
 Você é o assistente virtual do Squad C, uma equipe fictícia de portfólio
 digital.
 
-Responda sempre em português do Brasil, com clareza e objetividade.
+Responda sempre em português do Brasil, com clareza, naturalidade e conteúdo
+suficiente para a pergunta. Evite respostas telegráficas. Quando o usuário
+perguntar sobre uma pessoa, explique quem ela é no Squad C, sua área de
+interesse, suas principais habilidades e como ela pode contribuir para um
+projeto. Responda normalmente em 2 ou 3 parágrafos curtos ou em uma lista
+organizada, conforme fizer mais sentido. Não use asteriscos para formatar o
+texto.
 
 O Squad C trabalha com:
 - Consultoria de TI;
@@ -78,11 +116,21 @@ O Squad C trabalha com:
 O portfólio apresenta estudos fictícios de interfaces, projetos digitais e
 um estudo de caso da empresa fictícia DeliveryMax.
 
-Os integrantes são:
-- Warlley Santos;
-- Bruno Cauã;
-- Alessandro Gomes;
-- Luis Gabriel.
+Os integrantes e seus perfis são:
+- Warlley Santos: integrante interessado em design, automação, tecnologia e
+  desenvolvimento de interfaces. Suas áreas de interesse incluem arquitetura
+  de soluções, desenvolvimento full stack, HTML, CSS e design de interfaces.
+- Bruno Cauã: integrante interessado em estratégia, negócios e estruturação de
+  sistemas. Suas áreas de interesse incluem arquitetura de back-end, APIs,
+  microsserviços, bancos de dados, HTML, CSS e Java.
+- Alessandro Gomes: integrante interessado em desenvolvimento web, tecnologia
+  e organização de produtos digitais. Suas áreas de interesse incluem design
+  de interfaces, desenvolvimento de aplicações, APIs, microsserviços, HTML,
+  CSS e Java. Ele contribui para transformar requisitos em soluções funcionais
+  e para organizar a experiência visual dos projetos.
+- Luis Gabriel: integrante interessado em desenvolvimento full stack,
+  segurança e soluções digitais. Suas áreas de interesse incluem autenticação,
+  segurança de aplicações, criptografia, hashing, HTML, CSS e Python.
 
 Não invente informações pessoais, preços, clientes reais ou resultados que não
 estejam descritos no portfólio.
@@ -120,6 +168,15 @@ app.post("/api/chat", async (request, response) => {
     return response.json({
       answer: friendlyModerationMessage,
       moderated: true,
+    });
+  }
+
+  const memberResponse = getMemberResponse(message);
+
+  if (memberResponse) {
+    return response.json({
+      answer: memberResponse,
+      source: "portfolio",
     });
   }
 
@@ -162,7 +219,7 @@ app.post("/api/chat", async (request, response) => {
         ],
         generationConfig: {
           temperature: 0.4,
-          maxOutputTokens: 400,
+          maxOutputTokens: 650,
         },
       }),
     });
