@@ -14,7 +14,6 @@
 
     <title>Squad C | Portfólio digital</title>
   </head>
-
   <body>
     <header class="site-header">
       <div class="container header-content">
@@ -85,8 +84,8 @@
 
           <p>
             Somos uma equipe multidisciplinar em formação, unindo tecnologia,
-            design e estratégia para criar produtos digitais que sejam fáceis
-            de entender, usar e evoluir.
+            design e estratégia para criar produtos digitais que sejam fáceis de
+            entender, usar e evoluir.
           </p>
         </div>
       </section>
@@ -105,7 +104,10 @@
           </div>
 
           <div class="project-grid">
-            <a class="project-card project-card-large" href="pages/projetos.html">
+            <a
+              class="project-card project-card-large"
+              href="pages/projetos.html"
+            >
               <img
                 src="assets/images/Site-Uber.jpg"
                 alt="Projeto de interface inspirado em mobilidade urbana"
@@ -177,8 +179,8 @@
               <span class="service-number">03</span>
               <h3>Design UX/UI</h3>
               <p>
-                Desenvolvemos interfaces intuitivas, acessíveis e agradáveis
-                de usar.
+                Desenvolvemos interfaces intuitivas, acessíveis e agradáveis de
+                usar.
               </p>
             </article>
 
@@ -195,8 +197,8 @@
               <span class="service-number">05</span>
               <h3>Suporte Técnico</h3>
               <p>
-                Oferecemos acompanhamento para manter as soluções funcionando
-                e prontas para crescer.
+                Oferecemos acompanhamento para manter as soluções funcionando e
+                prontas para crescer.
               </p>
             </article>
           </div>
@@ -211,9 +213,7 @@
               <h2>Quatro perspectivas, uma mesma vontade de criar.</h2>
             </div>
 
-            <a class="text-link" href="pages/sobre.html">
-              Conhecer a equipe
-            </a>
+            <a class="text-link" href="pages/sobre.html"> Conhecer a equipe </a>
           </div>
 
           <div class="team-grid">
@@ -257,82 +257,81 @@
         </div>
       </section>
     </main>
-    
+
     <section class="chat-widget" aria-label="Assistente virtual do Squad C">
-  <button
-    class="chat-launcher"
-    type="button"
-    aria-expanded="false"
-    aria-controls="chat-panel"
-  >
-    <span class="chat-launcher-icon" aria-hidden="true">✦</span>
-    <span>Falar com o assistente</span>
-  </button>
-
-  <div class="chat-panel" id="chat-panel" hidden>
-    <div class="chat-header">
-      <div>
-        <span class="chat-status">
-          <span class="status-dot"></span>
-          Assistente online
-        </span>
-        <h2>Olá, sou o assistente do Squad C.</h2>
-      </div>
-
       <button
-        class="chat-close"
+        class="chat-launcher"
         type="button"
-        aria-label="Fechar assistente"
+        aria-expanded="false"
+        aria-controls="chat-panel"
       >
-        ×
+        <span class="chat-launcher-icon" aria-hidden="true">✦</span>
+        <span>Falar com o assistente</span>
       </button>
-    </div>
 
-    <div class="chat-messages" aria-live="polite">
-      <div class="chat-message chat-message-assistant">
-        Posso apresentar nossos projetos, explicar nossos serviços ou ajudar a
-        organizar uma ideia para o seu próximo produto digital.
+      <div class="chat-panel" id="chat-panel" hidden>
+        <div class="chat-header">
+          <div>
+            <span class="chat-status">
+              <span class="status-dot"></span>
+              Assistente online
+            </span>
+            <h2>Olá, sou o assistente do Squad C.</h2>
+          </div>
+
+          <button
+            class="chat-close"
+            type="button"
+            aria-label="Fechar assistente"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="chat-messages" aria-live="polite">
+          <div class="chat-message chat-message-assistant">
+            Posso apresentar nossos projetos, explicar nossos serviços ou ajudar
+            a organizar uma ideia para o seu próximo produto digital.
+          </div>
+        </div>
+
+        <div class="chat-suggestions" aria-label="Sugestões de perguntas">
+          <button type="button" data-message="Quais serviços vocês oferecem?">
+            Serviços
+          </button>
+
+          <button
+            type="button"
+            data-message="Quais projetos vocês desenvolveram?"
+          >
+            Projetos
+          </button>
+
+          <button type="button" data-message="Quem faz parte da equipe?">
+            Equipe
+          </button>
+        </div>
+
+        <form class="chat-form">
+          <label class="sr-only" for="chat-input"> Digite sua mensagem </label>
+
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Digite sua mensagem..."
+            autocomplete="off"
+          />
+
+          <button type="submit" aria-label="Enviar mensagem">Enviar</button>
+        </form>
+
+        <p class="chat-disclaimer">
+          Assistente demonstrativo. As respostas ainda são simuladas.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="chat-suggestions" aria-label="Sugestões de perguntas">
-      <button type="button" data-message="Quais serviços vocês oferecem?">
-        Serviços
-      </button>
-
-      <button type="button" data-message="Quais projetos vocês desenvolveram?">
-        Projetos
-      </button>
-
-      <button type="button" data-message="Quem faz parte da equipe?">
-        Equipe
-      </button>
-    </div>
-
-    <form class="chat-form">
-      <label class="sr-only" for="chat-input">
-        Digite sua mensagem
-      </label>
-
-      <input
-        id="chat-input"
-        type="text"
-        placeholder="Digite sua mensagem..."
-        autocomplete="off"
-      />
-
-      <button type="submit" aria-label="Enviar mensagem">
-        Enviar
-      </button>
-    </form>
-
-    <p class="chat-disclaimer">
-      Assistente demonstrativo. As respostas ainda são simuladas.
-    </p>
-  </div>
-</section>
-
-<script src="scripts/chat.js"></script>
+    <script src="scripts/chat.js"></script>
 
     <footer class="site-footer">
       <div class="container footer-content">
