@@ -6,6 +6,8 @@ const chatInput = document.querySelector("#chat-input");
 const messages = document.querySelector(".chat-messages");
 const suggestionButtons = document.querySelectorAll("[data-message]");
 
+const chatApiUrl = "http://localhost:3000/api/chat";
+
 function toggleChat(isOpen) {
   panel.hidden = !isOpen;
   launcher.setAttribute("aria-expanded", String(isOpen));
@@ -23,42 +25,62 @@ function addMessage(text, type) {
 
   messages.appendChild(message);
   messages.scrollTop = messages.scrollHeight;
+
+  return message;
 }
 
-function getDemoResponse(message) {
-  const normalizedMessage = message.toLowerCase();
+function setLoading(isLoading) {
+  chatInput.disabled = isLoading;
+  chatForm.querySelector("button[type='submit']").disabled = isLoading;
 
-  if (normalizedMessage.includes("serviço")) {
-    return "O Squad C trabalha com consultoria de TI, desenvolvimento de software, design UX/UI, marketing digital e suporte técnico.";
+  if (isLoading) {
+    return addMessage("Estou pensando...", "assistant loading-message");
   }
 
-  if (normalizedMessage.includes("projeto")) {
-    return "Você pode conhecer nossos estudos de interface e cases na página de projetos.";
-  }
-
-  if (
-    normalizedMessage.includes("equipe") ||
-    normalizedMessage.includes("integrante")
-  ) {
-    return "Nossa equipe reúne pessoas interessadas em design, desenvolvimento, produto, dados e segurança.";
-  }
-
-  return "Essa é uma resposta demonstrativa. Em breve, poderei responder com IA e ajudar você a encontrar a melhor informação no portfólio.";
+  return null;
 }
 
-function sendMessage(message) {
+async function sendMessage(message) {
   const cleanMessage = message.trim();
 
-  if (!cleanMessage) {
+  if (!cleanMessage || chatInput.disabled) {
     return;
   }
 
   addMessage(cleanMessage, "user");
   chatInput.value = "";
 
-  window.setTimeout(() => {
-    addMessage(getDemoResponse(cleanMessage), "assistant");
-  }, 500);
+  const loadingMessage = setLoading(true);
+
+  try {
+    const response = await fetch(chatApiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: cleanMessage,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Não foi possível enviar a mensagem.");
+    }
+
+    addMessage(data.answer, "assistant");
+  } catch (error) {
+    addMessage(
+      error.message ||
+        "Não consegui falar com o servidor. Tente novamente em instantes.",
+      "assistant",
+    );
+  } finally {
+    loadingMessage?.remove();
+    setLoading(false);
+    chatInput.focus();
+  }
 }
 
 launcher.addEventListener("click", () => {

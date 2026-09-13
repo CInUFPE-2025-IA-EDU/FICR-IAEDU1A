@@ -160,6 +160,12 @@
   border-color: var(--color-primary);
 }
 
+.chat-form button:disabled,
+.chat-form input:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
 .chat-form {
   display: flex;
   gap: 0.5rem;
