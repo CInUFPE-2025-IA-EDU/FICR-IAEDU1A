@@ -1,52 +1,55 @@
-# 🎓 FICR-IAEDU1A — IA Assistiva no Ensino de Programação
+# FICR-IAEDU1A
 
-Aplicação web do squad C para a disciplina de **Informática na Educação / HTML & CSS**,
-usada no experimento com **GitHub Copilot** (COMIA x SEMIA).
+Projeto desenvolvido para a disciplina de Informática na Educação, com foco
+em HTML, CSS, JavaScript e uso de inteligência artificial.
 
-## 📁 Estrutura do projeto
+## Estrutura
 
-- `squads/squad-C/` → aplicação escolhida para desenvolvimento.
-- `squads/squad-C/app/index.html` → entrada principal da aplicação.
-- `squads/squad-C/app/pages/` → páginas internas da aplicação.
-- `squads/squad-C/app/styles/` → folhas de estilo de cada página.
-- `squads/squad-C/app/assets/images/` → imagens e recursos visuais.
-- `scripts/` → ferramentas de análise e métricas.
-- `docs/` → instruções do projeto.
+- `squads/squad-C/app/index.html`: página inicial.
+- `squads/squad-C/app/pages/`: páginas internas.
+- `squads/squad-C/app/styles/`: arquivos CSS.
+- `squads/squad-C/app/scripts/`: arquivos JavaScript do frontend.
+- `squads/squad-C/app/assets/images/`: imagens utilizadas no site.
+- `server/`: backend do assistente virtual.
+- `scripts/`: scripts de análise e métricas.
+- `docs/`: instruções complementares do projeto.
 
+## Páginas
 
+O site contém as seguintes páginas:
 
-## 🗓️ Sprints (por páginas)
+- Página inicial
+- Sobre a equipe
+- Projetos
+- Serviços
+- Habilidades
+- Depoimentos
+- Estudo de caso
+- Contato
 
-- **Sprint 1:** Home, Sobre  
-- **Sprint 2:** Contato, Projetos  
-- **Sprint 3:** Habilidades, Serviços  
-- **Sprint 4:** Depoimentos, Case de Sucesso  
-
-Detalhes de uso e automação estão em `docs/INSTRUCTIONS.md`.
-
-## 🚀 Como executar localmente
+## Execução local
 
 ### Frontend
 
-O frontend é uma aplicação HTML, CSS e JavaScript estática. Na raiz do projeto:
+Abra um terminal na raiz do projeto e execute:
 
 ```powershell
 cd squads/squad-C/app
 python -m http.server 8001
 ```
 
-Acesse `http://localhost:8001/`.
+O site estará disponível em `http://localhost:8001/`.
 
-### Backend do assistente
+### Backend
 
-Em outro terminal, instale as dependências e configure o ambiente:
+Em outro terminal, instale as dependências:
 
 ```powershell
 cd server
 npm install
 ```
 
-Crie `server/.env` a partir de `server/.env.example`:
+Crie o arquivo `server/.env` com base em `server/.env.example`:
 
 ```env
 GEMINI_API_KEY=sua_chave_do_gemini
@@ -55,42 +58,46 @@ PORT=3000
 FRONTEND_ORIGIN=http://localhost:8001
 ```
 
-Inicie o backend:
+Inicie o servidor:
 
 ```powershell
 npm start
 ```
 
-O endpoint de verificação fica disponível em
-`http://localhost:3000/api/health`.
+O backend ficará disponível em `http://localhost:3000`. Para verificar se ele
+está funcionando, acesse `http://localhost:3000/api/health`.
 
-O arquivo `server/.env` contém uma credencial privada e não deve ser enviado
-ao GitHub. Ele já está protegido pelo `.gitignore`.
+O arquivo `server/.env` contém uma chave privada e não deve ser enviado para o
+GitHub. Esse arquivo já está incluído no `.gitignore`.
 
-## 💬 Assistente virtual
+## Assistente virtual
 
-O chat foi criado para auxiliar a navegação do portfólio. Ele responde sobre:
+O assistente foi desenvolvido para responder perguntas sobre o próprio
+portfólio. Ele pode explicar:
 
-- integrantes e habilidades do Squad C;
-- serviços e projetos apresentados;
-- estudo de caso DeliveryMax;
-- contato e início de um novo projeto.
+- os integrantes e suas habilidades;
+- os serviços oferecidos;
+- os projetos apresentados;
+- o estudo de caso DeliveryMax;
+- as formas de contato com a equipe.
 
-Mensagens ofensivas são bloqueadas. Perguntas fora desse escopo recebem uma
-orientação para voltar ao conteúdo do portfólio. Respostas sobre integrantes
-usam dados definidos no projeto; as demais perguntas são encaminhadas ao
-Gemini pelo backend.
+Perguntas fora desse assunto são redirecionadas para o conteúdo do site.
+Mensagens ofensivas recebem uma resposta de moderação e não são enviadas ao
+provedor de IA.
 
-## 🧪 Checklist de apresentação
+As respostas sobre os integrantes são definidas no backend. As demais perguntas
+relacionadas ao portfólio são enviadas ao Gemini pelo servidor, sem expor a
+chave no navegador.
 
-Antes de demonstrar o projeto, confirme:
+## Verificação antes da apresentação
 
-1. `http://localhost:3000/api/health` retorna `status: ok`.
-2. O frontend abre em `http://localhost:8001/`.
-3. O chat responde sobre serviços e integrantes.
-4. Uma mensagem ofensiva recebe a resposta amigável.
-5. Uma pergunta fora do contexto é redirecionada ao portfólio.
-6. `server/.env` não aparece no `git status`.
+1. Confirme se `http://localhost:3000/api/health` retorna `status: ok`.
+2. Abra o site em `http://localhost:8001/`.
+3. Teste uma pergunta sobre os serviços.
+4. Teste uma pergunta sobre um integrante.
+5. Teste uma mensagem ofensiva.
+6. Teste uma pergunta fora do assunto do portfólio.
+7. Verifique se `server/.env` não aparece no `git status`.
 
-Os nomes, depoimentos, contatos, resultados e a empresa DeliveryMax são dados
-fictícios para fins acadêmicos e demonstrativos.
+Os nomes, contatos, depoimentos, resultados e a empresa DeliveryMax são
+fictícios e foram utilizados apenas para fins acadêmicos.
