@@ -1,46 +1,268 @@
-<!-- Home - Squad C -->
 <!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Squad C: portfólio digital de soluções em tecnologia, design e desenvolvimento."
+    />
+
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Home - Squad C</title>
+
+    <title>Squad C | Portfólio digital</title>
   </head>
+
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#inicio">Início</a>
-          </li>
-          <li>
-            <a href="#sobrenos">Sobre nós</a>
-          </li>
-          <li>
-            <a href="#projetos">Projetos</a>
-          </li>
-          <li>
-            <a href="#contatos">Contatos</a>
-          </li>
-          <li>
-            <a href="#pagina">Página</a>
-          </li>
-          <li>
-            <a href="#paginadeservico">Página de Serviço</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="index.html">Squad C<span>.</span></a>
+
+        <nav aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#equipe">Equipe</a>
+          <a href="pages/contato.html">Contato</a>
+        </nav>
+      </div>
     </header>
-    <main id="inicio">
-      <img src="assets/images/Warlley.jpg" alt="Warlley-img" />
-      <p>Warlley Santos</p>
-      <img src="assets/images/Bruno.jpg" alt="Bruno-img" />
-      <p>Bruno Cauã</p>
-      <img src="assets/images/Alessandro.jpg" alt="Alessandro-img" />
-      <p>Alessandro Gomes</p>
-      <img src="assets/images/Luis.jpg" alt="Luís-img" />
-      <p>Luís Gabriel</p>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Portfólio digital · Squad C</p>
+
+            <h1>Um portfólio digital para ideias que ganham forma.</h1>
+
+            <p class="hero-description">
+              Criamos experiências digitais, interfaces e soluções sob medida
+              para transformar necessidades reais em projetos funcionais.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projetos">
+                Conheça nossos projetos
+              </a>
+
+              <a class="button button-secondary" href="pages/contato.html">
+                Fale com a equipe
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card hero-card-main">
+              <span>01</span>
+              <strong>Ideia</strong>
+              <p>Entendemos o desafio e encontramos possibilidades.</p>
+            </div>
+
+            <div class="hero-card hero-card-accent">
+              <span>02</span>
+              <strong>Experiência</strong>
+              <p>Projetamos soluções claras, úteis e visualmente marcantes.</p>
+            </div>
+
+            <div class="hero-card hero-card-dark">
+              <span>03</span>
+              <strong>Entrega</strong>
+              <p>Transformamos conceitos em experiências digitais.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <div class="container intro-grid">
+          <div>
+            <p class="eyebrow">Sobre o Squad C</p>
+            <h2>Projetos pensados para pessoas e negócios.</h2>
+          </div>
+
+          <p>
+            Somos uma equipe multidisciplinar em formação, unindo tecnologia,
+            design e estratégia para criar produtos digitais que sejam fáceis
+            de entender, usar e evoluir.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projetos">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Nosso trabalho</p>
+              <h2>Projetos que mostram nossa forma de criar.</h2>
+            </div>
+
+            <a class="text-link" href="pages/projetos.html">
+              Ver todos os projetos
+            </a>
+          </div>
+
+          <div class="project-grid">
+            <a class="project-card project-card-large" href="pages/projetos.html">
+              <img
+                src="assets/images/Site-Uber.jpg"
+                alt="Projeto de interface inspirado em mobilidade urbana"
+              />
+              <div class="project-overlay">
+                <span>Interface digital</span>
+                <h3>Experiências simples para jornadas complexas.</h3>
+              </div>
+            </a>
+
+            <a class="project-card" href="pages/projetos.html">
+              <img
+                src="assets/images/ifood_novo.jpg"
+                alt="Projeto de interface para plataforma de delivery"
+              />
+              <div class="project-overlay">
+                <span>Produto digital</span>
+                <h3>Informação clara no momento certo.</h3>
+              </div>
+            </a>
+
+            <a class="project-card" href="pages/projetos.html">
+              <img
+                src="assets/images/mercadolivre-projeto.png"
+                alt="Projeto de interface para comércio digital"
+              />
+              <div class="project-overlay">
+                <span>E-commerce</span>
+                <h3>Interfaces feitas para facilitar escolhas.</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-section" id="servicos">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">O que fazemos</p>
+              <h2>Serviços para levar seu projeto adiante.</h2>
+            </div>
+
+            <a class="text-link" href="pages/servicos.html">
+              Conhecer serviços
+            </a>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <span class="service-number">01</span>
+              <h3>Consultoria de TI</h3>
+              <p>
+                Analisamos necessidades e encontramos soluções digitais
+                alinhadas aos objetivos do projeto.
+              </p>
+            </article>
+
+            <article class="service-card service-card-highlight">
+              <span class="service-number">02</span>
+              <h3>Desenvolvimento de Software</h3>
+              <p>
+                Criamos aplicações sob medida com foco em desempenho,
+                organização e evolução.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-number">03</span>
+              <h3>Design UX/UI</h3>
+              <p>
+                Desenvolvemos interfaces intuitivas, acessíveis e agradáveis
+                de usar.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-number">04</span>
+              <h3>Marketing Digital</h3>
+              <p>
+                Ajudamos marcas a construir presença digital por meio de
+                estratégias e conteúdos relevantes.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-number">05</span>
+              <h3>Suporte Técnico</h3>
+              <p>
+                Oferecemos acompanhamento para manter as soluções funcionando
+                e prontas para crescer.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section" id="equipe">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Quem faz acontecer</p>
+              <h2>Quatro perspectivas, uma mesma vontade de criar.</h2>
+            </div>
+
+            <a class="text-link" href="pages/sobre.html">
+              Conhecer a equipe
+            </a>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <img src="assets/images/Warlley.jpg" alt="Warlley Santos" />
+              <h3>Warlley Santos</h3>
+              <p>Design e experiências digitais</p>
+            </article>
+
+            <article class="team-card">
+              <img src="assets/images/Bruno.jpg" alt="Bruno Cauã" />
+              <h3>Bruno Cauã</h3>
+              <p>Estratégia e negócios</p>
+            </article>
+
+            <article class="team-card">
+              <img src="assets/images/Alessandro.jpg" alt="Alessandro Gomes" />
+              <h3>Alessandro Gomes</h3>
+              <p>Desenvolvimento e tecnologia</p>
+            </article>
+
+            <article class="team-card">
+              <img src="assets/images/Luis.jpg" alt="Luís Gabriel" />
+              <h3>Luís Gabriel</h3>
+              <p>Produto e soluções digitais</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow">Vamos conversar?</p>
+            <h2>Tem uma ideia? Podemos ajudar a transformá-la.</h2>
+          </div>
+
+          <a class="button button-primary" href="pages/contato.html">
+            Entrar em contato
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="brand" href="index.html">Squad C<span>.</span></a>
+        <p>Portfólio digital de soluções criativas e funcionais.</p>
+        <p>&copy; 2026 Squad C. Todos os direitos reservados.</p>
+      </div>
+    </footer>
   </body>
 </html>
