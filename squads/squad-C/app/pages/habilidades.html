@@ -1,128 +1,187 @@
-<!-- Habilidades - Squad C -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../styles/global.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conheça as habilidades e áreas de interesse dos integrantes do Squad C."
+    />
+
+    <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/habilidades.css" />
-    <title>Habilidades - Squad C</title>
+
+    <title>Habilidades | Squad C</title>
   </head>
 
   <body>
-    <header>
-      <nav class="navbar">
-        <ul class="menu">
-          <li class="menu">
-            <a href="#inicio">Home</a>
-          </li>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
 
-          <li class="menu">
-            <a href="#sobre">Sobre</a>
-          </li>
-
-          <li class="menu">
-            <a href="#projetos">Projetos</a>
-          </li>
-
-          <li class="menu">
-            <a href="#contato">Contato</a>
-          </li>
-
-          <li class="menu">
-            <a href="#servicos">Serviços</a>
-          </li>
-
-          <li class="menu">
-            <a href="#habilidades">Habilidades</a>
-          </li>
-        </ul>
-      </nav>
+        <nav aria-label="Navegação principal">
+          <a href="../index.html">Início</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="../index.html#servicos">Serviços</a>
+          <a href="sobre.html">Equipe</a>
+          <a href="habilidades.html" aria-current="page">Habilidades</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="habilidades">
-        <div class="perfil">
-          <img
-            src="../assets/images/WhatsApp Image 2025-12-03 at 19.08.07.jpeg"
-            alt="Foto de Warley"
-          />
-          <h2 class="descricao">
-            Warlley é um desenvolvedor pioneiro, notório por ter criado a
-            primeira versão do site da Uber
-          </h3>
-          <ul class="lista-habilidades">
-            <h3>Skills</h3>
-            <li>Arquitetura de Soluções Críticas</li>
-            <li>Desenvolvimento Full-Stack Fundamental</li>
-            <li>Escalabilidade e Visão Estratégica</li>
-            <li>HTML/CSS & C Language</li>
-          </ul>
+      <section class="skills-hero">
+        <div class="container skills-hero-content">
+          <div>
+            <p class="eyebrow">Competências do time</p>
+
+            <h1>Habilidades diferentes, uma equipe em constante evolução.</h1>
+
+            <p class="skills-intro">
+              Cada integrante contribui com interesses e conhecimentos
+              diferentes para construir experiências digitais mais completas.
+            </p>
+          </div>
+
+          <a class="button button-secondary" href="../index.html">
+            Voltar ao portfólio
+          </a>
         </div>
       </section>
 
-      <section class="habilidades">
-        <div class="perfil">
-          <img
-            src="../assets/images/WhatsApp Image 2025-12-03 at 19.04.21.jpeg"
-            alt="Foto de Bruno"
-          />
-          <h2 class="descricao">
-            Bruno foi fundamental para a arquitetura de backend que garante a
-            transição de status dos pedidos.
-          </h3>
-          <ul class="lista-habilidades">
-            <h3>Skills</h3>
-            <li>Arquitetura de Sistemas de Backend</li>
-            <li>Design de APIs/Microsserviços</li>
-            <li>Gerenciamento de Banco de Dados e Transações</li>
-            <li>HTML/CSS & Java</li>
-          </ul>
+      <section class="skills-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Conheça o time</p>
+              <h2>Áreas que fazem parte do nosso processo.</h2>
+            </div>
+
+            <a class="text-link" href="sobre.html">
+              Sobre a equipe
+            </a>
+          </div>
+
+          <div class="profiles-grid">
+            <article class="profile-card">
+              <img
+                src="../assets/images/WhatsApp Image 2025-12-03 at 19.08.07.jpeg"
+                alt="Warlley Santos"
+              />
+
+              <div class="profile-content">
+                <p class="profile-role">Design e desenvolvimento</p>
+                <h2>Warlley Santos</h2>
+
+                <p>
+                  Interesse em criar interfaces, explorar automação e transformar
+                  ideias em experiências digitais mais claras.
+                </p>
+
+                <ul class="skill-list">
+                  <li>Arquitetura de soluções</li>
+                  <li>Desenvolvimento full stack</li>
+                  <li>HTML e CSS</li>
+                  <li>Design de interfaces</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="profile-card profile-card-highlight">
+              <img
+                src="../assets/images/WhatsApp Image 2025-12-03 at 19.04.21.jpeg"
+                alt="Bruno Cauã"
+              />
+
+              <div class="profile-content">
+                <p class="profile-role">Back-end e dados</p>
+                <h2>Bruno Cauã</h2>
+
+                <p>
+                  Interesse em estruturar sistemas, organizar dados e entender
+                  os processos por trás de produtos digitais.
+                </p>
+
+                <ul class="skill-list">
+                  <li>Arquitetura de back-end</li>
+                  <li>APIs e microsserviços</li>
+                  <li>Banco de dados</li>
+                  <li>HTML, CSS e Java</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="profile-card">
+              <img
+                src="../assets/images/WhatsApp Image 2025-12-03 at 19.02.35.jpeg"
+                alt="Alessandro Gomes"
+              />
+
+              <div class="profile-content">
+                <p class="profile-role">Tecnologia e produto</p>
+                <h2>Alessandro Gomes</h2>
+
+                <p>
+                  Interesse em desenvolvimento, organização de interfaces e
+                  construção de soluções digitais funcionais.
+                </p>
+
+                <ul class="skill-list">
+                  <li>Desenvolvimento web</li>
+                  <li>Design de interface</li>
+                  <li>APIs e microsserviços</li>
+                  <li>HTML, CSS e Java</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="profile-card">
+              <img
+                src="../assets/images/WhatsApp Image 2025-12-03 at 19.07.43.jpeg"
+                alt="Luis Gabriel"
+              />
+
+              <div class="profile-content">
+                <p class="profile-role">Segurança e desenvolvimento</p>
+                <h2>Luis Gabriel</h2>
+
+                <p>
+                  Interesse em desenvolvimento full stack, segurança e criação
+                  de estruturas confiáveis para aplicações.
+                </p>
+
+                <ul class="skill-list">
+                  <li>Autenticação</li>
+                  <li>Segurança de aplicações</li>
+                  <li>Criptografia e hashing</li>
+                  <li>HTML, CSS e Python</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="habilidades">
-        <div class="perfil">
-          <img
-            src="../assets/images/WhatsApp Image 2025-12-03 at 19.02.35.jpeg"
-            alt="Foto de Alessandro"
-          />
-          <h2 class="descricao">
-            Alessandro, um desenvolvedor-chave, foi o responsável por desenhar a
-            interface de demonstração de produtos no app Mercado Livre.
-          </h3>
-          <ul class="lista-habilidades">
-            <h3>Skills</h3>
-            <li>Desenvolvimento Mobile/Multiplataforma</li>
-            <li>Design de Interface do Usuário</li>
-            <li>Design de APIs/Microsserviços</li>
-            <li>HTML/CSS & Java</li>
-          </ul>
-        </div>
-      </section>
+      <section class="skills-cta">
+        <div class="container skills-cta-content">
+          <div>
+            <p class="eyebrow">Trabalho colaborativo</p>
+            <h2>As melhores soluções nascem da combinação de perspectivas.</h2>
+          </div>
 
-      <section class="habilidades">
-        <div class="perfil">
-          <img
-            src="../assets/images/WhatsApp Image 2025-12-03 at 19.07.43.jpeg"
-            alt="Foto de Luís"
-          />
-          <h2 class="descricao">
-           Luís, um engenheiro backend de talento, foi crucial no
-            desenvolvimento da infraestrutura de login do Facebook.
-          </h3>
-          <ul class="lista-habilidades">
-            <h3>Skills</h3>
-            <li>Protocolos de Autenticação</li>
-            <li>Prevenção de Ataques</li>
-            <li>Criptografia e Hashing</li>
-            <li>HTML/CSS & Phyton</li>
-          </ul>
+          <a class="button button-primary" href="contato.html">
+            Fale com a equipe
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <i>Desenvolvido por Bruno & Alessandro</i>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
+        <p>Portfólio digital de soluções criativas e funcionais.</p>
+      </div>
     </footer>
   </body>
 </html>
