@@ -1,103 +1,194 @@
-<!-- Projetos - Squad C -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../styles/global.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conheça os projetos e estudos de interface desenvolvidos pelo Squad C."
+    />
+
+    <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/projetos.css" />
-    <title>Projetos - Squad C</title>
+
+    <title>Projetos | Squad C</title>
   </head>
+
   <body>
-    <header>
-      <nav class="navbar">
-        <ul>
-          <li class="menu">
-            <a href="#inicio">Home</a>
-          </li>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
 
-          <li class="menu">
-            <a href="#sobre">Sobre</a>
-          </li>
-
-          <li class="menu">
-            <a href="#projetos">Projetos</a>
-          </li>
-
-          <li class="menu">
-            <a href="#contato">Contato</a>
-          </li>
-        </ul>
-      </nav>
-
-      <h1>Projetos individuais de cada integrante do Squad C</h1>
+        <nav aria-label="Navegação principal">
+          <a href="../index.html">Início</a>
+          <a href="projetos.html" aria-current="page">Projetos</a>
+          <a href="../index.html#servicos">Serviços</a>
+          <a href="sobre.html">Equipe</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
     </header>
+
     <main>
-      <section class="projetos">
-        <div class="cx-projetos">
-          <div class="cards">
-            <img src="../assets/images/Site-Uber.jpg" alt="Site-Uber" class="img-pj" />
-            <div class="cx-texto">
-              <h2>Trabalho pessoal de Warlley</h2>
-              <h3 class="pj-nome">Interface do site da Uber</h3>
-              <p class="pj">
-                Warlley, um talentoso desenvolvedor brasileiro, é lembrado por
-                ter criado a primeira versão do site da Uber. Seu trabalho
-                inicial foi fundamental para estabelecer a presença digital de
-                uma das maiores plataformas de transporte do mundo.
-              </p>
-            </div>
+      <section class="projects-hero">
+        <div class="container projects-hero-content">
+          <div>
+            <p class="eyebrow">Portfólio do Squad C</p>
+
+            <h1>Projetos que transformam referências em experiências digitais.</h1>
+
+            <p class="projects-intro">
+              Esta seleção reúne estudos de interface, exercícios de produto e
+              conceitos desenvolvidos pela equipe para praticar design,
+              tecnologia e experiência do usuário.
+            </p>
           </div>
 
-          <div class="cards">
-            <img src="../assets/images/ifood_novo.jpg" alt="Site-ifood" class="img-pj" />
-            <div class="cx-texto">
-              <h2>Trabalho pessoal de Bruno</h2>
-              <h3 class="pj-nome">Interface do site do Ifood</h3>
-              <p class="pj">
-                Bruno foi fundamental para a arquitetura de backend que garante
-                a transição de status dos pedidos, peça-chave para a interface
-                de entrega fluida que vemos no app do iFood.
-              </p>
+          <a class="button button-secondary" href="../index.html">
+            Voltar ao portfólio
+          </a>
+        </div>
+      </section>
+
+      <section class="projects-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Estudos selecionados</p>
+              <h2>Exploramos diferentes tipos de produtos digitais.</h2>
             </div>
+
+            <p class="section-description">
+              Cada projeto parte de uma referência conhecida e propõe uma
+              leitura visual própria.
+            </p>
           </div>
 
-          <div class="cards">
-            <img
-              src="../assets/images/mercadolivre-projeto.png"
-              alt="Site-mercadolivre"
-              class="img-pj"
-            />
-            <div class="cx-texto">
-              <h2>Trabalho pessoal de Alessandro</h2>
-              <h3 class="pj-nome">Interface do site do Ifood</h3>
-              <p class="pj">
-                Alessandro, um desenvolvedor-chave, foi o responsável por
-                desenhar a interface de demonstração de produtos no app Mercado
-                Livre. Seu trabalho foi essencial para otimizar a experiência do
-                usuário ao explorar e visualizar ofertas na plataforma.
-              </p>
-            </div>
+          <div class="projects-grid">
+            <article class="project-card project-card-featured">
+              <div class="project-image">
+                <img
+                  src="../assets/images/Site-Uber.jpg"
+                  alt="Estudo de interface para mobilidade urbana"
+                />
+                <span class="project-tag">Mobilidade</span>
+              </div>
+
+              <div class="project-content">
+                <p class="project-owner">Estudo de Warlley Santos</p>
+                <h2>Mobilidade com clareza</h2>
+                <p>
+                  Estudo de interface inspirado em plataformas de mobilidade,
+                  com foco em localização, escolha de destino e facilidade de
+                  uso.
+                </p>
+
+                <ul class="project-details">
+                  <li>Arquitetura de informação</li>
+                  <li>Interface responsiva</li>
+                  <li>Jornada do usuário</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="../assets/images/ifood_novo.jpg"
+                  alt="Estudo de interface para delivery"
+                />
+                <span class="project-tag">Delivery</span>
+              </div>
+
+              <div class="project-content">
+                <p class="project-owner">Estudo de Bruno Cauã</p>
+                <h2>Pedidos em movimento</h2>
+                <p>
+                  Conceito de produto digital para delivery, pensado para
+                  organizar restaurantes, produtos, pedidos e status de entrega.
+                </p>
+
+                <ul class="project-details">
+                  <li>Fluxo de compra</li>
+                  <li>Hierarquia visual</li>
+                  <li>Status de pedido</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="../assets/images/mercadolivre-projeto.png"
+                  alt="Estudo de interface para comércio digital"
+                />
+                <span class="project-tag">E-commerce</span>
+              </div>
+
+              <div class="project-content">
+                <p class="project-owner">Estudo de Alessandro Gomes</p>
+                <h2>Escolhas mais simples</h2>
+                <p>
+                  Estudo voltado para a descoberta de produtos, comparação de
+                  ofertas e organização de informações em uma experiência de
+                  comércio digital.
+                </p>
+
+                <ul class="project-details">
+                  <li>Catálogo de produtos</li>
+                  <li>Cards de oferta</li>
+                  <li>Experiência de compra</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="../assets/images/facebook.jpg"
+                  alt="Estudo de interface para rede social"
+                />
+                <span class="project-tag">Comunidade</span>
+              </div>
+
+              <div class="project-content">
+                <p class="project-owner">Estudo de Luis Gabriel</p>
+                <h2>Conexões mais intuitivas</h2>
+                <p>
+                  Conceito de interface para uma plataforma social, explorando
+                  navegação, identidade visual e organização do conteúdo.
+                </p>
+
+                <ul class="project-details">
+                  <li>Navegação de conteúdo</li>
+                  <li>Perfil de usuário</li>
+                  <li>Interação social</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-cta">
+        <div class="container projects-cta-content">
+          <div>
+            <p class="eyebrow">Tem uma ideia?</p>
+            <h2>Podemos transformar o próximo desafio em projeto.</h2>
           </div>
 
-          <div class="cards">
-            <img src="../assets/images/facebook.jpg" alt="Site-facebook" class="img-pj" />
-            <div class="cx-texto">
-              <h2>Trabalho pessoal de Luís</h2>
-              <h3 class="pj-nome">Interface do site do Ifood</h3>
-              <p class="pj">
-                Luís, um engenheiro backend de talento, foi crucial no
-                desenvolvimento da infraestrutura de login do Facebook. Seu
-                trabalho garantiu que a autenticação de milhões de usuários
-                fosse segura e instantânea na plataforma.
-              </p>
-            </div>
-          </div>
+          <a class="button button-primary" href="contato.html">
+            Fale com a equipe
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <i class="direita">Criado por Bruno & Alessandro</i>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
+        <p>Portfólio digital de soluções criativas e funcionais.</p>
+      </div>
     </footer>
   </body>
 </html>
