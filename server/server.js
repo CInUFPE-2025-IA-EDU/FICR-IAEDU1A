@@ -127,6 +127,19 @@ const portfolioResponses = {
   services: "O Squad C oferece consultoria de TI, desenvolvimento de software, design UX/UI, marketing digital e suporte técnico. A equipe também trabalha com criação de sites e landing pages, painéis administrativos e microsistemas personalizados.\n\nEsses serviços podem ser aplicados em projetos como plataformas de delivery, lojas digitais, interfaces responsivas, sistemas de acompanhamento e experiências digitais sob medida. Para conversar sobre uma ideia, acesse a página de Contato.",
 };
 
+const contactResponses = {
+  Warlley:
+    "Você pode encontrar o contato de Warlley Santos na página Contato do portfólio. O e-mail informado é warlleysquadc@gmail.com e o telefone é (81) 91234-5678.",
+  Bruno:
+    "Você pode encontrar o contato de Bruno Cauã na página Contato do portfólio. O e-mail informado é brunosquadc@gmail.com e o telefone é (81) 97856-3409.",
+  Alessandro:
+    "Você pode encontrar o contato de Alessandro Gomes na página Contato do portfólio. O e-mail informado é alessandrosquadc@gmail.com e o telefone é (81) 91245-4567.",
+  Luis:
+    "Você pode encontrar o contato de Luis Gabriel na página Contato do portfólio. O e-mail informado é luissquadc@gmail.com e o telefone é (81) 96688-0055.",
+  Squad:
+    "Você pode entrar em contato com o Squad C pela página Contato do portfólio. O e-mail geral informado é squadc123@gmail.com.",
+};
+
 function getMemberResponse(message) {
   const normalizedMessage = normalizeForModeration(message);
 
@@ -147,6 +160,44 @@ function getMemberResponse(message) {
   }
 
   return null;
+}
+
+function getContactResponse(message, contextMember) {
+  const normalizedMessage = normalizeForModeration(message);
+  const asksForContact =
+    normalizedMessage.includes("contato") ||
+    normalizedMessage.includes("email") ||
+    normalizedMessage.includes("telefone") ||
+    normalizedMessage.includes("falar com");
+
+  if (!asksForContact) {
+    return null;
+  }
+
+  if (normalizedMessage.includes("alessandro")) {
+    return contactResponses.Alessandro;
+  }
+
+  if (normalizedMessage.includes("warlley")) {
+    return contactResponses.Warlley;
+  }
+
+  if (normalizedMessage.includes("bruno")) {
+    return contactResponses.Bruno;
+  }
+
+  if (
+    normalizedMessage.includes("luis") ||
+    normalizedMessage.includes("luiz")
+  ) {
+    return contactResponses.Luis;
+  }
+
+  if (contextMember && contactResponses[contextMember]) {
+    return contactResponses[contextMember];
+  }
+
+  return contactResponses.Squad;
 }
 
 function getPortfolioResponse(message) {
@@ -241,7 +292,7 @@ app.get("/api/health", (_request, response) => {
 });
 
 app.post("/api/chat", async (request, response) => {
-  const { message } = request.body;
+  const { message, contextMember } = request.body;
 
   if (typeof message !== "string" || message.trim().length === 0) {
     return response.status(400).json({
@@ -259,6 +310,15 @@ app.post("/api/chat", async (request, response) => {
     return response.json({
       answer: friendlyModerationMessage,
       moderated: true,
+    });
+  }
+
+  const contactResponse = getContactResponse(message, contextMember);
+
+  if (contactResponse) {
+    return response.json({
+      answer: contactResponse,
+      source: "portfolio",
     });
   }
 

@@ -20,6 +20,7 @@ const blockedTerms = [
   "fodase",
   "foda-se",
 ];
+let lastMentionedMember = null;
 
 const chatApiUrl = "http://localhost:3000/api/chat";
 
@@ -62,6 +63,31 @@ function containsBlockedLanguage(text) {
   });
 }
 
+function detectMentionedMember(text) {
+  const normalizedText = normalizeForModeration(text);
+
+  if (normalizedText.includes("alessandro")) {
+    return "Alessandro";
+  }
+
+  if (normalizedText.includes("warlley")) {
+    return "Warlley";
+  }
+
+  if (normalizedText.includes("bruno")) {
+    return "Bruno";
+  }
+
+  if (
+    normalizedText.includes("luis") ||
+    normalizedText.includes("luiz")
+  ) {
+    return "Luis";
+  }
+
+  return null;
+}
+
 function cleanAnswer(text = "") {
   return String(text)
     .replace(/\*/g, "")
@@ -91,6 +117,8 @@ async function sendMessage(message) {
   addMessage(cleanMessage, "user");
   chatInput.value = "";
 
+  lastMentionedMember = detectMentionedMember(cleanMessage) || lastMentionedMember;
+
   if (containsBlockedLanguage(cleanMessage)) {
     addMessage(friendlyModerationMessage, "assistant");
     return;
@@ -106,6 +134,7 @@ async function sendMessage(message) {
       },
       body: JSON.stringify({
         message: cleanMessage,
+        contextMember: lastMentionedMember,
       }),
     });
 
