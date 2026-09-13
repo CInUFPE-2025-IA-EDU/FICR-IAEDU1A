@@ -9,6 +9,21 @@ dotenv.config();
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const frontendOrigin = process.env.FRONTEND_ORIGIN || "http://localhost:8001";
+const friendlyModerationMessage =
+  "Opa! Sou um chat amigável. Caso queira fazer perguntas sobre o Squad C, estou aqui!";
+const blockedTerms = [
+  "porra",
+  "caralho",
+  "merda",
+  "buceta",
+  "puta",
+  "putaria",
+  "viado",
+  "vadia",
+  "foder",
+  "fodase",
+  "foda-se",
+];
 
 app.use(
   cors({
@@ -17,6 +32,32 @@ app.use(
 );
 
 app.use(express.json({ limit: "10kb" }));
+
+function normalizeForModeration(text) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function containsBlockedLanguage(text) {
+  const normalizedText = normalizeForModeration(text);
+
+  return blockedTerms.some((term) => {
+    const normalizedTerm = normalizeForModeration(term);
+    return normalizedText.split(" ").includes(normalizedTerm);
+  });
+}
+
+function cleanAnswer(text = "") {
+  return String(text)
+    .replace(/\*/g, "")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
 
 const portfolioContext = `
 Você é o assistente virtual do Squad C, uma equipe fictícia de portfólio
@@ -75,6 +116,13 @@ app.post("/api/chat", async (request, response) => {
     });
   }
 
+  if (containsBlockedLanguage(message)) {
+    return response.json({
+      answer: friendlyModerationMessage,
+      moderated: true,
+    });
+  }
+
   const apiKey = process.env.GEMINI_API_KEY;
   const model = process.env.GEMINI_MODEL;
 
@@ -129,11 +177,11 @@ app.post("/api/chat", async (request, response) => {
       });
     }
 
-    const answer =
+    const answer = cleanAnswer(
       data.candidates?.[0]?.content?.parts
         ?.map((part) => part.text || "")
-        .join("")
-        .trim();
+        .join(""),
+    );
 
     if (!answer) {
       return response.status(502).json({

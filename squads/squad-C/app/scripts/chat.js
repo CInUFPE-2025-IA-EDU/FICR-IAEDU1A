@@ -5,6 +5,21 @@ const chatForm = document.querySelector(".chat-form");
 const chatInput = document.querySelector("#chat-input");
 const messages = document.querySelector(".chat-messages");
 const suggestionButtons = document.querySelectorAll("[data-message]");
+const friendlyModerationMessage =
+  "Opa! Sou um chat amigável. Caso queira fazer perguntas sobre o Squad C, estou aqui!";
+const blockedTerms = [
+  "porra",
+  "caralho",
+  "merda",
+  "buceta",
+  "puta",
+  "putaria",
+  "viado",
+  "vadia",
+  "foder",
+  "fodase",
+  "foda-se",
+];
 
 const chatApiUrl = "http://localhost:3000/api/chat";
 
@@ -29,6 +44,32 @@ function addMessage(text, type) {
   return message;
 }
 
+function normalizeForModeration(text) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function containsBlockedLanguage(text) {
+  const normalizedText = normalizeForModeration(text);
+
+  return blockedTerms.some((term) => {
+    const normalizedTerm = normalizeForModeration(term);
+    return normalizedText.split(" ").includes(normalizedTerm);
+  });
+}
+
+function cleanAnswer(text = "") {
+  return String(text)
+    .replace(/\*/g, "")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function setLoading(isLoading) {
   chatInput.disabled = isLoading;
   chatForm.querySelector("button[type='submit']").disabled = isLoading;
@@ -50,6 +91,11 @@ async function sendMessage(message) {
   addMessage(cleanMessage, "user");
   chatInput.value = "";
 
+  if (containsBlockedLanguage(cleanMessage)) {
+    addMessage(friendlyModerationMessage, "assistant");
+    return;
+  }
+
   const loadingMessage = setLoading(true);
 
   try {
@@ -69,7 +115,7 @@ async function sendMessage(message) {
       throw new Error(data.error || "Não foi possível enviar a mensagem.");
     }
 
-    addMessage(data.answer, "assistant");
+    addMessage(cleanAnswer(data.answer), "assistant");
   } catch (error) {
     addMessage(
       error.message ||
