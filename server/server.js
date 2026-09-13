@@ -121,6 +121,12 @@ const memberResponses = {
   Luis: "Luis Gabriel é integrante do Squad C e se interessa por desenvolvimento full stack, segurança e soluções digitais. Entre suas áreas de interesse estão autenticação, segurança de aplicações, criptografia, hashing, HTML, CSS e Python.\n\nSua contribuição está relacionada à criação de estruturas confiáveis e à preocupação com a segurança e o funcionamento das aplicações.",
 };
 
+const portfolioResponses = {
+  team: "O Squad C é formado por Warlley Santos, Bruno Cauã, Alessandro Gomes e Luis Gabriel. A equipe reúne interesses complementares em design de interfaces, desenvolvimento web, estratégia, produto, back-end e segurança de aplicações.\n\nWarlley contribui principalmente com design e experiências digitais. Bruno se interessa por estratégia, negócios e estruturas de back-end. Alessandro atua em desenvolvimento web, tecnologia e organização de produtos digitais. Luis se dedica a desenvolvimento full stack e segurança. Juntos, eles trabalham na criação de soluções digitais funcionais e fáceis de usar.",
+  projects: "O portfólio apresenta estudos de interface e conceitos de produtos digitais desenvolvidos pelo Squad C. Entre eles estão um estudo de mobilidade urbana, uma interface para delivery, uma experiência de comércio digital e um conceito de rede social.\n\nTambém há um estudo de caso fictício da DeliveryMax, uma plataforma regional de delivery. Nesse case, a equipe propõe melhorias na navegação, na organização visual e no processo de checkout. Para conhecer os detalhes, acesse a página Projetos ou a página Case de Sucesso.",
+  services: "O Squad C oferece consultoria de TI, desenvolvimento de software, design UX/UI, marketing digital e suporte técnico. A equipe também trabalha com criação de sites e landing pages, painéis administrativos e microsistemas personalizados.\n\nEsses serviços podem ser aplicados em projetos como plataformas de delivery, lojas digitais, interfaces responsivas, sistemas de acompanhamento e experiências digitais sob medida. Para conversar sobre uma ideia, acesse a página de Contato.",
+};
+
 function getMemberResponse(message) {
   const normalizedMessage = normalizeForModeration(message);
 
@@ -138,6 +144,39 @@ function getMemberResponse(message) {
 
   if (normalizedMessage.includes("luis") || normalizedMessage.includes("luiz")) {
     return memberResponses.Luis;
+  }
+
+  return null;
+}
+
+function getPortfolioResponse(message) {
+  const normalizedMessage = normalizeForModeration(message);
+
+  if (
+    normalizedMessage.includes("quem faz parte") ||
+    normalizedMessage.includes("quem sao") ||
+    normalizedMessage.includes("equipe") ||
+    normalizedMessage.includes("integrantes")
+  ) {
+    return portfolioResponses.team;
+  }
+
+  if (
+    normalizedMessage.includes("quais projetos") ||
+    normalizedMessage.includes("projetos voces") ||
+    normalizedMessage.includes("projetos desenvolvidos") ||
+    normalizedMessage.includes("o que voces desenvolveram")
+  ) {
+    return portfolioResponses.projects;
+  }
+
+  if (
+    normalizedMessage.includes("quais servicos") ||
+    normalizedMessage.includes("servicos voces") ||
+    normalizedMessage.includes("o que voces oferecem") ||
+    normalizedMessage.includes("quais servicos voces oferecem")
+  ) {
+    return portfolioResponses.services;
   }
 
   return null;
@@ -228,6 +267,15 @@ app.post("/api/chat", async (request, response) => {
   if (memberResponse) {
     return response.json({
       answer: memberResponse,
+      source: "portfolio",
+    });
+  }
+
+  const portfolioResponse = getPortfolioResponse(message);
+
+  if (portfolioResponse) {
+    return response.json({
+      answer: portfolioResponse,
       source: "portfolio",
     });
   }
