@@ -11,6 +11,8 @@ const port = Number(process.env.PORT || 3000);
 const frontendOrigin = process.env.FRONTEND_ORIGIN || "http://localhost:8001";
 const friendlyModerationMessage =
   "Opa! Sou um chat amigável. Caso queira fazer perguntas sobre o Squad C, estou aqui!";
+const outOfContextMessage =
+  "Posso ajudar com informações sobre o Squad C, nossos integrantes, serviços, projetos e formas de contato. Tente fazer uma pergunta relacionada ao portfólio.";
 const blockedTerms = [
   "porra",
   "caralho",
@@ -49,6 +51,56 @@ function containsBlockedLanguage(text) {
     const normalizedTerm = normalizeForModeration(term);
     return normalizedText.split(" ").includes(normalizedTerm);
   });
+}
+
+function isPortfolioQuestion(text) {
+  const normalizedText = normalizeForModeration(text);
+  const portfolioTerms = [
+    "squad",
+    "portfolio",
+    "projeto",
+    "servico",
+    "equipe",
+    "integrante",
+    "habilidade",
+    "contato",
+    "email",
+    "site",
+    "aplicacao",
+    "sistema",
+    "interface",
+    "design",
+    "tecnologia",
+    "desenvolvimento",
+    "deliverymax",
+    "contratar",
+    "orcamento",
+    "preco",
+    "trabalha",
+    "fazem",
+    "oferecem",
+    "ajuda",
+    "conhecer",
+  ];
+  const greetings = ["ola", "oi", "bom dia", "boa tarde", "boa noite"];
+
+  return (
+    portfolioTerms.some((term) => normalizedText.includes(term)) ||
+    greetings.some(
+      (greeting) =>
+        normalizedText === greeting || normalizedText.startsWith(`${greeting} `),
+    )
+  );
+}
+
+function isGreeting(text) {
+  const normalizedText = normalizeForModeration(text);
+  const greetings = ["ola", "oi", "bom dia", "boa tarde", "boa noite"];
+
+  return greetings.some(
+    (greeting) =>
+      normalizedText === greeting || normalizedText.startsWith(`${greeting} `),
+  );
 }
 
 function cleanAnswer(text = "") {
@@ -177,6 +229,21 @@ app.post("/api/chat", async (request, response) => {
     return response.json({
       answer: memberResponse,
       source: "portfolio",
+    });
+  }
+
+  if (isGreeting(message)) {
+    return response.json({
+      answer:
+        "Olá! Sou o assistente virtual do Squad C. Posso apresentar nossa equipe, serviços, projetos ou indicar como entrar em contato.",
+      source: "portfolio",
+    });
+  }
+
+  if (!isPortfolioQuestion(message)) {
+    return response.json({
+      answer: outOfContextMessage,
+      source: "scope",
     });
   }
 
