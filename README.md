@@ -1,13 +1,16 @@
 # 🎓 FICR-IAEDU1A — IA Assistiva no Ensino de Programação
 
-Repositório monorepo para a disciplina de **Informática na Educação / HTML & CSS**,
-usado no experimento com **GitHub Copilot** (COMIA x SEMIA) em squads.
+Aplicação web do squad C para a disciplina de **Informática na Educação / HTML & CSS**,
+usada no experimento com **GitHub Copilot** (COMIA x SEMIA).
 
-## 👥 Organização dos Squads
+## 📁 Estrutura do projeto
 
-Cada squad possui 4 alunos:
-- 2 focados em **HTML**
-- 2 focados em **CSS**
+- `squads/squad-C/` → aplicação escolhida para desenvolvimento.
+- `squads/squad-C/*.html` → páginas da aplicação.
+- `squads/squad-C/styles/` → folhas de estilo de cada página.
+- `squads/squad-C/img/` → imagens e recursos visuais.
+- `scripts/` → ferramentas de análise e métricas.
+- `docs/` → instruções do projeto.
 
 
 

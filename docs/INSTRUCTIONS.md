@@ -1,7 +1,7 @@
 # 📋 Instruções — FICR-IAEDU1A
 
 Este repositório foi preparado para o experimento de **IA assistiva (GitHub Copilot)**
-em turmas de HTML & CSS, com squads A–I.
+em turmas de HTML & CSS, com o squad C.
 
 ## 1. Estrutura Geral
 
@@ -10,7 +10,7 @@ em turmas de HTML & CSS, com squads A–I.
 - `scripts/analyze_squad.py` → Roda `html-validate` por squad
 - `scripts/analyze_metrics.py` → Gera esqueleto de métricas para a tese
 - `assignments.xlsx` → Planilha com as 144 issues (1 linha por issue)
-- `squads/squad-X/` → Código de cada squad
+- `squads/squad-C/` → Código da aplicação em desenvolvimento
 
 ## 2. Criação das Issues
 
@@ -35,9 +35,9 @@ em turmas de HTML & CSS, com squads A–I.
 6. Verifique as issues em:
    `https://github.com/sua-organizacao/FICR-IAEDU1A/issues`
 
-## 3. Estrutura dos Squads
+## 3. Estrutura da Aplicação
 
-Cada pasta `squads/squad-X` contém:
+A pasta `squads/squad-C` contém:
 
 - `metadata.json` → membros, grupo experimental (COMIA/SEMIA), datas
 - arquivos `.html` base: `home.html`, `sobre.html`, `contato.html`, `projetos.html`,
@@ -46,22 +46,22 @@ Cada pasta `squads/squad-X` contém:
 
 ## 4. CI e Métricas
 
-- `ci.yml` roda `html-validate` em todos os `.html` de cada squad.
-- Gera um JSON com métricas: `metrics-squad-X.json`.
+- `ci.yml` roda `html-validate` nos `.html` do squad C.
+- Gera um JSON com métricas: `metrics-squad-C.json`.
 - Gera a base para análise estatística:
   - `research_metrics.json`
   - `research_data_glmm.csv`
 
 ## 5. Fluxo para Alunos
 
-1. Descubra seu código (A01..A36) e seu squad.
+1. Use as issues atribuídas ao squad C.
 2. Filtre suas issues por `assignee:SEU_CODIGO` no GitHub.
 3. Clone o repo e vá para sua pasta:
 
    ```bash
-   git clone https://github.com/sua-organizacao/FICR-IAEDU1A.git
-   cd FICR-IAEDU1A/squads/squad-A
+   git clone https://github.com/CInUFPE-2025-IA-EDU/FICR-IAEDU1A.git
+   cd FICR-IAEDU1A/squads/squad-C
    ```
 
-4. Implemente apenas arquivos do seu squad.
+4. Implemente apenas arquivos do squad C.
 5. Faça commits frequentes e mantenha HTML semântico e CSS responsivo.

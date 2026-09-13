@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        squad: [A, B, C, D, E, F, G, H, I]
+        squad: [C]
 
     steps:
       - name: Checkout repository
