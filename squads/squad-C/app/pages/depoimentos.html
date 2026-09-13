@@ -1,99 +1,166 @@
-<!-- Depoimentos - Squad C -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/depoimentos.css">
-    <title>Depoimentos - Squad C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Depoimentos sobre as experiências e projetos do Squad C."
+    />
+
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/depoimentos.css" />
+
+    <title>Depoimentos | Squad C</title>
   </head>
+
   <body>
-    <header>
-      <nav class="navbar">
-        <ul>
-          <li class="menu">
-            <a href="#inicio">Home</a>
-          </li>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
 
-          <li class="menu">
-            <a href="#sobre">Sobre</a>
-          </li>
-
-          <li class="menu">
-            <a href="#projetos">Projetos</a>
-          </li>
-
-          <li class="menu">
-            <a href="#contato">Contato</a>
-          </li>
-
-          <li class="menu">
-            <a href="#servicos">Serviços</a>
-          </li>
-
-          <li class="menu">
-            <a href="#habilidades">Habilidades</a>
-          </li>
-
-          <li class="menu">
-            <a href="#case">Case de Sucesso</a>
-          </li>
-
-          <li class="menu">
-            <a href="#depoimentos">Depoimentos</a>
-          </li>
-        </ul>
-      </nav>
+        <nav aria-label="Navegação principal">
+          <a href="../index.html">Início</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="../index.html#servicos">Serviços</a>
+          <a href="sobre.html">Equipe</a>
+          <a href="depoimentos.html" aria-current="page">Depoimentos</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <div class="cx-dep">
-      <h3>Depoimentos</h3>
-      <h1>O que os clientes dizem</h1>
-      <p class="paragraph">
-        Atibuímos um grande valor a relacionamentos sólidos e vimos os
-        benefícios que eles trazem para o nosso negócio. o feedback do cliente é
-        vital para nos ajudar a acertar.
-      </p>
-      </div>
+      <section class="testimonials-hero">
+        <div class="container testimonials-hero-content">
+          <div>
+            <p class="eyebrow">Experiências compartilhadas</p>
 
-      <section class="depoimentos">
-        <div class="cx-depoimentos">
-          <div class="cards">
-            <img src="../assets/images/modelo-persona.jpg" alt="Persona" class="img-dep" />
-            <div class="cx-texto">
-               <p class="pj">
-                “Minha experiência foi excelente do começo ao fim. Desde o primeiro atendimento, percebi o cuidado em entender minhas necessidades e transformar minhas ideias em algo realmente funcional. A comunicação sempre foi clara, rápida e muito profissional. Fiquei impressionado com a atenção aos detalhes e com o compromisso em entregar tudo da melhor forma possível. O resultado final superou minhas expectativas e me deixou extremamente satisfeito. Certamente voltarei a contratar e também recomendarei para outras pessoas.”
-              </p>
-              <h4 class="pj-nome">Naty Almeida</h4>
-            </div>
+            <h1>Relacionamentos que dão sentido ao nosso trabalho.</h1>
+
+            <p class="testimonials-intro">
+              Estes depoimentos representam experiências fictícias criadas para
+              demonstrar como clientes poderiam perceber nosso processo e nossas
+              entregas.
+            </p>
           </div>
 
-          <div class="cx-depoimentos">
-          <div class="cards">
-            <img src="../assets/images/modelo-persona2.webp" alt="Persona" class="img-dep" />
-            <div class="cx-texto">
-               <p class="pj">
-                “Posso dizer com tranquilidade que essa foi uma das melhores experiências profissionais que já tive. O atendimento foi humano, atencioso e extremamente competente em todos os momentos. O projeto ficou exatamente como eu imaginava — e, em alguns pontos, até melhor do que o esperado. Cada detalhe foi pensado para garantir que tudo funcionasse bem e transmitisse qualidade. A sensação que tive foi de estar sendo acompanhado por pessoas que realmente se importam com o cliente. Não poderia estar mais satisfeito.”
-              </p>
-              <h4 class="pj-nome">Miguel Santos</h4>
+          <a class="button button-secondary" href="../index.html">
+            Voltar ao portfólio
+          </a>
+        </div>
+      </section>
+
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">O que clientes dizem</p>
+              <h2>Clareza, cuidado e atenção em cada etapa.</h2>
             </div>
+
+            <p class="section-description">
+              Para nós, uma boa entrega começa com escuta e termina com uma
+              experiência que faz sentido para quem usa.
+            </p>
           </div>
 
-          <div class="cx-depoimentos">
-          <div class="cards">
-            <img src="../assets/images/persona-modelo3.webp" alt="Persona" class="img-dep" />
-            <div class="cx-texto">
-               <p class="pj">
-                “Desde o início fui tratado com profissionalismo e empatia, algo raro hoje em dia. Entregaram um serviço muito completo, organizado e feito com verdadeiro cuidado. A cada etapa eu sentia que minhas opiniões eram realmente levadas em consideração, o que faz toda a diferença. O que mais me surpreendeu foi a qualidade da entrega final — muito acima do que eu imaginava. Fico feliz por ter escolhido esse serviço e com certeza pretendo continuar essa parceria pelos próximos projetos.”
-              <h4 class="pj-nome">Bianca Andrade</h4>
-            </div>
+          <div class="testimonials-grid">
+            <article class="testimonial-card testimonial-card-featured">
+              <div class="testimonial-image">
+                <img
+                  src="../assets/images/modelo-persona.jpg"
+                  alt="Naty Almeida"
+                />
+              </div>
+
+              <div class="testimonial-content">
+                <span class="quote-mark">“</span>
+
+                <blockquote>
+                  Minha experiência foi excelente do começo ao fim. Desde o
+                  primeiro atendimento, percebi o cuidado em entender minhas
+                  necessidades e transformar minhas ideias em algo realmente
+                  funcional.
+                </blockquote>
+
+                <div class="testimonial-author">
+                  <strong>Naty Almeida</strong>
+                  <span>Cliente de projeto digital</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-image">
+                <img
+                  src="../assets/images/modelo-persona2.webp"
+                  alt="Miguel Santos"
+                />
+              </div>
+
+              <div class="testimonial-content">
+                <span class="quote-mark">“</span>
+
+                <blockquote>
+                  O projeto ficou exatamente como eu imaginava e, em alguns
+                  pontos, até melhor do que o esperado. Cada detalhe foi pensado
+                  para garantir qualidade.
+                </blockquote>
+
+                <div class="testimonial-author">
+                  <strong>Miguel Santos</strong>
+                  <span>Cliente de produto digital</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-image">
+                <img
+                  src="../assets/images/persona-modelo3.webp"
+                  alt="Bianca Andrade"
+                />
+              </div>
+
+              <div class="testimonial-content">
+                <span class="quote-mark">“</span>
+
+                <blockquote>
+                  Fui tratado com profissionalismo e empatia. A cada etapa,
+                  minhas opiniões foram consideradas, e o resultado final ficou
+                  acima do que eu imaginava.
+                </blockquote>
+
+                <div class="testimonial-author">
+                  <strong>Bianca Andrade</strong>
+                  <span>Cliente de experiência digital</span>
+                </div>
+              </div>
+            </article>
           </div>
+        </div>
+      </section>
+
+      <section class="testimonials-cta">
+        <div class="container testimonials-cta-content">
+          <div>
+            <p class="eyebrow">Seu projeto pode ser o próximo</p>
+            <h2>Vamos construir uma experiência que as pessoas valorizem?</h2>
+          </div>
+
+          <a class="button button-primary" href="contato.html">
+            Fale com a equipe
+          </a>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <i>Criado por Bruno & Alessandro</i>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="brand" href="../index.html">Squad C<span>.</span></a>
+        <p>Portfólio digital de soluções criativas e funcionais.</p>
+      </div>
     </footer>
   </body>
 </html>
