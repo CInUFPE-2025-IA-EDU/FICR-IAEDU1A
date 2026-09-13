@@ -1,6 +1,6 @@
 # FICR-IAEDU1A
 
-Projeto desenvolvido para a disciplina de Informática na Educação, com foco
+Projeto desenvolvido para a Inteligência Artificial, com foco
 em HTML, CSS, JavaScript e uso de inteligência artificial.
 
 ## Estrutura
