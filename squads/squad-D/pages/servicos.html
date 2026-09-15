@@ -1,52 +1,87 @@
-<!-- Serviços - Squad D -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Squad D</title>
   <link rel="stylesheet" href="../styles/servicos.css">
 </head>
+
 <body>
-  
-  <img src=https://ixymyhazbhztpjnlxmbd.supabase.co/storage/v1/object/images/generated/mulheres-trabalhando-ti-equipe-52.webp
-       alt="img grupo">
-  
-  <h1> Equipe de Desenvolvedoras </h1>
-  <p> Somos um grupo de 4 desenvolvedoras oferecendo soluções completas em tecnologia </p>
-  <h2> Nossos Serviços </h2>
-  <ul>
-    <li> Desenvolvimento Frontend</li>
-    <li> Desenvolvimento Backend</li>
-    <li> Aplicações Mobile</li>
-    <li> UX/UI Design</li>
-  </ul>
-  <h2>Quem Somos</h2>
-  <ul>
-    <li> Desenvolvedora Débora- Frontend</li>
-    <li> Desenvolvedora Maria Clara- Backend</li>
-    <li> Desenvolvedora Geysiane- Aplicações Mobile</li>
-    <li> Desenvolvedora Ana Luiza- Ux/Design</li>
-  </ul>
- <H2>Nossos Valores</H2>
- <ul>
-  <li> Entrega no Prazo </li>
-  <li> Competência</li>
-  <li> Qualidade no código</li>
-  <li> Comunicação Clara</li>
- </ul>
- <h2> Entre em Contato Conosco!</h2>
- <form>
-  <label> nome:</label><br>
-  <input type="text"><br><br>
+  <header class="site-header">
+    <a class="brand" href="home.html">Squad D</a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="home.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="servicos.html" aria-current="page">Serviços</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="habilidades.html">Habilidades</a></li>
+        <li><a href="depoimentos.html">Depoimentos</a></li>
+        <li><a href="case-de-sucesso.html">Case de sucesso</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <label> E-mail:</label><br>
-  <input type="email"><br><br>
+  <main>
+    <h1>Equipe de desenvolvedoras</h1>
+    <p>Somos um grupo de quatro desenvolvedoras oferecendo soluções completas em tecnologia.</p>
 
-  <label>Mensagem:</label><br>
-  <textarea></textarea><br><br>
+    <img src="https://ixymyhazbhztpjnlxmbd.supabase.co/storage/v1/object/images/generated/mulheres-trabalhando-ti-equipe-52.webp"
+      alt="Equipe trabalhando em tecnologia">
 
-  <button type="submit">Enviar</button>
+    <section aria-labelledby="servicos-title">
+      <h2 id="servicos-title">Nossos serviços</h2>
+      <ul>
+        <li>Desenvolvimento frontend</li>
+        <li>Desenvolvimento backend</li>
+        <li>Aplicações mobile</li>
+        <li>UX/UI design</li>
+      </ul>
+    </section>
 
- </form>
+    <section aria-labelledby="equipe-title">
+      <h2 id="equipe-title">Quem somos</h2>
+      <ul>
+        <li>Débora - Frontend</li>
+        <li>Maria Clara - Backend</li>
+        <li>Geysiane - Aplicações mobile</li>
+        <li>Ana Luiza - UX/UI design</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="valores-title">
+      <h2 id="valores-title">Nossos valores</h2>
+      <ul>
+        <li>Entrega no prazo</li>
+        <li>Competência</li>
+        <li>Qualidade no código</li>
+        <li>Comunicação clara</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="contato-title">
+      <h2 id="contato-title">Entre em contato conosco</h2>
+      <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Squad D. Todos os direitos reservados.</p>
+  </footer>
 </body>
+
 </html>
