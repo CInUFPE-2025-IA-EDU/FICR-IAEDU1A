@@ -100,10 +100,14 @@ def analyze_squad(squad_path: str) -> dict:
         print(f"[WARN] Pasta não encontrada: {squad_path}")
         return data
 
-    for f in os.listdir(squad_path):
+    pages_path = os.path.join(squad_path, "pages")
+    if not os.path.isdir(pages_path):
+        pages_path = squad_path
+
+    for f in os.listdir(pages_path):
         if f.endswith(".html"):
             page_name = f.replace(".html", "")
-            data["pages"][page_name] = analyze_page(squad_path, f)
+            data["pages"][page_name] = analyze_page(pages_path, f)
 
     return data
 

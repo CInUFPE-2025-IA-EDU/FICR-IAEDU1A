@@ -8,6 +8,8 @@ const squadPath = process.argv[2];
 const outFile = process.argv[3];
 
 const result = { pages: {} };
+const pagesPath = path.join(squadPath, "pages");
+const stylesPath = path.join(squadPath, "styles");
 
 function analyzeHTML(filePath) {
   const html = fs.readFileSync(filePath, "utf8");
@@ -43,20 +45,16 @@ function analyzeCSS(filePath) {
   };
 }
 
-fs.readdirSync(squadPath).forEach(page => {
-  const pageDir = path.join(squadPath, page);
-  if (!fs.statSync(pageDir).isDirectory()) return;
+fs.readdirSync(pagesPath).forEach(htmlFile => {
+  if (!htmlFile.endsWith(".html")) return;
 
-  const htmlFile = fs.readdirSync(pageDir).find(f => f.endsWith(".html"));
-  const cssFile = fs.readdirSync(pageDir).find(f => f.endsWith(".css"));
-
-  if (!htmlFile) return;
-
+  const page = path.basename(htmlFile, ".html");
   const pageMetrics = {};
-  Object.assign(pageMetrics, analyzeHTML(path.join(pageDir, htmlFile)));
+  Object.assign(pageMetrics, analyzeHTML(path.join(pagesPath, htmlFile)));
 
-  if (cssFile) {
-    Object.assign(pageMetrics, analyzeCSS(path.join(pageDir, cssFile)));
+  const cssFile = `${page}.css`;
+  if (fs.existsSync(path.join(stylesPath, cssFile))) {
+    Object.assign(pageMetrics, analyzeCSS(path.join(stylesPath, cssFile)));
   }
 
   result.pages[page] = pageMetrics;
