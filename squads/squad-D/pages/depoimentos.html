@@ -1,31 +1,56 @@
-<!-- Depoimentos - Squad D -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Depoimentos - Squad D</title>
   <link rel="stylesheet" href="../styles/depoimentos.css">
 </head>
+
 <body>
-  <H1> Depoimentos de Clientes </H1>
-  <p>Confira o que nossos clientes dizem sobre o trabalho do nosso squad.</p>
+  <header class="site-header">
+    <a class="brand" href="home.html">Squad D</a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="home.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="habilidades.html">Habilidades</a></li>
+        <li><a href="depoimentos.html" aria-current="page">Depoimentos</a></li>
+        <li><a href="case-de-sucesso.html">Case de sucesso</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section>
-    <h3>Ana Silva</h3>
-    <p><strong>Empresa:</strong> Loja Luxo</p>
-    <p>"Entrega rápida, comunicação excelente e resultado acima do esperado."</p>
-  </section>
+  <main>
+    <h1>Depoimentos de clientes</h1>
+    <p>Confira o que nossos clientes dizem sobre o trabalho do nosso squad.</p>
 
-  <section>
-    <h3>João Costa</h3>
-    <p><strong>Empresa:</strong> Agência ABC</p>
-    <p>"Equipe organizada, profissionais dedicadas e código muito bem feito."</p>
-  </section>
+    <section aria-labelledby="ana-title">
+      <h2 id="ana-title">Ana Silva</h2>
+      <p><strong>Empresa:</strong> Loja Luxo</p>
+      <p>"Entrega rápida, comunicação excelente e resultado acima do esperado."</p>
+    </section>
 
-  <section>
-    <h3>Maria Oliveira</h3>
-    <p><strong>Empresa:</strong> Startup tech</p>
-    <p>"Nos ajudaram desde a ideia até a entrega final. Recomendo muito."</p>
-  </section>
+    <section aria-labelledby="joao-title">
+      <h2 id="joao-title">João Costa</h2>
+      <p><strong>Empresa:</strong> Agência ABC</p>
+      <p>"Equipe organizada, profissionais dedicadas e código muito bem feito."</p>
+    </section>
+
+    <section aria-labelledby="maria-title">
+      <h2 id="maria-title">Maria Oliveira</h2>
+      <p><strong>Empresa:</strong> Startup tech</p>
+      <p>"Nos ajudaram desde a ideia até a entrega final. Recomendo muito."</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Squad D. Todos os direitos reservados.</p>
+  </footer>
 </body>
+
 </html>
