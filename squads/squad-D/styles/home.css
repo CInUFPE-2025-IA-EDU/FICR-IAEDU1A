@@ -1,17 +1,39 @@
 .intro {
+  position: relative;
   display: grid;
-  gap: 1rem;
-  max-width: 48rem;
+  gap: 1.25rem;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: clamp(2rem, 8vw, 6rem);
-  border: 1px solid var(--color-line);
-  background: var(--color-surface);
-  box-shadow: 0.75rem 0.75rem 0 rgba(23, 37, 47, 0.1);
+  padding: clamp(2rem, 8vw, 7rem) clamp(1.5rem, 7vw, 6rem);
+  overflow: hidden;
+  border: 0;
+  background: var(--color-ink);
+  box-shadow: 1rem 1rem 0 var(--color-accent);
+  transform-origin: center;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.intro:hover {
+  transform: scale(1.03);
+  box-shadow: 1.1rem 1.1rem 0 var(--color-accent);
+}
+
+.intro::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 100%;
+  border-left: 1px solid rgba(255, 253, 248, 0.2);
+  background: rgba(217, 93, 57, 0.18);
+  content: '';
+  transform: skewX(-18deg) translateX(42%);
 }
 
 .intro p:first-child {
+  position: relative;
   margin-bottom: 0;
-  color: var(--color-accent-dark);
+  color: #f2b36c;
   font-family: Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
@@ -20,20 +42,52 @@
 }
 
 .intro h1 {
+  position: relative;
   margin-bottom: 0;
-  color: var(--color-ink);
-  font-size: clamp(3rem, 10vw, 7rem);
+  color: var(--color-surface);
+  font-size: clamp(3.5rem, 13vw, 9rem);
+  font-weight: 400;
+  line-height: 0.86;
   letter-spacing: 0;
 }
 
 .intro p:nth-of-type(2) {
-  color: var(--color-muted);
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: #dbe4e1;
   font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 
 .intro p:last-child {
+  position: relative;
   max-width: 38rem;
   margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 1.05rem;
+  color: #dbe4e1;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    box-shadow: 0.5rem 0.5rem 0 var(--color-accent);
+  }
+
+  .intro:hover {
+    transform: scale(1.018);
+    box-shadow: 0.6rem 0.6rem 0 var(--color-accent);
+  }
+
+  .intro::before {
+    width: 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    transition: none;
+  }
+
+  .intro:hover {
+    transform: none;
+  }
 }
