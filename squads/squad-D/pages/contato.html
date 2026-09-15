@@ -1,55 +1,84 @@
-<!-- Contato - Squad D -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato - Squad D</title>
   <link rel="stylesheet" href="../styles/contato.css">
 </head>
+
 <body>
-<header>
-  <h1>Nosso time</h1>
-  <p>Conheça a equipe, nossos valores e fale conosco.<p>
+  <header class="site-header">
+    <a class="brand" href="home.html">Squad D</a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="home.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" aria-current="page">Contato</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="habilidades.html">Habilidades</a></li>
+        <li><a href="depoimentos.html">Depoimentos</a></li>
+        <li><a href="case-de-sucesso.html">Case de sucesso</a></li>
+      </ul>
+    </nav>
   </header>
-      <section id="equipe"
-      <h2> Equipe </h2>
+
+  <main>
+    <header>
+      <h1>Nosso time</h1>
+      <p>Conheça a equipe, nossos valores e fale conosco.</p>
+    </header>
+
+    <section id="equipe" aria-labelledby="equipe-title">
+      <h2 id="equipe-title">Equipe</h2>
       <div class="grid">
-        <div class="card"
-        <h3>Membros: Débora, Geysiane, Maria Clara, Luiza. </h3>
-        <p> Densenvolvedoras</p>
-        </div>
-      <section id="valores">
-        <h2> Valores e Responsabilidades </h2>
-        <ul>
-          <li> compromisso com a qualidade </li>
-          <li> resposabilidade e ética</li>
-          <li>respeito aos prazos</li>
-        </ul>
-      </section>
-
-    <section id="contato">
-    <h2> Entre em contato </h2
-    <p> preencha o formulário abaixo para falar conosco.</p>
-  <form action="#" method="post">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
-
-    <label for="email">E-mail:</label>
-    <input type "email" id="email" name="email" required>
-
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-    <button type="submit">enviar</button>
-  </form>
-  </section>
-
-  <section id="mapa">
-    <h3> Localização - FICR</h3>
-    <iframe
-    scr="https://www.google.com/maps?q=FICR+Recife&output=embed">
-    </iframe>
+        <article class="card">
+          <h3>Desenvolvedoras</h3>
+          <p>Débora, Geysiane, Maria Clara e Luiza.</p>
+        </article>
+      </div>
     </section>
+
+    <section id="valores" aria-labelledby="valores-title">
+      <h2 id="valores-title">Valores e responsabilidades</h2>
+      <ul>
+        <li>Compromisso com a qualidade</li>
+        <li>Responsabilidade e ética</li>
+        <li>Respeito aos prazos</li>
+      </ul>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-title">
+      <h2 id="contato-title">Entre em contato</h2>
+      <p>Preencha o formulário abaixo para falar conosco.</p>
+      <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="mapa" aria-labelledby="mapa-title">
+      <h2 id="mapa-title">Localização - FICR</h2>
+      <iframe
+        title="Localização da FICR no mapa"
+        src="https://www.google.com/maps?q=FICR+Recife&output=embed">
+      </iframe>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Squad D. Todos os direitos reservados.</p>
+  </footer>
 
 
 
