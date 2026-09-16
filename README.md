@@ -23,3 +23,9 @@ O código da aplicação está em `squads/squad-D/`:
 
 Detalhes da estrutura e do fluxo de desenvolvimento estão em:
 `docs/ARCHITECTURE.md` e `docs/INSTRUCTIONS.md`.
+
+## Chatbot Gemini
+
+Para habilitar as respostas do chatbot, copie `.env.example` para `.env`,
+preencha `GEMINI_API_KEY` com uma chave válida do Google AI Studio e reinicie
+o servidor com `npm start`. O modelo padrão é `gemini-3.6-flash`.

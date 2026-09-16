@@ -1,6 +1,5 @@
 (() => {
   const STORAGE_KEY = 'squad-d-chat-state';
-  const LEGACY_HISTORY_KEY = 'squad-d-chat-history';
   const GREETING = 'Como posso te ajudar?';
   const DEFAULT_POSITION = { right: 24, bottom: 24 };
 
@@ -10,8 +9,6 @@
 
     const state = {
       ...loadState(),
-      // A posição é temporária: cada carregamento começa no canto inferior.
-      position: { ...DEFAULT_POSITION },
       drag: null,
       suppressLauncherClick: false,
       requestId: 0,
@@ -34,7 +31,12 @@
             <button class="chatbot-reset" type="button" aria-label="Reiniciar chat" title="Reiniciar chat">
               <span aria-hidden="true">&#8635;</span>
             </button>
-            <button class="chatbot-close" type="button" aria-label="Fechar chat">&times;</button>
+            <button class="chatbot-expand" type="button" aria-label="Maximizar chat" title="Maximizar chat">
+              <span aria-hidden="true">&#8599;</span>
+            </button>
+            <button class="chatbot-close" type="button" aria-label="Minimizar chat" title="Minimizar chat">
+              <span aria-hidden="true">&#8722;</span>
+            </button>
           </div>
         </header>
         <div class="chatbot-messages" aria-live="polite" aria-label="Histórico do chat"></div>
@@ -52,6 +54,7 @@
     const panel = root.querySelector('.chatbot-panel');
     const closeButton = root.querySelector('.chatbot-close');
     const resetButton = root.querySelector('.chatbot-reset');
+    const expandButton = root.querySelector('.chatbot-expand');
     const dragHandle = root.querySelector('[data-chatbot-drag-handle]');
     const form = root.querySelector('.chatbot-form');
     const input = root.querySelector('#chatbot-input');
@@ -111,6 +114,16 @@
       clampPosition();
     }
 
+    function setExpanded(expanded) {
+      state.expanded = expanded;
+      panel.classList.toggle('is-expanded', expanded);
+      expandButton.setAttribute('aria-label', expanded ? 'Restaurar tamanho do chat' : 'Maximizar chat');
+      expandButton.title = expanded ? 'Restaurar tamanho do chat' : 'Maximizar chat';
+      expandButton.querySelector('span').textContent = expanded ? '\u2198' : '\u2197';
+      saveState(state);
+      clampPosition();
+    }
+
     function addMessage(text, type) {
       const message = document.createElement('p');
       message.className = `chatbot-message chatbot-message--${type}`;
@@ -163,21 +176,26 @@
       return data.reply;
     }
 
-    function startDrag(event) {
-      if (event.target.closest('button')) return;
+    function startDrag(handle, event) {
+      if (handle !== launcher && event.target.closest('button')) return;
       state.drag = {
         pointerId: event.pointerId,
+        handle,
         startX: event.clientX,
         startY: event.clientY,
         right: state.position.right,
         bottom: state.position.bottom,
+        moved: false,
       };
-      dragHandle.setPointerCapture(event.pointerId);
+      handle.setPointerCapture(event.pointerId);
       root.classList.add('is-dragging');
     }
 
     function moveDrag(event) {
       if (!state.drag || event.pointerId !== state.drag.pointerId) return;
+      if (Math.abs(event.clientX - state.drag.startX) > 4 || Math.abs(event.clientY - state.drag.startY) > 4) {
+        state.drag.moved = true;
+      }
       state.position.right = state.drag.right - (event.clientX - state.drag.startX);
       state.position.bottom = state.drag.bottom - (event.clientY - state.drag.startY);
       clampPosition();
@@ -185,21 +203,34 @@
 
     function stopDrag(event) {
       if (!state.drag || event.pointerId !== state.drag.pointerId) return;
+      const { handle, moved } = state.drag;
       state.drag = null;
       root.classList.remove('is-dragging');
+      if (handle === launcher && moved) {
+        state.suppressLauncherClick = true;
+      }
       saveState(state);
-      if (dragHandle.hasPointerCapture(event.pointerId)) {
-        dragHandle.releasePointerCapture(event.pointerId);
+      if (handle.hasPointerCapture(event.pointerId)) {
+        handle.releasePointerCapture(event.pointerId);
       }
     }
 
-    launcher.addEventListener('click', () => setOpen(true));
+    launcher.addEventListener('click', () => {
+      if (state.suppressLauncherClick) {
+        state.suppressLauncherClick = false;
+        return;
+      }
+      setOpen(true);
+    });
     closeButton.addEventListener('click', () => setOpen(false));
     resetButton.addEventListener('click', resetChat);
-    dragHandle.addEventListener('pointerdown', startDrag);
-    dragHandle.addEventListener('pointermove', moveDrag);
-    dragHandle.addEventListener('pointerup', stopDrag);
-    dragHandle.addEventListener('pointercancel', stopDrag);
+    expandButton.addEventListener('click', () => setExpanded(!state.expanded));
+    [launcher, dragHandle].forEach((handle) => {
+      handle.addEventListener('pointerdown', (event) => startDrag(handle, event));
+      handle.addEventListener('pointermove', moveDrag);
+      handle.addEventListener('pointerup', stopDrag);
+      handle.addEventListener('pointercancel', stopDrag);
+    });
     window.addEventListener('resize', clampPosition);
 
     form.addEventListener('submit', async (event) => {
@@ -225,8 +256,12 @@
       } catch (error) {
         if (requestId !== state.requestId) return;
         console.error(error);
-        addMessage('Desculpe, não consegui me conectar à IA.', 'assistant');
-        status.textContent = error.message || 'Erro de conexão.';
+        const isServerOffline = error instanceof TypeError && error.message === 'Failed to fetch';
+        const errorMessage = isServerOffline
+          ? 'Não foi possível conectar ao servidor do chat. Inicie o projeto com npm start.'
+          : error.message || 'Não foi possível consultar o Gemini.';
+        addMessage(errorMessage, 'assistant');
+        status.textContent = errorMessage;
       } finally {
         input.disabled = false;
         submitButton.disabled = false;
@@ -235,6 +270,7 @@
     });
 
     loadMessages();
+    setExpanded(state.expanded);
     setOpen(state.open);
     applyPosition();
   }
@@ -242,15 +278,17 @@
   function loadState() {
     const defaultState = {
       open: false,
+      expanded: false,
       position: { right: 24, bottom: 24 },
       history: [],
     };
 
     try {
-      const savedState = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      const savedState = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null');
       if (savedState && typeof savedState === 'object') {
         return {
           open: savedState.open === true,
+          expanded: savedState.expanded === true,
           position: {
             right: Number.isFinite(savedState.position?.right) ? savedState.position.right : defaultState.position.right,
             bottom: Number.isFinite(savedState.position?.bottom) ? savedState.position.bottom : defaultState.position.bottom,
@@ -261,7 +299,7 @@
 
       return {
         ...defaultState,
-        history: loadHistory(),
+        history: [],
       };
     } catch (error) {
       return defaultState;
@@ -270,7 +308,7 @@
 
   function loadHistory(history) {
     try {
-      const savedHistory = history || JSON.parse(localStorage.getItem(LEGACY_HISTORY_KEY) || '[]');
+      const savedHistory = history || [];
       if (!Array.isArray(savedHistory)) return [];
       return savedHistory
         .filter((item) => item && (item.role === 'user' || item.role === 'model'))
@@ -282,8 +320,9 @@
 
   function saveState(state) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
         open: state.open,
+        expanded: state.expanded,
         position: state.position,
         history: state.history,
       }));

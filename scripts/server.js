@@ -53,7 +53,7 @@ function readRequestBody(request) {
 async function handleChat(request, response) {
   const geminiApiKey = process.env.GEMINI_API_KEY?.trim();
   if (!geminiApiKey) {
-    sendJson(response, 503, { error: 'GEMINI_API_KEY nao configurada no ambiente.' });
+    sendJson(response, 503, { error: 'Configure GEMINI_API_KEY no arquivo .env e reinicie o servidor.' });
     return;
   }
 
@@ -83,29 +83,38 @@ async function handleChat(request, response) {
       contents.push({ role: 'user', parts: [{ text: message }] });
     }
 
-    const geminiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': geminiApiKey,
-        },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents,
-          generationConfig: {
-            temperature: 0.4,
-            maxOutputTokens: 500,
-          },
-        }),
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': geminiApiKey,
       },
-    );
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents,
+        generationConfig: {
+          temperature: 0.4,
+          maxOutputTokens: 500,
+        },
+      }),
+    };
+    let geminiResponse;
+    let data;
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      geminiResponse = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
+        requestOptions,
+      );
+      data = await geminiResponse.json();
+      const isTemporaryError = geminiResponse.status === 429 || geminiResponse.status >= 500;
+      if (!isTemporaryError || attempt === 2) break;
+      await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
+    }
 
-    const data = await geminiResponse.json();
     if (!geminiResponse.ok) {
       console.error('Gemini API error:', data.error?.message || geminiResponse.status);
-      sendJson(response, 502, { error: 'Nao foi possivel consultar o Gemini.' });
+      const errorMessage = data.error?.message || 'Nao foi possivel consultar o Gemini.';
+      sendJson(response, 502, { error: `Gemini: ${errorMessage}` });
       return;
     }
 
@@ -117,7 +126,8 @@ async function handleChat(request, response) {
 
     sendJson(response, 200, { reply });
   } catch (error) {
-    sendJson(response, 400, { error: 'Nao foi possivel processar a mensagem.' });
+    console.error('Chatbot error:', error.message);
+    sendJson(response, 502, { error: 'Nao foi possivel consultar o Gemini.' });
   }
 }
 
