@@ -69,6 +69,15 @@
   justify-self: start;
 }
 
+.success-message {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  color: #185c37;
+  border-left: 0.3rem solid #2f9e68;
+  background: #e8f5ed;
+  font-weight: 700;
+}
+
 #mapa iframe {
   width: 100%;
   min-height: 20rem;
