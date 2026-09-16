@@ -1,77 +1,261 @@
-<!-- Depoimentos - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>Depoimentos - Squad H</title>
-</head>
-<body>
-  HTML
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depoimentos - DevPortfolio</title>
+    <title>Depoimentos de Clientes | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/depoimentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<body class="depoimentos-page">
 
-<body>
+    <!-- Iluminação de fundo estética (Glow Mesh) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-    <nav class="navbar">
-        <div class="logo">💻 DevJuniors</div>
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
 
-        <ul class="menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="case-de-sucesso.html">SuccessStory</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="habilidades.html">Habilidades</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="depoimentos.html" class="ativo">Depoimentos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link active">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
 
-    <header class="header">
-        <h1>O que nossos clientes dizem</h1>
-        <p class="descricao">Feedback real de pessoas que confiaram no nosso trabalho.</p>
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="depoimentos-container">
+    <!-- Seção Principal Hero -->
+    <main class="depoimentos-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Avaliações Verificadas &bull; Squad H</span>
+            </div>
 
-        <div class="card-depoimento">
-            <h3>Mariana Souza</h3>
-            <p class="profissao">Empresária</p>
-            <p class="texto">
-                “O site ficou incrível! Rápido, moderno e muito bem organizado. A equipe é super atenciosa.”
+            <h1 class="hero-title">
+                O que Nossos <span class="gradient-text">Clientes e Parceiros</span> Dizem
+            </h1>
+            <p class="hero-subtitle">
+                Histórias reais de pessoas e empresas que confiaram no nosso trabalho para transformar suas ideias em produtos digitais de alto impacto.
             </p>
-            <div class="estrelas">★★★★★</div>
-        </div>
 
-        <div class="card-depoimento">
-            <h3>Lucas Andrade</h3>
-            <p class="profissao">Fotógrafo</p>
-            <p class="texto">
-                “Transformaram minhas ideias em algo muito melhor do que eu esperava!”
-            </p>
-            <div class="estrelas">★★★★★</div>
+            <!-- Painel de Resumo de Satisfação -->
+            <div class="scorecard-container">
+                <div class="score-main">
+                    <div class="big-rating gradient-text">4.9</div>
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-label">Nota Média de Satisfação</span>
+                </div>
+                <div class="score-divider"></div>
+                <div class="score-stats">
+                    <div class="score-stat-item">
+                        <strong>100%</strong>
+                        <span>Projetos Entregues no Prazo</span>
+                    </div>
+                    <div class="score-stat-item">
+                        <strong>+15</strong>
+                        <span>Clientes Atendidos</span>
+                    </div>
+                    <div class="score-stat-item">
+                        <strong>98%</strong>
+                        <span>Taxa de Recomendação</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <div class="card-depoimento">
-            <h3>Ana Oliveira</h3>
-            <p class="profissao">Influencer</p>
-            <p class="texto">
-                “Super recomendo. Trabalho impecável e entrega dentro do prazo.”
-            </p>
-            <div class="estrelas">★★★★★</div>
+    <!-- Grid de Cards de Depoimentos -->
+    <section class="depoimentos-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">HISTÓRIAS DE SUCESSO</span>
+                <h2 class="section-title">Confiança que Gera <span class="gradient-text">Resultados</span></h2>
+                <p class="section-desc">Confira os feedbacks de quem já evoluiu sua presença online com o Squad H.</p>
+            </div>
+
+            <div class="depoimentos-grid">
+
+                <!-- Depoimento 1: Mariana Souza -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “O site ficou incrível! Rápido, moderno e muito bem organizado. Desde a publicação da nova plataforma, nossos agendamentos aumentaram mais de 180%. A equipe do Squad H é extremamente atenciosa e competente.”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-purple">MS</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Mariana Souza</h3>
+                            <span class="author-role">Empresária &bull; Studio Elegance</span>
+                            <span class="verified-badge">✓ Cliente Verificada</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Site Institucional & Agendamento</div>
+                </article>
+
+                <!-- Depoimento 2: Lucas Andrade -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “Transformaram minhas ideias em algo infinitamente melhor do que eu imaginava! O carregamento das fotos em alta resolução ficou instantâneo e o design escuro realçou minhas fotografias de forma cinematográfica.”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-blue">LA</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Lucas Andrade</h3>
+                            <span class="author-role">Fotógrafo Profissional</span>
+                            <span class="verified-badge">✓ Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Portfólio Fotográfico Responsivo</div>
+                </article>
+
+                <!-- Depoimento 3: Ana Oliveira -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “Super recomendo o trabalho dos meninos! Eles captaram exatamente o estilo da minha marca pessoal. A landing page do meu curso bateu recorde de conversões logo no primeiro dia de campanha.”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-pink">AO</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Ana Oliveira</h3>
+                            <span class="author-role">Influenciadora Digital &bull; +200k</span>
+                            <span class="verified-badge">✓ Cliente Verificada</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Landing Page de Conversão</div>
+                </article>
+
+                <!-- Depoimento 4: Carlos Eduardo Mendes -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “O sistema de e-commerce e pedidos para nossa distribuidora de água potável organizou toda a nossa operação comercial. A navegação no smartphone é excelente e facilitou muito a vida dos nossos clientes.”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-cyan">CM</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Carlos Eduardo Mendes</h3>
+                            <span class="author-role">Diretor &bull; Distribuidora Cristalina</span>
+                            <span class="verified-badge">✓ Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Plataforma E-Commerce Completa</div>
+                </article>
+
+                <!-- Depoimento 5: Beatriz Valença -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “O compromisso com prazos e a transparência em cada sprint me impressionaram. Código limpo, componentização impecável e um layout de encher os olhos. Parceiros de confiança para projetos futuros!”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-green">BV</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Beatriz Valença</h3>
+                            <span class="author-role">Gerente de TI &bull; InovaTech</span>
+                            <span class="verified-badge">✓ Cliente Verificada</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Dashboard Administrativo Web</div>
+                </article>
+
+                <!-- Depoimento 6: Rodrigo Albuquerque -->
+                <article class="card-depoimento">
+                    <div class="card-quote-icon">“</div>
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-texto">
+                        “O redesign que o Squad H fez no nosso site corporativo aumentou nosso volume de leads em 240%. A velocidade de carregamento caiu para menos de 1 segundo. Trabalho digno das melhores agências globais!”
+                    </p>
+                    <div class="card-author">
+                        <div class="author-avatar avatar-gold">RA</div>
+                        <div class="author-info">
+                            <h3 class="author-name">Rodrigo Albuquerque</h3>
+                            <span class="author-role">Head de Marketing &bull; Conner Exteriors</span>
+                            <span class="verified-badge">✓ Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="project-tag-pill">Projeto: Redesign Flagship Case</div>
+                </article>
+
+            </div>
         </div>
-
     </section>
 
-</body>
-</html>
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Quer ser nossa próxima história de sucesso?</h2>
+                    <p>Entre em contato com nossa equipe e descubra como podemos construir a melhor solução para o seu projeto.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contato.html" class="btn btn-primary">Iniciar Meu Projeto</a>
+                    <a href="case-de-sucesso.html" class="btn btn-secondary">Ver Case de Sucesso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

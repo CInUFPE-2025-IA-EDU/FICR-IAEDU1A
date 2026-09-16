@@ -1,100 +1,299 @@
-<!-- Serviços - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Serviços - Squad H</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/servicos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Digitais | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/servicos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
- 
+<body class="servicos-page">
 
- 
-    <header class="header">
-    <p class="subtitulo">NOSSOS SERVIÇOS</p>
-    <h1>Transformamos Seu Projeto em <span class="destaque">Experiências Digitais Incríveis</span></h1>
-    <p class="descricao">Nossa equipe entrega soluções modernas, eficientes e de alto padrão para que sua marca se destaque no ambiente digital.</p>
-</header>
+    <!-- Iluminação de fundo estética (Glow Mesh) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-<section class="servicos-grid">
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-code icon-servico"></i>
-        <h3>Desenvolvimento Web</h3>
-        <p>Construímos sites modernos, rápidos e profissionais, com foco em desempenho e credibilidade para o seu negócio.</p>
-    </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link active">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-mobile-screen icon-servico"></i>
-        <h3>Interfaces Responsivas</h3>
-        <p>Garantimos que seu site funcione perfeitamente em qualquer dispositivo, proporcionando uma experiência fluida e intuitiva.</p>
-    </div>
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
+    </header>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-brain icon-servico"></i>
-        <h3>Consultoria</h3>
-        <p>Oferecemos orientação técnica e estratégica para transformar suas ideias em soluções digitais reais e eficazes.</p>
-    </div>
+    <!-- Seção Principal Hero -->
+    <main class="servicos-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Soluções Sob Medida &bull; Squad H</span>
+            </div>
 
-    <!-- Melhoria Visual -->
-    <div class="servico-card">
-        <i class="fa-solid fa-wand-magic-sparkles icon-servico"></i>
-        <h3>Melhoria Visual</h3>
-        <p>Redesign profissional para elevar o visual do seu site, aprimorar identidade e aumentar a percepção de valor da sua marca.</p>
-    </div>
+            <h1 class="hero-title">
+                Transformamos Ideias em <br>
+                <span class="gradient-text">Soluções Digitais</span> de Alto Padrão
+            </h1>
+            <p class="hero-subtitle">
+                Do design da interface à entrega de sistemas completos, o Squad H desenvolve experiências web modernas, rápidas, acessíveis e focadas em gerar resultados reais.
+            </p>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-rocket icon-servico"></i>
-        <h3>Landing Pages Otimizadas</h3>
-        <p>Desenvolvemos páginas focadas em conversão, perfeitas para vendas, captação de leads e divulgação de serviços.</p>
-    </div>
+            <!-- Métricas Resumidas dos Serviços -->
+            <div class="servicos-stats-row">
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">100%</span>
+                    <span class="pill-label">Projetos Personalizados</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">Mobile</span>
+                    <span class="pill-label">Design Responsivo Nativo</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">Ágil</span>
+                    <span class="pill-label">Prazos & Entregas Claras</span>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-gauge-high icon-servico"></i>
-        <h3>Otimização de Performance</h3>
-        <p>Tornamos seu site mais rápido, leve e eficiente, melhorando SEO e garantindo uma experiência impecável ao usuário.</p>
-    </div>
+    <!-- Grid Principal de Serviços -->
+    <section class="servicos-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">CATÁLOGO DE SERVIÇOS</span>
+                <h2 class="section-title">Como Podemos <span class="gradient-text">Ajudar Sua Marca</span></h2>
+                <p class="section-desc">Soluções modulares para empresas, startups e profissionais autônomos.</p>
+            </div>
 
-  
-    <div class="servico-card">
-        <i class="fa-solid fa-palette icon-servico"></i>
-        <h3>Identidade Visual</h3>
-        <p>Criamos logos, paletas, tipografias e padrões visuais que fortalecem sua presença e identidade no mercado.</p>
-    </div>
+            <div class="servicos-grid">
 
-   
-    <div class="servico-card">
-        <i class="fa-solid fa-headset icon-servico"></i>
-        <h3>Manutenção e Suporte</h3>
-        <p>Cuidamos do seu site com atualizações, correções e melhorias contínuas para garantir segurança e estabilidade.</p>
-    </div>
+                <!-- Serviço 1: Desenvolvimento Web -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box code-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="servico-badge">Principal</span>
+                    </div>
+                    <h3 class="servico-title">Desenvolvimento Web Moderno</h3>
+                    <p class="servico-desc">
+                        Construção de sites institucionais e portais completos utilizando HTML5 semântico, CSS3 componentizado e JavaScript moderno com total velocidade.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Código limpo e de fácil manutenção</li>
+                        <li><span>✓</span> Acessibilidade e conformidade W3C</li>
+                        <li><span>✓</span> Otimizado para motores de busca (SEO)</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
-    
-    <div class="servico-card">
-        <i class="fa-solid fa-gears icon-servico"></i>
-        <h3>Desenvolvimento de Sistemas</h3>
-        <p>Criamos sistemas personalizados, como dashboards, áreas administrativas e automações feitas sob medida.</p>
-    </div>
+                <!-- Serviço 2: Landing Pages -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box rocket-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <span class="servico-badge">Conversão</span>
+                    </div>
+                    <h3 class="servico-title">Landing Pages de Alta Conversão</h3>
+                    <p class="servico-desc">
+                        Páginas estratégicas criadas para captação de clientes, lançamento de infoprodutos e campanhas de anúncios, com foco em retenção e chamadas diretas.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Carregamento ultra rápido</li>
+                        <li><span>✓</span> Call to Actions (CTAs) magnéticas</li>
+                        <li><span>✓</span> Integração com WhatsApp e formulários</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
-   ]
-    <div class="servico-card">
-        <i class="fa-solid fa-pen-ruler icon-servico"></i>
-        <h3>Design UI/UX</h3>
-        <p>Projetamos interfaces agradáveis, intuitivas e profissionais, sempre focadas na melhor experiência do usuário.</p>
-    </div>
+                <!-- Serviço 3: UI/UX & Redesign -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box design-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="servico-badge">Design</span>
+                    </div>
+                    <h3 class="servico-title">UI/UX Design & Redesign</h3>
+                    <p class="servico-desc">
+                        Modernização de interfaces antiquadas, criando experiências fluidas, intuitivas e esteticamente impecáveis alinhadas às tendências globais.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Hierarquia visual e tipográfica clara</li>
+                        <li><span>✓</span> Glassmorphism e micro-interações</li>
+                        <li><span>✓</span> Experiência centrada no usuário</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
-</section>
+                <!-- Serviço 4: E-Commerce & Catálogos -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box shop-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <span class="servico-badge">Vendas</span>
+                    </div>
+                    <h3 class="servico-title">Plataformas E-Commerce & Catálogos</h3>
+                    <p class="servico-desc">
+                        Lojas virtuais e catálogos interativos de produtos, com exibição inteligente de estoques, vitrines responsivas e fluxo facilitado de compra.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Catálogos visuais com filtros dinâmicos</li>
+                        <li><span>✓</span> Carrinho intuitivo e checkout ágil</li>
+                        <li><span>✓</span> Painel para gerenciar produtos</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
+                <!-- Serviço 5: Sistemas Web & Dashboards -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box system-icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <span class="servico-badge">Sistemas</span>
+                    </div>
+                    <h3 class="servico-title">Sistemas Web & Painéis Administrativos</h3>
+                    <p class="servico-desc">
+                        Aplicações corporativas sob medida, dashboards com indicadores visuais em tempo real, telas de autenticação e fluxos administrativos inteligentes.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Dashboards com métricas e gráficos</li>
+                        <li><span>✓</span> Gestão de usuários e permissões</li>
+                        <li><span>✓</span> Integração e persistência em banco</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
+                <!-- Serviço 6: Performance & Otimização -->
+                <article class="servico-card">
+                    <div class="servico-card-top">
+                        <div class="servico-icon-box speed-icon">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <span class="servico-badge">Velocidade</span>
+                    </div>
+                    <h3 class="servico-title">Otimização de Performance & SEO</h3>
+                    <p class="servico-desc">
+                        Auditoria e aceleração de sites lentos, otimização de imagens, compressão de código e pontuação máxima no Google PageSpeed Insights.
+                    </p>
+                    <ul class="servico-features">
+                        <li><span>✓</span> Redução drástica no tempo de carregamento</li>
+                        <li><span>✓</span> Estruturação para melhor ranking no Google</li>
+                        <li><span>✓</span> Redução de taxa de rejeição de clientes</li>
+                    </ul>
+                    <a href="contato.html" class="servico-link">Solicitar Orçamento &rarr;</a>
+                </article>
 
-  <!-- Conteúdo da página Serviços do Squad H -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Fluxo de Trabalho (Como Trabalhamos) -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">NOSSO PROCESSO</span>
+                <h2 class="section-title">Como Tiramos seu Projeto do <span class="gradient-text">Papel</span></h2>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <span class="process-step">01</span>
+                    <h4>Briefing & Planejamento</h4>
+                    <p>Entendemos profundamente seus objetivos, público-alvo e requisitos técnicos essenciais.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-step">02</span>
+                    <h4>Design & Arquitetura</h4>
+                    <p>Criamos a estrutura visual, fluxos de navegação e alinhamos a identidade estética.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-step">03</span>
+                    <h4>Desenvolvimento Ágil</h4>
+                    <p>Codificação limpa, testes em múltiplos dispositivos e validações contínuas.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-step">04</span>
+                    <h4>Deploy & Lançamento</h4>
+                    <p>Publicação segura, validação de velocidade e suporte dedicado após o lançamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Tem uma ideia ou demanda específica em mente?</h2>
+                    <p>Converse diretamente com o Squad H e receba uma estimativa transparente para sua aplicação.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contato.html" class="btn btn-primary">Falar com o Squad H</a>
+                    <a href="case-de-sucesso.html" class="btn btn-secondary">Ver Case de Sucesso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

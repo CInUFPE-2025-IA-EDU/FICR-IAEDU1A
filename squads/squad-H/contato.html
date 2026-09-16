@@ -4,117 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - DevPortfolio</title>
+    <title>Contato | DevJuniors - Squad H</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/contato.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">
-            <span class="icon">💻</span> DevJuniors
-        </div>
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-        <ul class="menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="case-de-sucesso.html">SuccessStory</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="habilidades.html">Habilidades</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="depoimentos.html">Depoimentos</a></li>
-            <li><a href="contato.html" class="active">Contato</a></li>
-        </ul>
-    </nav>
-
-    <!-- HEADER -->
-    <header class="header">
-        <p class="subtitulo">ENTRE EM CONTATO</p>
-        <h1>Vamos Trabalhar <span class="destaque">Juntos</span></h1>
-        <p class="descricao">
-            Tem um projeto em mente? Entre em contato e vamos transformar suas ideias em realidade!
-        </p>
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="Logo DevJuniors" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link active">Contato</a></li>
+            </ul>
+            <a href="#formulario" class="btn btn-outline-nav">Fale Conosco</a>
+        </nav>
     </header>
 
-    <!-- CONTEÚDO -->
-    <section class="contato-container">
+    <main>
+        <section class="contact-hero">
+            <div class="hero-copy">
+                <span class="section-tag">ENTRE EM CONTATO</span>
+                <h1>Vamos transformar sua ideia em <span class="gradient-text">experiência.</span></h1>
+                <p>Conte para o Squad H o que você está planejando. Nossa equipe está pronta para construir uma solução digital clara, rápida e feita para crescer.</p>
+                <div class="availability"><span class="pulse-dot"></span> Disponíveis para novos desafios</div>
+            </div>
+            <div class="hero-note">
+                <span class="note-mark">{ }</span>
+                <p>"Boas soluções começam com uma boa conversa."</p>
+                <span class="note-caption">Squad H · DevJuniors</span>
+            </div>
+        </section>
 
-        <!-- FORMULÁRIO -->
-        <form class="formulario">
+        <section class="contact-layout" aria-label="Formulário e contatos da equipe">
+            <form class="formulario" id="formulario">
+                <div class="form-heading">
+                    <span class="eyebrow">01 / MENSAGEM</span>
+                    <h2>Fale com a gente</h2>
+                    <p>Preencha os campos abaixo e retornaremos em breve.</p>
+                </div>
 
-            <div class="linha">
+                <div class="linha">
                 <div class="campo">
-                    <label>Nome</label>
-                    <input type="text" placeholder="Seu nome">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" placeholder="Seu nome" required>
                 </div>
 
                 <div class="campo">
-                    <label>Email</label>
-                    <input type="email" placeholder="seu@email.com">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="seu@email.com" required>
                 </div>
-            </div>
+                </div>
 
-            <div class="campo">
-                <label>Assunto</label>
-                <input type="text" placeholder="Assunto da mensagem">
-            </div>
+                <div class="campo">
+                    <label for="assunto">Assunto</label>
+                    <input id="assunto" type="text" placeholder="Assunto da mensagem" required>
+                </div>
 
-            <div class="campo">
-                <label>Mensagem</label>
-                <textarea placeholder="Descreva seu projeto ou ideia..."></textarea>
-            </div>
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" placeholder="Descreva seu projeto ou ideia..." required></textarea>
+                </div>
 
-            <button type="submit" class="btn-enviar">✉️ Enviar Mensagem</button>
-        </form>
+                <button type="submit" class="btn btn-primary btn-enviar">Enviar mensagem <span aria-hidden="true">→</span></button>
+            </form>
 
-        <!-- LADO DIREITO -->
-        <div class="contatos-lista">
-
-            <!-- EQUIPE -->
-            <div class="card-info">
-                <section class="contatos-equipe">
-                    <div class="integrantes-grid">
+            <aside class="contatos-lista">
+                <div class="support-panel">
+                    <span class="eyebrow">02 / CONEXÕES</span>
+                    <h2>Fale diretamente com o Squad H</h2>
+                    <p>Escolha um integrante ou acompanhe nosso trabalho nas redes.</p>
+                    <div class="location"><span class="icon-card">⌖</span><span><strong>Base do squad</strong><br>Recife · PE</span></div>
+                </div>
+                <div class="integrantes-grid">
 
                         <div class="card-integrante">
-                            <h2>Carla Paraguaio</h2>
+                            <h3>Carla Paraguaio</h3>
                             <p>📞 (81) 98597-5171</p>
                             <p>📷 @carlinhadoparaguaio</p>
                         </div>
 
                         <div class="card-integrante">
-                            <h2>Cleidiane Silva</h2>
+                            <h3>Cleidiane Silva</h3>
                             <p>📞 (81) 98678-5840</p>
                             <p>📷 @cleidianeccesilva</p>
                         </div>
 
                         <div class="card-integrante">
-                            <h2>João Gabriel França</h2>
+                            <h3>João Gabriel França</h3>
                             <p>📞 (81) 99100-9623</p>
                             <p>📷 @jg_biel19</p>
                         </div>
 
                         <div class="card-integrante">
-                            <h2>Uilson Nascimento</h2>
+                            <h3>Uilson Nascimento</h3>
                             <p>📞 (81) 99169-6781</p>
                             <p>📷 @_uilson</p>
                         </div>
 
-                    </div>
-                </section>
-            </div>
-
-            <!-- LOCALIZAÇÃO -->
-            <div class="card-info">
-                <div class="icon-card">📍</div>
-                <div>
-                    <h3>Localização</h3>
-                    <p>Recife - PE</p>
                 </div>
-            </div>
-
-        </div>
-    </section>
+            </aside>
+        </section>
+    </main>
 
 </body>
 </html>
