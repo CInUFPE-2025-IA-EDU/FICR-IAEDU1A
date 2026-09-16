@@ -110,17 +110,3 @@
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Prepara o card principal e o fundo para a transição */
-.intro,
-.intro::after,
-.intro::before {
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  will-change: transform;
-}
-
-/* Movimenta o card principal e os elementos de fundo juntos no hover */
-.intro:hover,
-.intro:hover::after,
-.intro:hover::before {
-  transform: scale(1.02) translateY(-6px);
-}
