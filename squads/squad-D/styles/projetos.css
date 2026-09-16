@@ -1,6 +1,87 @@
-/* Estilos base - personalize para seu squad */
+#conteudo {
+  max-width: 76rem;
+}
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+#conteudo > h1 {
+  margin-bottom: 0.75rem;
+}
+
+.page-lead {
+  max-width: 42rem;
+  margin-bottom: 3rem;
+  color: var(--color-muted);
+  font-size: 1.2rem;
+}
+
+.squad-summary,
+.projeto {
+  margin-bottom: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: 0 0.75rem 1.5rem rgba(23, 37, 47, 0.08);
+  transition: all 0.3s ease;
+}
+
+.squad-summary:hover,
+.projeto:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(23, 37, 47, 0.15);
+}
+
+.squad-summary {
+  border-left: 0.4rem solid var(--color-accent);
+}
+
+.squad-summary h2,
+.projeto h2 {
+  margin-bottom: 0.75rem;
+  color: var(--color-ink);
+}
+
+.squad-summary h3,
+.projeto h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.squad-summary ul,
+.projeto ul {
+  margin-bottom: 0;
+}
+
+.projeto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.projeto hr,
+.squad-summary hr {
+  display: none;
+}
+
+.projeto p strong {
+  color: var(--color-accent-dark);
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 760px) {
+  #conteudo > .projeto + .projeto {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .squad-summary,
+  .projeto {
+    transition: none;
+  }
+
+  .squad-summary:hover,
+  .projeto:hover {
+    transform: none;
+  }
 }
