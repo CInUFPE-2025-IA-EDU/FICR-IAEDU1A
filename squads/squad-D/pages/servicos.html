@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Squad D</title>
+  <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/servicos.css">
 </head>
 
@@ -29,59 +30,116 @@
     <h1>Equipe de desenvolvedoras</h1>
     <p>Somos um grupo de quatro desenvolvedoras oferecendo soluções completas em tecnologia.</p>
 
-    <img src="https://ixymyhazbhztpjnlxmbd.supabase.co/storage/v1/object/images/generated/mulheres-trabalhando-ti-equipe-52.webp"
+    <img class="services-image" src="https://ixymyhazbhztpjnlxmbd.supabase.co/storage/v1/object/images/generated/mulheres-trabalhando-ti-equipe-52.webp"
       alt="Equipe trabalhando em tecnologia">
 
-    <section aria-labelledby="servicos-title">
-      <h2 id="servicos-title">Nossos serviços</h2>
-      <ul>
-        <li>Desenvolvimento frontend</li>
-        <li>Desenvolvimento backend</li>
-        <li>Aplicações mobile</li>
-        <li>UX/UI design</li>
-      </ul>
-    </section>
+    <div class="services-grid">
+      <section class="service-card" aria-labelledby="servicos-title">
+        <h2 id="servicos-title">Nossos serviços</h2>
+        <ul>
+          <li>
+            <span class="item-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="item-copy">
+              <strong>Desenvolvimento frontend</strong>
+              <small>Interfaces modernas, responsivas e focadas na experiência do usuário.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">⚙</span>
+            <span class="item-copy">
+              <strong>Desenvolvimento backend</strong>
+              <small>Soluções seguras e organizadas para dar força ao produto por trás da tela.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">▣</span>
+            <span class="item-copy">
+              <strong>Aplicações mobile</strong>
+              <small>Experiências práticas e consistentes para acompanhar o usuário em qualquer lugar.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">✦</span>
+            <span class="item-copy">
+              <strong>UX/UI design</strong>
+              <small>Decisões visuais que tornam cada interação mais clara, intuitiva e agradável.</small>
+            </span>
+          </li>
+        </ul>
+      </section>
 
-    <section aria-labelledby="equipe-title">
-      <h2 id="equipe-title">Quem somos</h2>
-      <ul>
-        <li>Débora - Frontend</li>
-        <li>Maria Clara - Backend</li>
-        <li>Geysiane - Aplicações mobile</li>
-        <li>Ana Luiza - UX/UI design</li>
-      </ul>
-    </section>
+      <section class="service-card" aria-labelledby="equipe-title">
+        <h2 id="equipe-title">Quem somos</h2>
+        <ul>
+          <li>
+            <span class="avatar" aria-hidden="true">♙</span>
+            <span class="item-copy">
+              <strong>Débora</strong>
+              <small class="role-badge">Frontend</small>
+            </span>
+          </li>
+          <li>
+            <span class="avatar" aria-hidden="true">♙</span>
+            <span class="item-copy">
+              <strong>Maria Clara</strong>
+              <small class="role-badge">Backend</small>
+            </span>
+          </li>
+          <li>
+            <span class="avatar" aria-hidden="true">♙</span>
+            <span class="item-copy">
+              <strong>Geysiane</strong>
+              <small class="role-badge">Aplicações mobile</small>
+            </span>
+          </li>
+          <li>
+            <span class="avatar" aria-hidden="true">♙</span>
+            <span class="item-copy">
+              <strong>Luiza</strong>
+              <small class="role-badge">UX/UI design</small>
+            </span>
+          </li>
+        </ul>
+      </section>
 
-    <section aria-labelledby="valores-title">
-      <h2 id="valores-title">Nossos valores</h2>
-      <ul>
-        <li>Entrega no prazo</li>
-        <li>Competência</li>
-        <li>Qualidade no código</li>
-        <li>Comunicação clara</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="contato-title">
-      <h2 id="contato-title">Entre em contato conosco</h2>
-      <form action="#" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2025 Squad D. Todos os direitos reservados.</p>
-  </footer>
+      <section class="service-card" aria-labelledby="valores-title">
+        <h2 id="valores-title">Nossos valores</h2>
+        <ul>
+          <li>
+            <span class="item-icon" aria-hidden="true">◷</span>
+            <span class="item-copy">
+              <strong>Entrega no prazo</strong>
+              <small>Planejamos cada etapa para cumprir combinados com responsabilidade.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">◆</span>
+            <span class="item-copy">
+              <strong>Competência</strong>
+              <small>Aprendemos continuamente e aplicamos conhecimento com autonomia.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">⌘</span>
+            <span class="item-copy">
+              <strong>Qualidade no código</strong>
+              <small>Construímos soluções claras, cuidadosas e preparadas para evoluir.</small>
+            </span>
+          </li>
+          <li>
+            <span class="item-icon" aria-hidden="true">↗</span>
+            <span class="item-copy">
+              <strong>Comunicação clara</strong>
+              <small>Compartilhamos decisões e mantemos o trabalho em sintonia.</small>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+ </main>
+ <footer style="margin-top: 50px;">
+  <p>© 2025 Squad D. Todos os direitos reservados.</p>
+</footer>
 </body>
 
 </html>
