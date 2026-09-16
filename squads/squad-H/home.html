@@ -1,52 +1,243 @@
-<!-- Home - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home - Squad H</title>
-  <link rel="stylesheet" href="styles/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevJuniors | Squad H - Inovação & Desenvolvimento Web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
-<body> 
-  <div class="logo-container">
-  <img src="dev_logo.webp" alt="Logo" class="logo">
-   <p>Portfolio</p>
-</div>
-<header>
-<nav>
-    <ul class="links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="depoimentos.html">Depoimentos</a></li>
-      <li><a href="habilidades.html">Habilidades</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="servicos.html">Serviços</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
-    <div class="botao-centro">
-      <button class="botao">Ver projetos</button>
-    </div>
-  </nav> 
+<body>
 
-</header>
+    <!-- Fundo com iluminação de gradiente estético -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-  <main class="titulos">
-      <p>Olá, nós somos</p>
-      <h1>Equipe unida</h1>
-      <h2>Desenvolvedores full stack Developer</h2>
-      <p>Especializados em criar experiências digitais incríveis com React, Node.js e TypeScript. Transformamos ideias em soluções tecnológicas inovadoras.</p>
-  </main>
+    <!-- Barra de Navegação -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
 
-   <div class="opçoes-superior-direita">
-  <a href="#" class="icon github">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="Github">
-  </a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link active">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
 
-  <a href="linkedin.svg" class="icon linkedin">
-    <img src="linkedin.svg" alt="LinkedIn">
-  </a>
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
+    </header>
 
-</div>
+    <!-- Seção Principal / Hero -->
+    <main class="hero-container">
+        <div class="hero-content">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Squad H • Disponíveis para Novos Desafios</span>
+            </div>
 
-</div>
+            <h1 class="hero-title">
+                Transformando ideias em <br>
+                <span class="gradient-text">experiências digitais</span> de alto nível.
+            </h1>
+
+            <p class="hero-subtitle">
+                Somos a <strong>DevJuniors</strong>, uma equipe de desenvolvedores full stack apaixonados por construir interfaces modernas, rápidas e aplicações web inovadoras.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="projetos.html" class="btn btn-primary">
+                    <span>Ver Projetos</span>
+                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="sobre.html" class="btn btn-secondary">Conhecer a Equipe</a>
+            </div>
+
+            <!-- Métricas em Destaque -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Devs no Squad</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Dedicação & Código Limpo</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">+15</span>
+                    <span class="stat-label">Desafios Concluídos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Hero: Card Interativo de Código & Vitrine -->
+        <div class="hero-visual">
+            <!-- Badge Flutuante 1 -->
+            <div class="floating-chip chip-top">
+                <span class="chip-icon">⚡</span>
+                <div class="chip-text">
+                    <strong>Alta Performance</strong>
+                    <small>CSS3 & HTML5 Otimizado</small>
+                </div>
+            </div>
+
+            <!-- Janela Mockup de Código Interativa -->
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                    </div>
+                    <span class="window-title">squadH_manifest.ts</span>
+                    <span class="window-lang">TypeScript</span>
+                </div>
+
+                <div class="window-body">
+                    <pre><code><span class="token-keyword">const</span> <span class="token-variable">squadH</span> = {
+  <span class="token-prop">team</span>: <span class="token-string">"DevJuniors"</span>,
+  <span class="token-prop">focus</span>: <span class="token-string">"Web Moderno & Escalável"</span>,
+  <span class="token-prop">technologies</span>: [
+    <span class="token-string">"HTML5"</span>, <span class="token-string">"CSS3"</span>, <span class="token-string">"JavaScript"</span>,
+    <span class="token-string">"React"</span>, <span class="token-string">"Node.js"</span>
+  ],
+  <span class="token-prop">mindset</span>: <span class="token-string">"Criatividade + Eficiência"</span>,
+  <span class="token-prop">status</span>: <span class="token-string">"🚀 Pronto para o próximo projeto"</span>
+};
+
+<span class="token-comment">// Inovando a cada linha de código</span>
+<span class="token-variable">squadH</span>.<span class="token-function">buildAwesomeExperience</span>();</code></pre>
+                </div>
+
+                <div class="window-footer">
+                    <div class="footer-status">
+                        <span class="status-indicator"></span> UTF-8
+                    </div>
+                    <div class="footer-meta">Squad-H | FICR 2025</div>
+                </div>
+            </div>
+
+            <!-- Badge Flutuante 2 -->
+            <div class="floating-chip chip-bottom">
+                <span class="chip-icon">🎯</span>
+                <div class="chip-text">
+                    <strong>Design Responsivo</strong>
+                    <small>Perfeito em qualquer tela</small>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção de Destaques / Por que a DevJuniors? -->
+    <section class="features-section">
+        <div class="section-title-wrap">
+            <span class="section-tag">NOSSA ESSÊNCIA</span>
+            <h2 class="section-title">O que nos move a <span class="gradient-text">ir além</span></h2>
+            <p class="section-desc">Combinamos técnica, design moderno e trabalho em equipe para entregar valor de ponta a ponta.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-box">🎨</div>
+                <h3 class="feature-name">Design & Front-End Moderno</h3>
+                <p class="feature-text">Layouts visualmente marcantes, responsivos e acessíveis com foco na experiência do usuário.</p>
+                <a href="habilidades.html" class="feature-link">Ver habilidades &rarr;</a>
+            </div>
+
+            <div class="feature-card highlighted">
+                <div class="highlight-tag">Foco Principal</div>
+                <div class="feature-icon-box">⚙️</div>
+                <h3 class="feature-name">Desenvolvimento Full Stack</h3>
+                <p class="feature-text">Soluções completas, desde a arquitetura de interfaces até a estruturação de serviços e integrações.</p>
+                <a href="servicos.html" class="feature-link">Explorar serviços &rarr;</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon-box">🚀</div>
+                <h3 class="feature-name">Cases de Impacto Real</h3>
+                <p class="feature-text">Histórias de sucesso comprovadas, mostrando evolução contínua e resultados de alta relevância.</p>
+                <a href="case-de-sucesso.html" class="feature-link">Ler case de sucesso &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de Tecnologias / Tech Stack -->
+    <section class="tech-strip">
+        <p class="tech-strip-title">TECNOLOGIAS & FERRAMENTAS QUE DOMINAMOS</p>
+        <div class="tech-tags">
+            <span class="tech-pill">🌐 HTML5 Semântico</span>
+            <span class="tech-pill">🎨 CSS3 Moderno</span>
+            <span class="tech-pill">⚡ JavaScript (ES6+)</span>
+            <span class="tech-pill">⚛️ React</span>
+            <span class="tech-pill">🟢 Node.js</span>
+            <span class="tech-pill">🐙 Git & GitHub</span>
+            <span class="tech-pill">📱 Mobile First</span>
+            <span class="tech-pill">✨ UI/UX Design</span>
+        </div>
+    </section>
+
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h2>Tem um projeto ou quer bater um papo?</h2>
+                <p>Nossa equipe está pronta para colaborar e construir soluções incríveis com você.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="contato.html" class="btn btn-primary">Falar com o Squad H</a>
+                <a href="depoimentos.html" class="btn btn-outline">Ver Depoimentos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociais Flutuantes -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H • Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
