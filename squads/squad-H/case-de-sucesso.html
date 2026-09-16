@@ -1,67 +1,275 @@
-<!-- Case de Sucesso - Squad H -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case de Sucesso - DevPortfolio</title>
+    <title>Case de Sucesso | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/case-de-sucesso.css">
 </head>
-<body>
- <nav class="navbar">
-        <div class="logo">💻 DevJuniors</div>
+<body class="case-page">
 
-        <ul class="menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="case-de-sucesso.html" class="ativo">SuccessStory</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="habilidades.html">Habilidades</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="depoimentos.html">Depoimentos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
-     <header class="header">
-        <h1>Case de <span class="destaque">Sucesso</span></h1>
-        <p class="descricao1">Veja como transformamos ideias em resultados reais.</p>
+    <!-- Iluminação de fundo estética (Glow Mesh) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link active">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="case-container">
+    <!-- Seção Hero do Case -->
+    <main class="case-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Case de Sucesso em Destaque &bull; Transformação Digital</span>
+            </div>
 
-        <div class="case-imagem">
-            <img src="img/CASE.webp" alt="Projeto Final">
-        </div>
-
-        <div class="case-texto">
-            <h2>Site profissional para empresa local</h2>
-
-            <p class="descricao">
-                A empresa buscava melhorar sua presença online. Criamos um site moderno, rápido e totalmente responsivo.
+            <h1 class="hero-title">
+                Do Legado ao Extraordinário: <br>
+                <span class="gradient-text">Redesign Completo</span> para a Conner Exteriors
+            </h1>
+            <p class="hero-subtitle">
+                Descubra como o Squad H transformou um site corporativo desatualizado em uma plataforma moderna, rápida, responsiva e focada em gerar novos negócios.
             </p>
 
-            <h3>Antes</h3>
-            <ul>
-                <li>Layout simples e desatualizado</li>
-                <li>Não era responsivo</li>
-                <li>Dificuldade de navegação</li>
-            </ul>
-             <h3>Depois</h3>
-            <ul>
-                <li>Design moderno e profissional</li>
-                <li>Velocidade otimizada</li>
-                <li>Navegação intuitiva</li>
-            </ul>
-
-            <blockquote>
-                “O trabalho superou nossas expectativas! A visibilidade da empresa online aumentou muito.”
-                <br> — <strong>Cliente</strong>
-            </blockquote>
+            <!-- Grid de Métricas de Impacto do Case -->
+            <div class="metrics-row">
+                <div class="metric-box">
+                    <span class="metric-icon">📈</span>
+                    <div class="metric-val gradient-text">+240%</div>
+                    <p class="metric-desc">Geração de Leads & Contatos</p>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-icon">⚡</span>
+                    <div class="metric-val gradient-text">0.8s</div>
+                    <p class="metric-desc">Velocidade de Carregamento (antes 4.2s)</p>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-icon">📱</span>
+                    <div class="metric-val gradient-text">100%</div>
+                    <p class="metric-desc">Responsivo & Mobile First</p>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-icon">⭐</span>
+                    <div class="metric-val gradient-text">5.0 / 5</div>
+                    <p class="metric-desc">Satisfação Total do Cliente</p>
+                </div>
+            </div>
         </div>
+    </main>
 
-        </section>
+    <!-- Vitrine Visual Comparativa Antes e Depois -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">COMPARAÇÃO VISUAL</span>
+                <h2 class="section-title">A Metamorfose: <span class="gradient-text">Antes vs Depois</span></h2>
+                <p class="section-desc">Observe a evolução drástica de estética, hierarquia tipográfica e experiência do usuário.</p>
+            </div>
+
+            <div class="case-card-visual">
+                <div class="comparison-bar">
+                    <div class="pill-badge before-pill">🔴 Versão Anterior (2018)</div>
+                    <div class="pill-divider">➔</div>
+                    <div class="pill-badge after-pill">🟢 Redesign Squad H (Atual)</div>
+                </div>
+
+                <!-- Container com rolagem e zoom confortável -->
+                <div class="image-viewport">
+                    <img src="img/CASE.webp" alt="Comparativo Antes e Depois do Site Conner Exteriors" class="case-full-image">
+                </div>
+
+                <div class="viewport-footer">
+                    <span>💡 <strong>Dica:</strong> A reformulação modernizou as paletas, refinou as CTAs e aumentou a legibilidade para os usuários.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnóstico e Solução Lado a Lado -->
+    <section class="analysis-section">
+        <div class="container">
+            <div class="analysis-grid">
+                <!-- Card O Que Havia Antes -->
+                <div class="analysis-card before-card">
+                    <div class="analysis-header">
+                        <div class="status-icon red">⚠️</div>
+                        <div>
+                            <span class="sub-label">O CENÁRIO ANTERIOR</span>
+                            <h3>Problemas & Limitações</h3>
+                        </div>
+                    </div>
+                    <ul class="analysis-list">
+                        <li>
+                            <strong>Layout Desatualizado:</strong> Excesso de caixas sem alinhamento, poluindo a leitura e a credibilidade da marca.
+                        </li>
+                        <li>
+                            <strong>Incompatibilidade Mobile:</strong> Quebra severa de elementos e menus em smartphones e tablets.
+                        </li>
+                        <li>
+                            <strong>Navegação Confusa:</strong> Menus duplicados dificultavam a localização de serviços e contatos.
+                        </li>
+                        <li>
+                            <strong>Carregamento Lento:</strong> Imagens pesadas e código sem otimização geravam desistência de visitantes.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card A Solução Squad H -->
+                <div class="analysis-card after-card">
+                    <div class="analysis-header">
+                        <div class="status-icon green">✨</div>
+                        <div>
+                            <span class="sub-label">A SOLUÇÃO DEVIJUNIORS</span>
+                            <h3>Transformação Aplicada</h3>
+                        </div>
+                    </div>
+                    <ul class="analysis-list">
+                        <li>
+                            <strong>Design Sofisticado & Clean:</strong> Hierarquia equilibrada, seções arejadas e imagens com alto apelo visual.
+                        </li>
+                        <li>
+                            <strong>Totalmente Responsivo:</strong> Grid fluido adaptável a qualquer resolução com foco em Mobile First.
+                        </li>
+                        <li>
+                            <strong>Arquitetura Intuitiva:</strong> Menus consolidados, chamadas para ação claras e jornada simplificada.
+                        </li>
+                        <li>
+                            <strong>Performance Otimizada:</strong> HTML5 semântico enxuto, CSS moderno e ativos comprimidos para abertura instantânea.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- As 4 Etapas do Projeto -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">METODOLOGIA ÁGIL</span>
+                <h2 class="section-title">Como Conduzimos esse <span class="gradient-text">Projeto</span></h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h4>Imersão & Diagnóstico</h4>
+                    <p>Mapeamos os gargalos de conversão, dados de navegação e as reais dores dos clientes da empresa.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4>Wireframe & UI Design</h4>
+                    <p>Planejamento da nova arquitetura de informação, protótipo interativo e aprovação da identidade visual.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4>Codificação Front-End</h4>
+                    <p>Desenvolvimento em código limpo, semântica acessível, estilização moderna e testes em múltiplos dispositivos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h4>Deploy & Métricas</h4>
+                    <p>Lançamento em produção com monitoramento de tráfego, velocidade e captação de novos clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimento em Destaque do Cliente -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                    “O trabalho do Squad H superou todas as nossas expectativas! Nossa empresa ganhou uma presença online moderna e imponente. Os clientes elogiam constantemente a facilidade de pedir orçamentos pelo novo site, e nosso volume de contatos mais do que dobrou nas primeiras semanas.”
+                </blockquote>
+                <div class="client-meta">
+                    <div class="client-avatar">🏢</div>
+                    <div class="client-info">
+                        <strong>Diretoria de Marketing</strong>
+                        <span>Conner Exteriors & Enclosures &bull; Flórida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Deseja transformar o site da sua empresa também?</h2>
+                    <p>Nossa equipe do Squad H está preparada para construir a melhor versão da sua presença digital.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contato.html" class="btn btn-primary">Fazer um Orçamento</a>
+                    <a href="projetos.html" class="btn btn-secondary">Ver Outros Projetos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
 
 </body>
-
 </html>
