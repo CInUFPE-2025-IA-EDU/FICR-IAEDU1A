@@ -93,7 +93,10 @@
     }
 
     async function askGemini() {
-      const response = await fetch('/api/chat', {
+      const apiUrl = window.location.port === '3000'
+        ? '/api/chat'
+        : 'http://localhost:3000/api/chat';
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -103,7 +106,16 @@
       });
 
       if (!response.ok) {
-        throw new Error(`Erro API: ${response.status}`);
+        let errorMessage = `Erro API: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          if (errorData.error) {
+            errorMessage = errorData.error;
+          }
+        } catch (error) {
+          // Mantém a mensagem de status quando o backend não retorna JSON.
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
@@ -171,8 +183,8 @@
         status.textContent = '';
       } catch (error) {
         console.error(error);
-        addMessage('Desculpe, não consegui me conectar à IA. Verifique as configurações de API.', 'assistant');
-        status.textContent = 'Erro de conexão.';
+        addMessage('Desculpe, não consegui me conectar à IA.', 'assistant');
+        status.textContent = error.message || 'Erro de conexão.';
       } finally {
         input.disabled = false;
         submitButton.disabled = false;

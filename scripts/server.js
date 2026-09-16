@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 
-dotenv.config();
-
 const ROOT_DIR = path.resolve(__dirname, '..');
+dotenv.config({ path: path.join(ROOT_DIR, '.env') });
+
 const PORT = Number(process.env.PORT || 3000);
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 const SYSTEM_PROMPT = `Você é o assistente de suporte oficial do site do 'Squad D'.
 Suas respostas devem ser curtas, objetivas, amigáveis e em português do Brasil.
 
@@ -27,7 +27,10 @@ const MIME_TYPES = {
 };
 
 function sendJson(response, statusCode, payload) {
-  response.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8' });
+  response.writeHead(statusCode, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Access-Control-Allow-Origin': '*',
+  });
   response.end(JSON.stringify(payload));
 }
 
@@ -135,6 +138,16 @@ function serveStatic(request, response) {
 }
 
 const server = http.createServer((request, response) => {
+  if (request.method === 'OPTIONS' && request.url === '/api/chat') {
+    response.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    });
+    response.end();
+    return;
+  }
+
   if (request.method === 'POST' && request.url === '/api/chat') {
     handleChat(request, response);
     return;
