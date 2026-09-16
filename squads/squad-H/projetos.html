@@ -1,82 +1,231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem vindo aos projetos da nossa equipe</title>
-    <link rel="stylesheet" href="styles/projetos.css"> 
+    <title>Projetos em Destaque | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/projetos.css">
 </head>
-<body>
-    <main class="class-carde-projetos">
-        
-        <div class="section-header">
-            <p class="subtitle">PORTFOLIO</p>
-            <h1 class="title">Projetos em Destaque</h1>
-            <p class="description">Alguns dos meus trabalhos mais recentes e impactantes</p>
+<body class="projetos-page">
+
+    <!-- Iluminação de fundo estética (Glow Mesh) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link active">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Principal de Projetos -->
+    <main class="projetos-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Portfólio Squad H &bull; Soluções em Produção</span>
+            </div>
+
+            <h1 class="hero-title">
+                Nossos <span class="gradient-text">Projetos</span> em Destaque
+            </h1>
+            <p class="hero-subtitle">
+                Uma seleção de aplicações web, réplicas interativas e interfaces modernas criadas com dedicação, arquitetura limpa e foco total na experiência do usuário.
+            </p>
+
+            <!-- Categorias / Filtros Visuais -->
+            <div class="filter-pills">
+                <span class="filter-pill active">⚡ Todos os Trabalhos</span>
+                <span class="filter-pill">🛒 E-Commerce</span>
+                <span class="filter-pill">🔍 Clones & UI</span>
+                <span class="filter-pill">📰 Portais Editoriais</span>
+                <span class="filter-pill">🏆 Cases de Sucesso</span>
+            </div>
+
+            <!-- Grid de Cards de Projetos -->
+            <div class="projects-grid">
+
+                <!-- Projeto 1: E-commerce Água Potável -->
+                <article class="card-projeto">
+                    <div class="card-image-box">
+                        <img src="img/Gemini_Generated_Image_uiedb7uiedb7uied.png" alt="Plataforma E-commerce Loja de Água Potável" class="card-img">
+                        <span class="badge badge-accent">E-Commerce</span>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="project-tag">APLICAÇÃO WEB</span>
+                        <h2 class="card-title">Plataforma de E-Commerce para Distribuidora de Água</h2>
+                        <p class="card-description">
+                            Sistema completo para vendas online com catálogo de produtos, fluxo de carrinho de compras, tela de login responsiva e painel administrativo integrado.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">HTML5 Semântico</span>
+                            <span class="tag">CSS3 Grid</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="contato.html" class="btn-project-link">Solicitar Demonstração &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 2: Google Clone UI -->
+                <article class="card-projeto">
+                    <div class="card-image-box">
+                        <img src="img/Gemini_Generated_Image_uiedb7uiedb7uied (1).png" alt="Réplica Interativa da Home do Google" class="card-img">
+                        <span class="badge badge-purple">Clone UI</span>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="project-tag">FRONT-END FIDELIDADE</span>
+                        <h2 class="card-title">Réplica Interativa da Interface do Google</h2>
+                        <p class="card-description">
+                            Recriação fiel pixel a pixel da home page do Google com barra de pesquisa interativa, menus dinâmicos e botões funcionais respeitando as diretrizes Material Design.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS Flexbox</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="contato.html" class="btn-project-link">Ver Detalhes do Código &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 3: Jornal Digital Responsivo -->
+                <article class="card-projeto">
+                    <div class="card-image-box">
+                        <img src="img/Gemini_Generated_Image_4qp7n14qp7n14qp7.png" alt="Portal de Notícias e Jornal Digital" class="card-img">
+                        <span class="badge badge-cyan">Editorial</span>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="project-tag">PORTAL DE CONTEÚDO</span>
+                        <h2 class="card-title">Portal de Notícias & Jornal Digital Responsivo</h2>
+                        <p class="card-description">
+                            Layout editorial moderno com hierarquia de manchetes, colunas adaptáveis, tipografia refinada para leitura contínua e total fluidez em qualquer smartphone.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3 Moderno</span>
+                            <span class="tag">Mobile First</span>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="contato.html" class="btn-project-link">Explorar Layout &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 4: Case Conner Exteriors Flagship -->
+                <article class="card-projeto featured-project">
+                    <div class="card-image-box">
+                        <img src="img/CASE.webp" alt="Redesign do Site Conner Exteriors" class="card-img">
+                        <span class="badge badge-gold">⭐ Flagship Case</span>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="project-tag">TRANSFORMAÇÃO COMPLETA</span>
+                        <h2 class="card-title">Redesign Corporativo Conner Exteriors</h2>
+                        <p class="card-description">
+                            Reformulação de ponta a ponta que resultou em +240% de conversão de clientes e tempo de carregamento inferior a 1 segundo com código limpo e moderno.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">UI/UX Redesign</span>
+                            <span class="tag">CSS Otimizado</span>
+                            <span class="tag">Alta Conversão</span>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="case-de-sucesso.html" class="btn-project-link">Ler Estudo de Caso Completo &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
-
-        <div class="projects-grid">
-            
-            <div class="card-projeto">
-                <div class="card-image">
-                                        <img src="Gemini_Generated_Image_uiedb7uiedb7uied.png" alt="Projeto E-commerce" />
-                    <span class="badge">Destaque</span>
-                </div>
-
-                <div class="card-body">
-                    <h2 class="card-title">PLATAFORMA PARA UMA LOJA DE ÁGUA POTÁVEL</h2>
-                    <p class="card-description">
-                        Plataforma completa de e-commerce com, painel administrativo, tela de login e tela de cadastro de produtos dísponiveis na sua loja.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JAVA SCRIPT</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-projeto">
-                <div class="card-image">
-                                        <img src="Gemini_Generated_Image_uiedb7uiedb7uied (1).png" alt="Projeto Réplica Google" />
-                    <span class="badge">Destaque</span>
-                </div>
-
-                <div class="card-body">
-                    <h2 class="card-title">HOME DO GOOGLE</h2>
-                    <p class="card-description">
-                        Uma réplica da página inicial do google com barra de pesquisa funcional e botões interativos.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JAVA SCRIPT</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-projeto">
-                <div class="card-image">
-                                        <img src="Gemini_Generated_Image_4qp7n14qp7n14qp7.png" alt="Projeto Jornal" />
-                </div>
-
-                <div class="card-body">
-                    <h2 class="card-title">página de jornal</h2>
-                    <p class="card-description">
-                        Uma página de jornal responsiva com layout moderno e adaptável a diferentes tipos de telas.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JAVA SCRIPT</span>
-                    </div>
-                </div>
-            </div>
-            
-            </div>
     </main>
+
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Gostou dos projetos e quer tirar sua ideia do papel?</h2>
+                    <p>O Squad H combina técnica e agilidade para transformar o seu conceito em uma solução web de verdade.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contato.html" class="btn btn-primary">Iniciar um Projeto</a>
+                    <a href="servicos.html" class="btn btn-secondary">Conhecer Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
