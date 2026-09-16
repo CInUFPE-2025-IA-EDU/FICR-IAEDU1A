@@ -1,0 +1,15 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Generated reports and Python cache
+__pycache__/
+*.py[cod]
+metrics-*.json
+research_metrics.json
+research_data_glmm.csv
+css-report-*.json
