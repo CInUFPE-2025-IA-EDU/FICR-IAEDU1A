@@ -1,77 +1,430 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habilidades - DevJuniors</title>
+    <title>Habilidades & Stack | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/habilidades.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>  
+</head>
+<body class="habilidades-page">
 
-<body>
+    <!-- Iluminação de fundo estética (Glow Mesh) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-    <nav class="navbar">
-        <div class="logo"><span class="icon">💻</span> DevJuniors</div>
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
 
-        <ul class="menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="case-de-sucesso.html">SuccessStory</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a class="active" href="habilidades.html">Habilidades</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="depoimentos.html">Depoimentos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link active">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
 
-   
-    <header class="header">
-        <p class="subtitulo">O QUE SABEMOS FAZER</p>
-        <h1>Habilidades da <span class="destaque">Equipe</span></h1>
-        <p class="descricao">Aqui estão as principais tecnologias e competências que dominamos.</p>
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="skills-grid">
+    <!-- Seção Principal Hero -->
+    <main class="skills-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Expertise Técnica &bull; Squad H</span>
+            </div>
 
-        <div class="skill-card">
-            <i class="fab fa-html5 icon-skill"></i>
-            <h3>HTML5</h3>
-            <p>Estruturação semântica e criação de interfaces web modernas.</p>
+            <h1 class="hero-title">
+                Habilidades & <span class="gradient-text">Tecnologias</span> que Dominamos
+            </h1>
+            <p class="hero-subtitle">
+                Combinamos fundamentos sólidos de engenharia de software com as ferramentas mais modernas do mercado para entregar interfaces rápidas, acessíveis e código de alta manutenibilidade.
+            </p>
+
+            <!-- Métricas Resumidas de Habilidades -->
+            <div class="skills-stats-row">
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">10+</span>
+                    <span class="pill-label">Tecnologias Centrais</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">100%</span>
+                    <span class="pill-label">Padrões W3C & Semântica</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="pill-number gradient-text">A+</span>
+                    <span class="pill-label">Performance & SEO</span>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <div class="skill-card">
-            <i class="fab fa-css3-alt icon-skill"></i>
-            <h3>CSS3</h3>
-            <p>Estilização, animações e layouts responsivos.</p>
+    <!-- Pilares de Competências -->
+    <section class="skills-section">
+        <div class="container">
+
+            <!-- Categoria 1: Front-End & Interface -->
+            <div class="category-block">
+                <div class="category-header">
+                    <span class="category-tag">PILAR 01</span>
+                    <h2 class="category-title">🎨 Front-End & Engenharia de Interface</h2>
+                    <p class="category-desc">Estruturação visual de alto desempenho, acessibilidade e fluidez para o usuário final.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- HTML5 -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box html-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">HTML5 Semântico</h3>
+                        <p class="skill-desc">Arquitetura semântica rigorosa, acessibilidade (ARIA), SEO avançado e estruturação limpa.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Acessibilidade</span>
+                            <span>SEO</span>
+                            <span>Semântica</span>
+                        </div>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box css-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">CSS3 & Design Moderno</h3>
+                        <p class="skill-desc">Flexbox, CSS Grid, animações fluidas com keyframes, microinterações e layout 100% responsivo.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Grid & Flexbox</span>
+                            <span>Animações</span>
+                            <span>Mobile First</span>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box js-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <span class="skill-level">Intermediário / Avançado</span>
+                        </div>
+                        <h3 class="skill-title">JavaScript (ES6+)</h3>
+                        <p class="skill-desc">Manipulação dinâmica de DOM, consumo assíncrono de APIs (Fetch/Promises) e lógica estruturada.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>ES6+</span>
+                            <span>Fetch API</span>
+                            <span>DOM Dinâmico</span>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box ui-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">UI/UX & Glassmorphism</h3>
+                        <p class="skill-desc">Design systems consistentes, hierarquia tipográfica, paletas harmoniosas e contraste acessível.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>86%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 86%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Design System</span>
+                            <span>Cores & Tipografia</span>
+                            <span>Usabilidade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria 2: Backend, Dados & Arquitetura -->
+            <div class="category-block">
+                <div class="category-header">
+                    <span class="category-tag">PILAR 02</span>
+                    <h2 class="category-title">⚙️ Backend, Dados & Arquitetura</h2>
+                    <p class="category-desc">Estruturas de persistência, regras de negócio e integração de serviços.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Banco de Dados -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box db-icon">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <h3 class="skill-title">Banco de Dados & Modelagem</h3>
+                        <p class="skill-desc">Modelagem relacional e dimensional, normalização de dados, queries SQL e persistência segura.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>SQL</span>
+                            <span>Modelagem ER</span>
+                            <span>Consultas Ágeis</span>
+                        </div>
+                    </div>
+
+                    <!-- Node.js & APIs -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box node-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <h3 class="skill-title">Node.js & Integração de APIs</h3>
+                        <p class="skill-desc">Criação de rotas, manipulação de requisições HTTP, validação de payloads e serviços backend.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>REST APIs</span>
+                            <span>JSON</span>
+                            <span>Express</span>
+                        </div>
+                    </div>
+
+                    <!-- Arquitetura Limpa -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box arch-icon">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">Clean Code & Boas Práticas</h3>
+                        <p class="skill-desc">Código manutenível, componentização, separação de responsabilidades e documentação técnica.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Manutenibilidade</span>
+                            <span>Modularização</span>
+                            <span>Refatoração</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria 3: Ferramentas & Metodologia Ágil -->
+            <div class="category-block">
+                <div class="category-header">
+                    <span class="category-tag">PILAR 03</span>
+                    <h2 class="category-title">🐙 Ferramentas, Versionamento & Cultura</h2>
+                    <p class="category-desc">Fluxo de trabalho profissional focado em entregas contínuas e qualidade.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Git & GitHub -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box git-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">Git & GitHub Colaborativo</h3>
+                        <p class="skill-desc">Controle de versão com branches organizadas, pull requests, resolução de conflitos e histórico rastreável.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Git Flow</span>
+                            <span>Pull Requests</span>
+                            <span>Code Review</span>
+                        </div>
+                    </div>
+
+                    <!-- Trabalho em Equipe & Métodos Ágeis -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box team-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <span class="skill-level">Especialista</span>
+                        </div>
+                        <h3 class="skill-title">Sinergia em Equipe & Scrum</h3>
+                        <p class="skill-desc">Comunicação ágil e transparente, divisão inteligente de tarefas, pair programming e foco em entregas iterativas.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 96%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Pair Programming</span>
+                            <span>Comunicação</span>
+                            <span>Sprint Planning</span>
+                        </div>
+                    </div>
+
+                    <!-- Resolução de Problemas -->
+                    <div class="skill-card">
+                        <div class="card-top">
+                            <div class="icon-box sol-icon">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <h3 class="skill-title">Resolução Criativa de Desafios</h3>
+                        <p class="skill-desc">Capacidade analítica para investigar bugs complexos, propor soluções escaláveis e otimizar tempo de execução.</p>
+                        <div class="progress-wrap">
+                            <div class="progress-info">
+                                <span>Proficiência</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Debugging</span>
+                            <span>Pensamento Crítico</span>
+                            <span>Resiliência</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="skill-card">
-            <i class="fab fa-js-square icon-skill"></i>
-            <h3>JavaScript</h3>
-            <p>Lógica, interações dinâmicas e manipulação de DOM.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-git-alt icon-skill"></i>
-            <h3>Git & GitHub</h3>
-            <p>Versionamento e trabalho em equipe organizado.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-database icon-skill"></i>
-            <h3>Banco de Dados</h3>
-            <p>Modelagem</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-users icon-skill"></i>
-            <h3>Trabalho em Equipe</h3>
-            <p>Comunicação, colaboração e resolução de problemas.</p>
-        </div>
-
     </section>
+
+    <!-- Banner Chamada para Ação (CTA) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Precisa de um squad capacitado para criar seu projeto?</h2>
+                    <p>Dominamos essas tecnologias para transformar demandas reais em produtos funcionais e elegantes.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contato.html" class="btn btn-primary">Falar com o Squad H</a>
+                    <a href="servicos.html" class="btn btn-secondary">Conhecer Nossos Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
