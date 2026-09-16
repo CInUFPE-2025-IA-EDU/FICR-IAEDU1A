@@ -6,16 +6,20 @@
   margin: 0 auto;
   padding: clamp(2rem, 8vw, 7rem) clamp(1.5rem, 7vw, 6rem);
   overflow: hidden;
+  z-index: 0;
   border: 0;
   background: var(--color-ink);
-  box-shadow: 1rem 1rem 0 var(--color-accent);
+  box-shadow: 1rem 1rem 0 var(--color-accent), 0 1rem 2rem rgba(23, 37, 47, 0.12);
   transform-origin: center;
-  transition: transform 280ms ease, box-shadow 280ms ease;
+  will-change: transform;
+  transition: all 0.3s ease;
 }
 
-.intro:hover {
-  transform: scale(1.03);
-  box-shadow: 1.1rem 1.1rem 0 var(--color-accent);
+.intro:hover,
+.intro:focus-within {
+  z-index: 1;
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 1.1rem 1.1rem 0 var(--color-accent), 0 1.25rem 2.5rem rgba(23, 37, 47, 0.18);
 }
 
 .intro::before {
@@ -69,12 +73,13 @@
 
 @media (max-width: 600px) {
   .intro {
-    box-shadow: 0.5rem 0.5rem 0 var(--color-accent);
+    box-shadow: 0.5rem 0.5rem 0 var(--color-accent), 0 0.75rem 1.5rem rgba(23, 37, 47, 0.12);
   }
 
-  .intro:hover {
-    transform: scale(1.018);
-    box-shadow: 0.6rem 0.6rem 0 var(--color-accent);
+  .intro:hover,
+  .intro:focus-within {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0.6rem 0.6rem 0 var(--color-accent), 0 1rem 2rem rgba(23, 37, 47, 0.16);
   }
 
   .intro::before {
@@ -87,7 +92,8 @@
     transition: none;
   }
 
-  .intro:hover {
+  .intro:hover,
+  .intro:focus-within {
     transform: none;
   }
 }
