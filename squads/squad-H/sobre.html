@@ -3,85 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós</title>
+    <title>Sobre Nós | DevJuniors - Squad H</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/sobre.css">
 </head>
 <body class="sobre-page">
 
-    <header class="navbar">
-        <div class="logo">
-            <span class="icon">💻</span>
-            <h2>DevJuniors</h2>
-        </div>
+    <!-- Efeitos de iluminação de fundo (Glow) -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="habilidades.html">Habilidades</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="depoimentos.html">Depoimentos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+    <!-- Barra de Navegação Consistente -->
+    <header class="navbar-header">
+        <nav class="navbar">
+            <a href="home.html" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <img src="img/dev_logo.webp" alt="DevJuniors Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="fallback-icon">💻</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Dev<span class="gradient-text">Juniors</span></span>
+                    <span class="brand-tag">Squad H</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+                <li><a href="case-de-sucesso.html" class="nav-link">SuccessStory</a></li>
+                <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="habilidades.html" class="nav-link">Habilidades</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="depoimentos.html" class="nav-link">Depoimentos</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
             </ul>
+
+            <div class="nav-actions">
+                <a href="contato.html" class="btn btn-outline-nav">Fale Conosco</a>
+            </div>
         </nav>
     </header>
 
-    <section class="sobre-section">
+    <!-- Seção Principal: Sobre Nós Hero -->
+    <main class="sobre-hero">
+        <div class="container">
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                <span>Conheça Nossa História &bull; Squad H</span>
+            </div>
 
-        <h3 class="subtitulo">SOBRE NÓS</h3>
-        <h1 class="titulo">
-            Desenvolvedores <span class="gradiente">Apaixonados</span> por Tecnologia
-        </h1>
+            <h1 class="hero-title">
+                Desenvolvedores <span class="gradient-text">Apaixonados</span> por Criar o Futuro da Web
+            </h1>
+            <p class="hero-subtitle">
+                Uma equipe conectada pela curiosidade técnica, movida pelo aprendizado ágil e focada em construir produtos digitais funcionais, acessíveis e elegantes.
+            </p>
 
-        <div class="conteudo">
-
-            <img src="img/Squad-H.jpeg" class="foto" alt="">
-
-            <div class="texto">
-
-                <P>Somos uma equipe de quatro desenvolvedores apaixonados por tecnologia, atualmente cursando Análise e Desenvolvimento de Sistemas (ADS). Combinamos nossos conhecimentos teóricos e práticos adquiridos na graduação para criar soluções inovadoras e eficientes. </p>                <p>Nossa formação nos proporciona uma visão abrangente...</p>
-                <p>Embora estejamos no início de nossa jornada profissional, nossa dedicação e projetos acadêmicos, detalhados neste portfólio, demonstram nossa capacidade de enfrentar desafios e entregar resultados de qualidade.</p>
-                <p>Estamos entusiasmados com as oportunidades futuras e comprometidos em continuar aprendendo e crescendo na área de desenvolvimento de software.</p>
-
-
-                <div class="skills-tags">
-                    <span>FrontEnd</span>
-                    <span>Html</span>
-                    <span>Css</span>
-                    <span>JavaScript</span>
+            <!-- Card de Destaque da Equipe com Foto -->
+            <div class="team-showcase-card">
+                <div class="team-media">
+                    <div class="photo-scroll-box">
+                        <div class="scroll-helper-badge">
+                            <span>↕️ Role para ver todos os integrantes</span>
+                        </div>
+                        <div class="photo-wrapper">
+                            <img src="img/Squad-H.jpeg" alt="Foto dos integrantes do Squad H: Uilson Nascimento, Cleidiane Silva, João Gabriel França e Carla Paraguaio" class="team-photo">
+                        </div>
+                    </div>
+                    <!-- Pílulas com os nomes dos integrantes -->
+                    <div class="members-names-pills">
+                        <span class="member-pill">👨‍💻 Uilson Nasimento</span>
+                        <span class="member-pill">👩‍💻 Cleidiane Silva</span>
+                        <span class="member-pill">👨‍💻 João Gabriel França</span>
+                        <span class="member-pill">👩‍💻 Carla Paraguaio</span>
+                    </div>
                 </div>
 
+                <div class="team-bio">
+                    <span class="section-tag">QUEM SOMOS</span>
+                    <h2 class="bio-title">Unindo teoria acadêmica à excelência prática</h2>
+                    <p class="bio-text">
+                        Somos quatro desenvolvedores &mdash; <strong>Uilson Nasimento</strong>, <strong>Cleidiane Silva</strong>, <strong>João Gabriel França</strong> e <strong>Carla Paraguaio</strong> &mdash; cursando <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong> na FICR. Combinamos rigor conceitual, boas práticas de engenharia de software e foco prático para resolver problemas complexos com soluções digitais elegantes.
+                    </p>
+                    <p class="bio-text">
+                        Nosso ecossistema de trabalho valoriza a cooperação mútua: desde a estruturação semântica em HTML5 e arquiteturas de estilo em CSS3 até interfaces dinâmicas e integração full stack, cada membro contribui diretamente para o sucesso de cada entrega.
+                    </p>
+
+                    <div class="skills-highlight">
+                        <span class="skill-chip">🌐 Front-End Moderno</span>
+                        <span class="skill-chip">🎨 CSS & UI Engineering</span>
+                        <span class="skill-chip">⚡ JavaScript / Node.js</span>
+                        <span class="skill-chip">📱 Responsividade Total</span>
+                        <span class="skill-chip">🐙 Git Colaborativo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Métricas de Impacto -->
+    <section class="metricas-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">NÚMEROS QUE IMPORTAM</span>
+                <h2 class="section-title">Evolução contínua em <span class="gradient-text">cada sprint</span></h2>
+            </div>
+
+            <div class="metricas-grid">
+                <div class="card-metrica">
+                    <div class="metrica-icon">📚</div>
+                    <div class="metrica-data">
+                        <h3 class="metrica-number gradient-text">+1 Ano</h3>
+                        <p class="metrica-label">De estudo intensivo e prática diária</p>
+                    </div>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="metrica-icon">💻</div>
+                    <div class="metrica-data">
+                        <h3 class="metrica-number gradient-text">+15</h3>
+                        <p class="metrica-label">Projetos e protótipos construídos</p>
+                    </div>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="metrica-icon">👥</div>
+                    <div class="metrica-data">
+                        <h3 class="metrica-number gradient-text">4 Devs</h3>
+                        <p class="metrica-label">Integrados em ritmo ágil e colaborativo</p>
+                    </div>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="metrica-icon">🚀</div>
+                    <div class="metrica-data">
+                        <h3 class="metrica-number gradient-text">+120</h3>
+                        <p class="metrica-label">Commits e revisões de código no GitHub</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="metricas">
-        <div class="card-metrica">
-            <span class="icone">📚</span>
-            <h2 class="gradiente">+1 ano</h2>
-            <p>De Estudo e Prática</p>
-        </div>
+    <!-- Seção de Valores & Metodologia -->
+    <section class="valores-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">PILAREs & CULTURA</span>
+                <h2 class="section-title">Como o Squad H <span class="gradient-text">faz a diferença</span></h2>
+                <p class="section-desc">Princípios que guiam cada decisão técnica e visual dos nossos projetos.</p>
+            </div>
 
-        <div class="card-metrica">
-            <span class="icone">💻</span>
-            <h2 class="gradiente">10+</h2>
-            <p>Projetos de Estudo</p>
-        </div>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon-box">🎯</div>
+                    <h3 class="valor-title">Foco na Experiência do Usuário</h3>
+                    <p class="valor-text">
+                        Não criamos apenas interfaces estéticas; pensamos em usabilidade, tempos de carregamento ágeis e acessibilidade para todos os públicos.
+                    </p>
+                </div>
 
-        <div class="card-metrica">
-            <span class="icone">👥</span>
-            <h2 class="gradiente">5+</h2>
-            <p>Projetos em Equipe</p>
-        </div>
+                <div class="valor-card">
+                    <div class="valor-icon-box">🧩</div>
+                    <h3 class="valor-title">Arquitetura Limpa & Componentizada</h3>
+                    <p class="valor-text">
+                        Organização modular em HTML e CSS bem estruturado, facilitando manutenibilidade, escalabilidade e leitura clara do código.
+                    </p>
+                </div>
 
-        <div class="card-metrica">
-            <span class="icone">🚀</span>
-            <h2 class="gradiente">100+</h2>
-            <p>Commits no GitHub</p>
+                <div class="valor-card">
+                    <div class="valor-icon-box">🤝</div>
+                    <h3 class="valor-title">Sinergia & Comunicação Ágil</h3>
+                    <p class="valor-text">
+                        Pair programming, alinhamentos constantes e entregas iterativas garantem consistência e alta velocidade em cada entrega.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Chamada para Ação -->
+    <section class="cta-sobre">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Quer ver nosso trabalho em prática?</h2>
+                    <p>Confira nossos cases de sucesso ou explore a galeria de projetos completos desenvolvidos pela equipe.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="projetos.html" class="btn btn-primary">Explorar Projetos</a>
+                    <a href="case-de-sucesso.html" class="btn btn-secondary">Ver Case de Sucesso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock Social Flutuante -->
+    <aside class="social-dock">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <img src="linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">💻 DevJuniors</span>
+                <p>Squad H &bull; Portfólio Coletivo FICR</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="case-de-sucesso.html">SuccessStory</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Squad H. Criado com dedicação e criatividade.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
