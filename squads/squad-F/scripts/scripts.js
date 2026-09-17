@@ -210,3 +210,206 @@
     init();
   }
 })();
+
+/**
+ * scripts.js
+ * -------------------------------------------------
+ * Arquivo único de JavaScript do site. Cada funcionalidade é
+ * organizada em sua própria função "initX" e só é ativada se os
+ * elementos correspondentes existirem na página atual — assim
+ * este MESMO arquivo pode ser incluído em todas as páginas do
+ * projeto (basta um único <script src="./scripts/scripts.js" defer>
+ * no <head> ou no fim do <body>), sem precisar trocar de arquivo
+ * por página nem checar manualmente onde cada função é usada.
+ *
+ * Para adicionar uma nova funcionalidade no futuro:
+ *   1. Escreva uma função initNomeDaFuncionalidade(el) { ... }
+ *   2. Registre-a dentro de init(), com o seletor do elemento que
+ *      ela depende.
+ */
+(function () {
+  'use strict';
+
+  /* ============================================================
+   * 1. Ano dinâmico no rodapé
+   * ============================================================ */
+  function initFooterYear(el) {
+    el.textContent = new Date().getFullYear();
+  }
+
+  /* ============================================================
+   * 2. Carrossel de depoimentos
+   * ============================================================ */
+  function initDepoimentosCarousel(root) {
+    const track = root.querySelector('[data-carousel-track]');
+    const prevButton = root.querySelector('[data-carousel-prev]');
+    const nextButton = root.querySelector('[data-carousel-next]');
+    const dotsContainer = root.querySelector('[data-carousel-dots]');
+    const slides = Array.from(track.children);
+
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    const dots = slides.map((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'depoimento-carousel__dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Ir para depoimento ' + (index + 1));
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+      return dot;
+    });
+
+    function updateUI() {
+      const offset = currentIndex * 100;
+      track.style.transform = 'translateX(-' + offset + '%)';
+      track.style.transition = prefersReducedMotion ? 'none' : 'transform 0.35s ease';
+
+      dots.forEach((dot, index) => {
+        const isActive = index === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', String(isActive));
+        dot.tabIndex = isActive ? 0 : -1;
+      });
+
+      slides.forEach((slide, index) => {
+        slide.setAttribute('aria-hidden', String(index !== currentIndex));
+      });
+
+      prevButton.disabled = slides.length <= 1;
+      nextButton.disabled = slides.length <= 1;
+    }
+
+    function goToSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      updateUI();
+    }
+
+    function goToNext() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function goToPrevious() {
+      goToSlide(currentIndex - 1);
+    }
+
+    prevButton.addEventListener('click', goToPrevious);
+    nextButton.addEventListener('click', goToNext);
+
+    root.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goToPrevious();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goToNext();
+      }
+    });
+
+    let touchStartX = 0;
+    const SWIPE_THRESHOLD = 40;
+
+    track.addEventListener('touchstart', (event) => {
+      touchStartX = event.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (event) => {
+      const touchEndX = event.changedTouches[0].clientX;
+      const delta = touchEndX - touchStartX;
+
+      if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+
+      if (delta < 0) {
+        goToNext();
+      } else {
+        goToPrevious();
+      }
+    }, { passive: true });
+
+    updateUI();
+  }
+
+  /* ============================================================
+   * 3. Validação do formulário de contato
+   * ============================================================ */
+  function initFormValidation(form) {
+    const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const nome = form.querySelector('#nome');
+    const email = form.querySelector('#email');
+    const mensagem = form.querySelector('#mensagem');
+
+    const campos = [
+      {
+        input: nome,
+        erroEl: form.querySelector('#nome-erro'),
+        validar: (valor) => (valor.trim().length >= 2 ? '' : 'Digite seu nome completo.'),
+      },
+      {
+        input: email,
+        erroEl: form.querySelector('#email-erro'),
+        validar: (valor) =>
+          EMAIL_REGEX.test(valor.trim()) ? '' : 'Digite um e-mail válido, ex: nome@exemplo.com.',
+      },
+      {
+        input: mensagem,
+        erroEl: form.querySelector('#mensagem-erro'),
+        validar: (valor) =>
+          valor.trim().length >= 10 ? '' : 'Escreva uma mensagem com pelo menos 10 caracteres.',
+      },
+    ];
+
+    function validarCampo(campo) {
+      const mensagemErro = campo.validar(campo.input.value);
+      campo.erroEl.textContent = mensagemErro;
+      campo.input.setAttribute('aria-invalid', mensagemErro ? 'true' : 'false');
+      return mensagemErro === '';
+    }
+
+    campos.forEach((campo) => {
+      campo.input.addEventListener('blur', () => validarCampo(campo));
+    });
+
+    form.addEventListener('submit', (event) => {
+      const resultados = campos.map(validarCampo);
+      const formularioValido = resultados.every(Boolean);
+
+      if (!formularioValido) {
+        event.preventDefault();
+        const primeiroCampoComErro = campos.find((_, index) => !resultados[index]);
+        if (primeiroCampoComErro) {
+          primeiroCampoComErro.input.focus();
+        }
+      }
+    });
+  }
+
+  /* ============================================================
+   * Inicialização geral
+   * -------------------------------------------------
+   * Cada bloco abaixo só executa se o elemento existir na página
+   * atual, então é seguro incluir este script.js em TODAS as
+   * páginas do site sem se preocupar em remover funcionalidades
+   * que não se aplicam a cada uma.
+   * ============================================================ */
+  function init() {
+    const anoEl = document.getElementById('ano-atual');
+    if (anoEl) initFooterYear(anoEl);
+
+    document.querySelectorAll('[data-carousel]').forEach(initDepoimentosCarousel);
+
+    document.querySelectorAll('[data-form-contato]').forEach(initFormValidation);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
