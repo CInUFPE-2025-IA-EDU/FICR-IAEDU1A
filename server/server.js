@@ -28,11 +28,7 @@ const blockedTerms = [
   "foda-se",
 ];
 
-app.use(
-  cors({
-    origin: frontendOrigin,
-  }),
-);
+app.use(cors());
 
 app.use(express.json({ limit: "10kb" }));
 
