@@ -1,0 +1,12 @@
+{
+  "name": "equipe-de-desenvolvedoras",
+  "version": "1.5.0",
+  "private": true,
+  "description": "Projeto institucional da Equipe de Desenvolvedoras com interface responsiva e chatbot usando Gemini.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

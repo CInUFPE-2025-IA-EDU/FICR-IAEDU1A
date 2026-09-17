@@ -1,5 +1,5 @@
 {
-  "squad_name": "squad-D",
+  "project_name": "Equipe de Desenvolvedoras",
   "members": {
     "html_team": [
       "A13",
@@ -13,8 +13,12 @@
   "experiment_group": "TODO",
   "technologies": [
     "HTML5",
-    "CSS3"
+    "CSS3",
+    "JavaScript",
+    "Gemini API"
   ],
   "project_start": "2025-03-01",
-  "project_deadline": "2025-03-28"
+  "project_deadline": "2025-03-28",
+  "version": "1.6",
+  "notes": "Avatar feminino flutuante, imagens de portfólio e contexto ampliado para o chatbot."
 }
