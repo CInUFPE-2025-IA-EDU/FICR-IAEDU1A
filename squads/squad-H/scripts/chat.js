@@ -1,3 +1,5 @@
+let interactionId = null;
+
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chat-messages");
@@ -26,7 +28,8 @@ chatForm.addEventListener("submit", async (event) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                mensagem: mensagem
+                mensagem: mensagem,
+                previousInteractionId: interactionId
             })
         });
 
@@ -41,6 +44,8 @@ chatForm.addEventListener("submit", async (event) => {
             );
             return;
         }
+
+        interactionId = dados.interactionId;
 
         adicionarMensagem(dados.resposta, "ia");
 
