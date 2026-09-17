@@ -353,81 +353,79 @@ app.post("/api/chat", async (request, response) => {
   }
 
   const apiKey = process.env.GEMINI_API_KEY;
-  const model = process.env.GEMINI_MODEL;
 
-  if (!apiKey || !model) {
+  if (!apiKey) {
     return response.status(500).json({
       error: "O serviço de IA ainda não foi configurado.",
     });
   }
 
-  const endpoint =
-    `https://generativelanguage.googleapis.com/v1beta/models/` +
-    `${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  // Lista ordenada de modelos gratuitos disponíveis para fallback em caso de erro/alta demanda
+  const envModels = process.env.GEMINI_MODELS
+    ? process.env.GEMINI_MODELS.split(",").map((m) => m.trim())
+    : [];
 
-  try {
-    const geminiResponse = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [
-            {
-              text: portfolioContext,
-            },
-          ],
-        },
-        contents: [
-          {
-            role: "user",
-            parts: [
-              {
-                text: message.trim(),
-              },
-            ],
-          },
-        ],
-        generationConfig: {
+  const candidateModels = [
+    process.env.GEMINI_MODEL,
+    ...envModels,
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+  ].filter(Boolean);
+
+  const modelsToTry = [...new Set(candidateModels)];
+
+  const ai = new GoogleGenAI({ apiKey });
+  let answer = null;
+  let lastError = null;
+
+  for (const model of modelsToTry) {
+    try {
+      const geminiResponse = await ai.models.generateContent({
+        model,
+        contents: message.trim(),
+        config: {
+          systemInstruction: portfolioContext,
           temperature: 0.4,
           maxOutputTokens: 650,
         },
-      }),
-    });
-
-    const data = await geminiResponse.json();
-
-    if (!geminiResponse.ok) {
-      console.error("Erro retornado pelo Gemini:", data);
-
-      return response.status(502).json({
-        error: "Não foi possível obter uma resposta da IA.",
       });
+
+      const rawAnswer =
+        geminiResponse.text ||
+        geminiResponse.candidates?.[0]?.content?.parts
+          ?.map((part) => part.text || "")
+          .join("");
+
+      const cleaned = cleanAnswer(rawAnswer);
+
+      if (cleaned) {
+        answer = cleaned;
+        break;
+      }
+
+      console.warn(`Modelo ${model} retornou resposta vazia. Tentando próximo modelo...`);
+    } catch (error) {
+      lastError = error;
+      console.warn(
+        `Erro ao consultar modelo ${model}: ${error?.message || error}. Tentando próximo modelo...`,
+      );
     }
+  }
 
-    const answer = cleanAnswer(
-      data.candidates?.[0]?.content?.parts
-        ?.map((part) => part.text || "")
-        .join(""),
-    );
+  if (!answer) {
+    console.error("Todos os modelos de IA falharam. Último erro:", lastError);
 
-    if (!answer) {
-      return response.status(502).json({
-        error: "A IA não retornou uma resposta válida.",
-      });
-    }
-
-    return response.json({
-      answer,
-    });
-  } catch (error) {
-    console.error("Erro ao consultar o Gemini:", error);
-
-    return response.status(500).json({
-      error: "Ocorreu um erro ao consultar o assistente.",
+    return response.status(502).json({
+      error: "Não foi possível obter uma resposta da IA.",
     });
   }
+
+  return response.json({
+    answer,
+  });
 });
 
 app.listen(port, () => {
