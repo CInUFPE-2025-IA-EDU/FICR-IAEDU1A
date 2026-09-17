@@ -3,6 +3,7 @@ const path = require("node:path");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const { GoogleGenAI } = require("@google/genai");
 
 dotenv.config();
 
