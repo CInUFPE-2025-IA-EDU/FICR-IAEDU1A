@@ -1,6 +1,8 @@
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chat-messages");
+const chatContainer = document.querySelector(".chat-container");
+const chatToggle = document.getElementById("chat-toggle");
 
 chatForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -66,3 +68,11 @@ function adicionarMensagem(texto, tipo) {
 
     return mensagem;
 }
+
+chatToggle.addEventListener("click", () => {
+    chatContainer.classList.toggle("aberto");
+
+    if (chatContainer.classList.contains("aberto")) {
+        chatInput.focus();
+    }
+});

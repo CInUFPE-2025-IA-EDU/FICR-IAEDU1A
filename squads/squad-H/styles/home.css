@@ -193,4 +193,233 @@ header {
         font-size: 22px;
     }
 }
+/* =========================
+   CHAT FLUTUANTE - TecIA
+========================= */
 
+.chat-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 360px;
+    height: 500px;
+
+    margin: 0;
+
+    background: #181818;
+    border: 1px solid #444;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+    z-index: 1000;
+}
+
+.chat-header {
+    padding: 16px 18px;
+
+    background: #242424;
+
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.chat-header p {
+    margin: 4px 0 0;
+
+    color: #aaa;
+    font-size: 13px;
+}
+
+.chat-messages {
+    height: 370px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-mensagem {
+    max-width: 80%;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    line-height: 1.4;
+    font-size: 14px;
+
+    word-wrap: break-word;
+}
+
+.chat-mensagem.ia {
+    align-self: flex-start;
+
+    background: #292929;
+
+    border-bottom-left-radius: 4px;
+}
+
+.chat-mensagem.usuario {
+    align-self: flex-end;
+
+    background: #3d3d3d;
+
+    border-bottom-right-radius: 4px;
+}
+
+.chat-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    gap: 8px;
+
+    padding: 12px;
+
+    background: #222;
+    border-top: 1px solid #3a3a3a;
+}
+
+.chat-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 10px 12px;
+
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    background: #151515;
+    color: white;
+
+    outline: none;
+}
+
+.chat-form button {
+    padding: 10px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #e6e6e6;
+    color: #111;
+
+    font-weight: bold;
+}
+
+.chat-form button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        right: 10px;
+        bottom: 10px;
+
+        width: calc(100% - 20px);
+        height: 480px;
+    }
+
+    .chat-messages {
+        height: 350px;
+    }
+}
+/* =========================
+   BOTÃO FLUTUANTE DA TecIA
+========================= */
+
+.chat-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #333;
+    color: white;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+
+    z-index: 1001;
+
+    transition: 0.3s;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.08);
+    background: #444;
+}
+
+
+/* =========================
+   JANELA FECHADA
+========================= */
+
+.chat-container {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* =========================
+   JANELA ABERTA
+========================= */
+
+.chat-container.aberto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+
+    bottom: 95px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .chat-toggle {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-container.aberto {
+        right: 10px;
+        bottom: 85px;
+
+        width: calc(100% - 20px);
+    }
+}
