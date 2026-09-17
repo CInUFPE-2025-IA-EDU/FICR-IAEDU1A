@@ -127,6 +127,7 @@ header {
         var(--gradiente-inicio),
         var(--gradiente-fim)
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
