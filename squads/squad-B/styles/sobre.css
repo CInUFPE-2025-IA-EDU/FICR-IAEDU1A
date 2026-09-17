@@ -3,7 +3,7 @@
 :root {
   --background: #FEFEFE;
   --text: #0A0614;
-  --cor-primaria: #2349FF;
+  --cor-primaria: #25645f;
 }
 
 * {
@@ -65,7 +65,6 @@ body * {
 
 .apresentação > img {
   border-radius: 20px;
-  outline: 1px solid #C27CFA;
   width: 450px;
   height: 600px;
   flex-shrink: 0;

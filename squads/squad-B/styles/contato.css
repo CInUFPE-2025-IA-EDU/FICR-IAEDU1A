@@ -96,10 +96,10 @@ li a {
 }
 
 li a:hover {
-  background-color: #7b68ee;
+  background-color: #25645f;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(123, 104, 238, 0.2);
+  box-shadow: 0 4px 12px rgba(37, 100, 95, 0.2);
 }
 
 .navegação {
@@ -143,9 +143,9 @@ button {
 }
 
 .email:hover, .whatsapp:hover {
-  background-color: #7b68ee;
+  background-color: #25645f;
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(123, 104, 238, 0.25);
+  box-shadow: 0 6px 16px rgba(37, 100, 95, 0.25);
 }
 
 .email svg, .whatsapp svg {
@@ -208,14 +208,14 @@ button {
 .form-grupo input:focus,
 .form-grupo textarea:focus {
   outline: none;
-  border-color: #7b68ee;
+  border-color: #25645f;
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.1);
+  box-shadow: 0 0 0 3px rgba(37, 100, 95, 0.1);
 }
 
 .form-grupo input:hover,
 .form-grupo textarea:hover {
-  border-color: #a89be8;
+  border-color:  #25645f;
 }
 
 .form-grupo textarea {
@@ -239,14 +239,14 @@ button {
 }
 
 .button-enviar button[type="submit"] {
-  background: linear-gradient(135deg, #7b68ee 0%, #6a5adb 100%);
+  background: #25645f;
   color: #fff;
-  box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 100, 95, 0.3);
 }
 
 .button-enviar button[type="submit"]:hover {
-  background: linear-gradient(135deg, #8b79f5 0%, #7b68ee 100%);
-  box-shadow: 0 6px 20px rgba(123, 104, 238, 0.4);
+  background: #25645f;
+  box-shadow: 0 6px 20px rgba(37, 100, 95, 0.4);
   transform: translateY(-2px);
 }
 
