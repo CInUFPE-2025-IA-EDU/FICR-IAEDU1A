@@ -19,6 +19,7 @@
   />
 
   <link rel="stylesheet" href="./styles/case-de-sucesso.css" />
+  <link rel="stylesheet" href="./styles/depoimento-carousel.css" />
 </head>
 <body>
   <!-- Skip link: permite que usuários de teclado/leitor de tela pulem direto para o conteúdo -->
@@ -106,39 +107,81 @@
       <section class="case-depoimento" aria-labelledby="depoimento-titulo">
         <h3 id="depoimento-titulo">Depoimentos dos clientes</h3>
 
-        <blockquote class="case-depoimento-card" cite="">
-          <p class="case-depoimento-texto">
-            O portal desenvolvido pelo Squad F facilitou muito nossa rotina. Agora conseguimos centralizar avisos
-            e materiais em um único lugar, o que trouxe mais segurança e transparência para responsáveis e
-            alunos.
-          </p>
-          <footer class="case-depoimento-autor">
-            <cite>Coordenadora Pedagógica, Escola Parceira</cite>
-          </footer>
-        </blockquote>
+        <div
+          class="depoimento-carousel"
+          data-carousel
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Depoimentos dos clientes"
+        >
+          <div class="depoimento-carousel__viewport">
+            <ul class="depoimento-carousel__track" data-carousel-track>
+              <li class="depoimento-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 3">
+                <blockquote class="case-depoimento-card" cite="">
+                  <p class="case-depoimento-texto">
+                    O portal desenvolvido pelo Squad F facilitou muito nossa rotina. Agora conseguimos centralizar
+                    avisos e materiais em um único lugar, o que trouxe mais segurança e transparência para
+                    responsáveis e alunos.
+                  </p>
+                  <footer class="case-depoimento-autor">
+                    <cite>Coordenadora Pedagógica, Escola Parceira</cite>
+                  </footer>
+                </blockquote>
+              </li>
 
-        <blockquote class="case-depoimento-card" cite="">
-          <p class="case-depoimento-texto">
-            Eu ficava sempre preocupado em saber quem seria o professor que daria aula naquele dia, qual seria a
-            sala, qual era a matéria do professor. Agora não tenho mais dúvidas. Eu apenas olho o site da escola e
-            já encontro tudo pronto.
-          </p>
-          <footer class="case-depoimento-autor">
-            <cite>Fabiano Zimmermann</cite>, Aluno da Escola
-          </footer>
-        </blockquote>
+              <li class="depoimento-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 3">
+                <blockquote class="case-depoimento-card" cite="">
+                  <p class="case-depoimento-texto">
+                    Eu ficava sempre preocupado em saber quem seria o professor que daria aula naquele dia, qual
+                    seria a sala, qual era a matéria do professor. Agora não tenho mais dúvidas. Eu apenas olho o
+                    site da escola e já encontro tudo pronto.
+                  </p>
+                  <footer class="case-depoimento-autor">
+                    <cite>Fabiano Zimmermann</cite>, Aluno da Escola
+                  </footer>
+                </blockquote>
+              </li>
 
-        <blockquote class="case-depoimento-card" cite="">
-          <p class="case-depoimento-texto">
-            Ficou extremamente fácil acompanhar o desempenho da minha filha após a criação do site. Eu posso ver
-            a presença dela, as notas, observações dos professores etc. Com essas informações, eu consigo
-            conversar e ajudá-la nas questões em que ela tem dúvida ou onde o desempenho esteja um pouco mais
-            fraco.
-          </p>
-          <footer class="case-depoimento-autor">
-            <cite>Ismael Constantino</cite>, Pai de Aluna
-          </footer>
-        </blockquote>
+              <li class="depoimento-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 3">
+                <blockquote class="case-depoimento-card" cite="">
+                  <p class="case-depoimento-texto">
+                    Ficou extremamente fácil acompanhar o desempenho da minha filha após a criação do site. Eu
+                    posso ver a presença dela, as notas, observações dos professores etc. Com essas informações,
+                    eu consigo conversar e ajudá-la nas questões em que ela tem dúvida ou onde o desempenho
+                    esteja um pouco mais fraco.
+                  </p>
+                  <footer class="case-depoimento-autor">
+                    <cite>Ismael Constantino</cite>, Pai de Aluna
+                  </footer>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+
+          <div class="depoimento-carousel__controls">
+            <button
+              type="button"
+              class="depoimento-carousel__arrow depoimento-carousel__arrow--prev"
+              data-carousel-prev
+              aria-label="Depoimento anterior"
+            >
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+
+            <div class="depoimento-carousel__dots" data-carousel-dots role="tablist" aria-label="Escolher depoimento">
+              <!-- Os botões (dots) são gerados dinamicamente pelo JS, um por slide -->
+            </div>
+
+            <button
+              type="button"
+              class="depoimento-carousel__arrow depoimento-carousel__arrow--next"
+              data-carousel-next
+              aria-label="Próximo depoimento"
+            >
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </div>
       </section>
     </article>
 
@@ -148,9 +191,6 @@
     <p>&copy; <span id="ano-atual">2025</span> Squad F. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    // Mantém o ano do rodapé sempre atualizado automaticamente
-    document.getElementById('ano-atual').textContent = new Date().getFullYear();
-  </script>
+  <script src="./scripts/scripts.js" defer></script>
 </body>
 </html>
