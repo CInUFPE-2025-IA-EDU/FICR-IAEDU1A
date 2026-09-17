@@ -1,14 +1,14 @@
 ---
 name: Task de Pesquisa
 about: Template padrão para tasks da pesquisa
-title: '[Squad X] Tipo - Página'
+title: '[Squad B] Tipo - Página'
 labels: ['pesquisa']
 assignees: ''
 
 ---
 
 ## 🎯 Detalhes da Task
-- **Squad:** 
+- **Squad:** B
 - **Página:** 
 - **Tipo:** HTML/CSS
 - **Sprint:** 
@@ -23,7 +23,7 @@ assignees: ''
 - [ ] Commits realizados
 
 ## 📁 Estrutura de Arquivos
-squads/squad-[letra]/
+squads/squad-B/
 ├── [pagina].html
 └── styles/
 └── [pagina].css
